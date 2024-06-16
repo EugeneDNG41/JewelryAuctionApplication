@@ -1,0 +1,27 @@
+﻿<Window x:Class="JewelryAuctionDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JewelryAuctionDemo" xmlns:views="clr-namespace:JewelryAuctionSystem.Views" xmlns:viewModel="clr-namespace:JewelryAuctionDemo.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <viewModel:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Button Content="Login" Command="{Binding ShowLoginCommand}" Margin="522,96,87,284"  />
+        
+    </Grid>
+    <ContentControl Conten="{Binding CurrentViewModel}">
+        <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <views:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+                <views:LoginView/>
+            </DataTemplate>
+            
+        </ContentControl.Resources>
+    </ContentControl>
+</Window>

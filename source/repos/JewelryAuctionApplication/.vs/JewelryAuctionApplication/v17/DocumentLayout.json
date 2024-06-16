@@ -1,0 +1,725 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\jewelryauctionapplication.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:jewelryauctionapplication.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\commands\\logincommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:commands\\logincommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\repositories\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:repositories\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\views\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:views\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\repositories\\iaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:repositories\\iaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\commands\\navigatecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:commands\\navigatecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\commands\\logoutcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:commands\\logoutcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\commands\\basecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:commands\\basecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\stores\\navigationstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:stores\\navigationstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\stores\\modalnavigationstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:stores\\modalnavigationstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\stores\\accountstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:stores\\accountstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\services\\inavigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:services\\inavigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\services\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:services\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\components\\bindablepasswordbox.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:components\\bindablepasswordbox.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\components\\bindablepasswordbox.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:components\\bindablepasswordbox.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\jewelryauctioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:jewelryauctioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\migrations\\jewelryauctioncontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:migrations\\jewelryauctioncontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\models\\jewelry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:models\\jewelry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\migrations\\20240616075308_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:migrations\\20240616075308_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\configuration\\requestconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:configuration\\requestconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\configuration\\bidconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:configuration\\bidconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\configuration\\postconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:configuration\\postconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\models\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:models\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\models\\bid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:models\\bid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\models\\auction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:models\\auction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\configuration\\accountconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:configuration\\accountconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\configuration\\paymentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:configuration\\paymentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\configuration\\jewelryconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:configuration\\jewelryconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\configuration\\auctionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:configuration\\auctionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|c:\\users\\lenovo\\source\\repos\\jewelryauctionapplication\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E7598D-A1AA-41AA-96B9-D831169EBB96}|JewelryAuctionApplication.csproj|solutionrelative:assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 300,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginCommand.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Commands\\LoginCommand.cs",
+              "RelativeDocumentMoniker": "Commands\\LoginCommand.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Commands\\LoginCommand.cs",
+              "RelativeToolTip": "Commands\\LoginCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T14:48:08.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Repositories\\AccountRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\AccountRepository.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Repositories\\AccountRepository.cs",
+              "RelativeToolTip": "Repositories\\AccountRepository.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwDAAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T09:12:19.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Views\\LoginView.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\LoginView.xaml.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Views\\LoginView.xaml.cs",
+              "RelativeToolTip": "Views\\LoginView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T10:02:14.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "ViewModels\\LoginViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T09:16:58.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MainViewModel.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwA4AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T11:55:20.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAjwCcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T06:51:57.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "JewelryAuctionApplication.csproj",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\JewelryAuctionApplication.csproj",
+              "RelativeDocumentMoniker": "JewelryAuctionApplication.csproj",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\JewelryAuctionApplication.csproj",
+              "RelativeToolTip": "JewelryAuctionApplication.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-15T06:28:06.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IAccountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Repositories\\IAccountRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\IAccountRepository.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Repositories\\IAccountRepository.cs",
+              "RelativeToolTip": "Repositories\\IAccountRepository.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T09:12:08.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Views\\LoginView.xaml",
+              "RelativeDocumentMoniker": "Views\\LoginView.xaml",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Views\\LoginView.xaml",
+              "RelativeToolTip": "Views\\LoginView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-16T09:43:53.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NavigateCommand.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Commands\\NavigateCommand.cs",
+              "RelativeDocumentMoniker": "Commands\\NavigateCommand.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Commands\\NavigateCommand.cs",
+              "RelativeToolTip": "Commands\\NavigateCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T12:54:56.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LogoutCommand.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Commands\\LogoutCommand.cs",
+              "RelativeDocumentMoniker": "Commands\\LogoutCommand.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Commands\\LogoutCommand.cs",
+              "RelativeToolTip": "Commands\\LogoutCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T13:02:22.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BaseCommand.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Commands\\BaseCommand.cs",
+              "RelativeDocumentMoniker": "Commands\\BaseCommand.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Commands\\BaseCommand.cs",
+              "RelativeToolTip": "Commands\\BaseCommand.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T08:30:07.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MainWindowViewModel.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MainWindowViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAzwCMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T07:09:08.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Views\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-15T03:23:33.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NavigationStore.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Stores\\NavigationStore.cs",
+              "RelativeDocumentMoniker": "Stores\\NavigationStore.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Stores\\NavigationStore.cs",
+              "RelativeToolTip": "Stores\\NavigationStore.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T11:50:58.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ModalNavigationStore.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Stores\\ModalNavigationStore.cs",
+              "RelativeDocumentMoniker": "Stores\\ModalNavigationStore.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Stores\\ModalNavigationStore.cs",
+              "RelativeToolTip": "Stores\\ModalNavigationStore.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwBkAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T11:49:57.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AccountStore.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Stores\\AccountStore.cs",
+              "RelativeDocumentMoniker": "Stores\\AccountStore.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Stores\\AccountStore.cs",
+              "RelativeToolTip": "Stores\\AccountStore.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T11:47:14.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "INavigationService.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Services\\INavigationService.cs",
+              "RelativeDocumentMoniker": "Services\\INavigationService.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Services\\INavigationService.cs",
+              "RelativeToolTip": "Services\\INavigationService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T11:52:37.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IAccountService.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Services\\IAccountService.cs",
+              "RelativeDocumentMoniker": "Services\\IAccountService.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Services\\IAccountService.cs",
+              "RelativeToolTip": "Services\\IAccountService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T08:44:22.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "Services\\AccountService.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Services\\AccountService.cs",
+              "RelativeToolTip": "Services\\AccountService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T08:44:35.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\ViewModels\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\BaseViewModel.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\ViewModels\\BaseViewModel.cs",
+              "RelativeToolTip": "ViewModels\\BaseViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T08:28:25.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Views\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Views\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Views\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T03:23:32.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "BindablePasswordBox.xaml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Components\\BindablePasswordBox.xaml",
+              "RelativeDocumentMoniker": "Components\\BindablePasswordBox.xaml",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Components\\BindablePasswordBox.xaml",
+              "RelativeToolTip": "Components\\BindablePasswordBox.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-16T09:28:07.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "BindablePasswordBox.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Components\\BindablePasswordBox.xaml.cs",
+              "RelativeDocumentMoniker": "Components\\BindablePasswordBox.xaml.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Components\\BindablePasswordBox.xaml.cs",
+              "RelativeToolTip": "Components\\BindablePasswordBox.xaml.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAwBUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T09:57:42.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "JewelryAuctionContext.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\JewelryAuctionContext.cs",
+              "RelativeDocumentMoniker": "JewelryAuctionContext.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\JewelryAuctionContext.cs",
+              "RelativeToolTip": "JewelryAuctionContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T05:06:30.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Account.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "Models\\Account.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Account.cs",
+              "RelativeToolTip": "Models\\Account.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAASwBkAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T03:26:02.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "JewelryAuctionContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Migrations\\JewelryAuctionContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\JewelryAuctionContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Migrations\\JewelryAuctionContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\JewelryAuctionContextModelSnapshot.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwFYAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T07:57:01.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Models\\Payment.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Payment.cs",
+              "RelativeToolTip": "Models\\Payment.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAkwCgAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T04:04:34.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Jewelry.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Jewelry.cs",
+              "RelativeDocumentMoniker": "Models\\Jewelry.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Jewelry.cs",
+              "RelativeToolTip": "Models\\Jewelry.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwCUAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T03:33:48.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-15T06:28:38.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "20240616075308_Init.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Migrations\\20240616075308_Init.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240616075308_Init.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Migrations\\20240616075308_Init.cs",
+              "RelativeToolTip": "Migrations\\20240616075308_Init.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T07:53:08.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "RequestConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\RequestConfiguration.cs",
+              "RelativeDocumentMoniker": "Configuration\\RequestConfiguration.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\RequestConfiguration.cs",
+              "RelativeToolTip": "Configuration\\RequestConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T07:44:33.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "BidConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\BidConfiguration.cs",
+              "RelativeDocumentMoniker": "Configuration\\BidConfiguration.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\BidConfiguration.cs",
+              "RelativeToolTip": "Configuration\\BidConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T07:42:11.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "PostConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\PostConfiguration.cs",
+              "RelativeDocumentMoniker": "Configuration\\PostConfiguration.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\PostConfiguration.cs",
+              "RelativeToolTip": "Configuration\\PostConfiguration.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAADwvykAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T07:44:23.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Request.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Request.cs",
+              "RelativeDocumentMoniker": "Models\\Request.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Request.cs",
+              "RelativeToolTip": "Models\\Request.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T03:50:50.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Post.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Post.cs",
+              "RelativeDocumentMoniker": "Models\\Post.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Post.cs",
+              "RelativeToolTip": "Models\\Post.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABAAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T04:27:00.27Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Bid.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Bid.cs",
+              "RelativeDocumentMoniker": "Models\\Bid.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Bid.cs",
+              "RelativeToolTip": "Models\\Bid.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAzwBYAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T03:38:25.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Auction.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Auction.cs",
+              "RelativeDocumentMoniker": "Models\\Auction.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Models\\Auction.cs",
+              "RelativeToolTip": "Models\\Auction.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAA1wBgAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T03:38:40.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "AccountConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\AccountConfiguration.cs",
+              "RelativeDocumentMoniker": "Configuration\\AccountConfiguration.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\AccountConfiguration.cs",
+              "RelativeToolTip": "Configuration\\AccountConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T07:38:52.745Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "PaymentConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\PaymentConfiguration.cs",
+              "RelativeDocumentMoniker": "Configuration\\PaymentConfiguration.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\PaymentConfiguration.cs",
+              "RelativeToolTip": "Configuration\\PaymentConfiguration.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAADQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T07:44:13.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "JewelryConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\JewelryConfiguration.cs",
+              "RelativeDocumentMoniker": "Configuration\\JewelryConfiguration.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\JewelryConfiguration.cs",
+              "RelativeToolTip": "Configuration\\JewelryConfiguration.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAA0wCcAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T07:43:01.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "AuctionConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\AuctionConfiguration.cs",
+              "RelativeDocumentMoniker": "Configuration\\AuctionConfiguration.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\Configuration\\AuctionConfiguration.cs",
+              "RelativeToolTip": "Configuration\\AuctionConfiguration.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAA0wBsAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T07:41:50.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-15T06:51:54.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\JewelryAuctionApplication\\AssemblyInfo.cs",
+              "RelativeToolTip": "AssemblyInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T08:48:43.192Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
