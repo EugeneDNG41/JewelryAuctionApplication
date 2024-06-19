@@ -1,0 +1,20 @@
+﻿JewelryAuctionApplication
+1.0.0.0
+
+winexe
+C#
+.cs
+D:\Coding stuff\JewelryAuctionApplication\obj\Debug\net6.0-windows\
+JewelryAuctionApplication
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+D:\Coding stuff\JewelryAuctionApplication\App.xaml
+4301874381
+
+47141965952
+24134521974
+Components\BindablePasswordBox.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;
+
+True
+
