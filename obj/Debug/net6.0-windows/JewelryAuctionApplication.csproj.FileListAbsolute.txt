@@ -183,3 +183,10 @@ D:\Coding stuff\JewelryAuctionApplication\obj\Debug\net6.0-windows\refint\Jewelr
 D:\Coding stuff\JewelryAuctionApplication\obj\Debug\net6.0-windows\JewelryAuctionApplication.pdb
 D:\Coding stuff\JewelryAuctionApplication\obj\Debug\net6.0-windows\JewelryAuctionApplication.genruntimeconfig.cache
 D:\Coding stuff\JewelryAuctionApplication\obj\Debug\net6.0-windows\ref\JewelryAuctionApplication.dll
+D:\Coding stuff\JewelryAuctionApplication\obj\Debug\net6.0-windows\JewelryAuctionApplication.sourcelink.json
+D:\Coding stuff\JewelryAuctionApplication\obj\Debug\net6.0-windows\Components\NavigationBar.g.cs
+D:\Coding stuff\JewelryAuctionApplication\obj\Debug\net6.0-windows\Components\NavigationBar.baml
+D:\Coding stuff\JewelryAuctionApplication\obj\Debug\net6.0-windows\Views\LayoutView.g.cs
+D:\Coding stuff\JewelryAuctionApplication\obj\Debug\net6.0-windows\Views\LayoutView.baml
+D:\Coding stuff\JewelryAuctionApplication\obj\Debug\net6.0-windows\Themes\Generic.baml
+D:\Coding stuff\JewelryAuctionApplication\bin\Debug\net6.0-windows\ModalControl.dll

@@ -1,0 +1,17 @@
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\bin\Debug\net6.0\appsettings.json
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\bin\Debug\net6.0\JewelryAuctionApplicationBLL.deps.json
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\bin\Debug\net6.0\JewelryAuctionApplicationBLL.dll
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\bin\Debug\net6.0\JewelryAuctionApplicationBLL.pdb
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.dll
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.pdb
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\obj\Debug\net6.0\JewelryAuctionApplicationBLL.csproj.AssemblyReference.cache
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\obj\Debug\net6.0\JewelryAuctionApplicationBLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\obj\Debug\net6.0\JewelryAuctionApplicationBLL.AssemblyInfoInputs.cache
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\obj\Debug\net6.0\JewelryAuctionApplicationBLL.AssemblyInfo.cs
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\obj\Debug\net6.0\JewelryAuctionApplicationBLL.csproj.CoreCompileInputs.cache
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\obj\Debug\net6.0\JewelryAuctionApplicationBLL.sourcelink.json
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\obj\Debug\net6.0\JewelryA.5B9FB719.Up2Date
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\obj\Debug\net6.0\JewelryAuctionApplicationBLL.dll
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\obj\Debug\net6.0\refint\JewelryAuctionApplicationBLL.dll
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\obj\Debug\net6.0\JewelryAuctionApplicationBLL.pdb
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\obj\Debug\net6.0\ref\JewelryAuctionApplicationBLL.dll

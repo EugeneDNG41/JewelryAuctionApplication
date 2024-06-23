@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="JewelryAuctionApplicationGUI.Components.NavigationBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JewelryAuctionApplicationGUI.Components"
+             Background="DarkSlateBlue"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <TextBlock Text="{TemplateBinding Content}" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <TextBlock Text="{TemplateBinding Content}" TextDecorations="Underline" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+    <Grid MaxWidth="1000" Margin="20 10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Column="0"
+            FontSize="14"
+            Foreground="White"
+            Text="Placeholder name" />
+
+        <Button
+            Grid.Column="1"
+            Margin="10 0 0 0"
+            Command="{Binding NavigateHomeCommand}"
+            Content="Home" />
+
+        <Button
+            Grid.Column="3"
+            Margin="10 0 0 0"
+            Command="{Binding NavigateLoginCommand}"
+            Content="Login" 
+            Visibility="{Binding IsLoggedOut, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <Button
+            Grid.Column="4"
+            Margin="10 0 0 0"
+            Command="{Binding NavigateSignupCommand}"
+            Content="Sign up" 
+            Visibility="{Binding IsLoggedOut, Converter={StaticResource BooleanToVisibilityConverter}}"/>  
+
+        <!--<Button
+            Grid.Column="5"
+            Margin="10 0 0 0"
+            Command="{Binding NavigateAccountCommand}"
+            Content="Account"
+            Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}" />-->
+
+        <Button
+            Grid.Column="6"
+            Margin="10 0 0 0"
+            Command="{Binding NavigateLogoutCommand}"
+            Content="Logout"
+            Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}" />
+    </Grid>
+</UserControl>

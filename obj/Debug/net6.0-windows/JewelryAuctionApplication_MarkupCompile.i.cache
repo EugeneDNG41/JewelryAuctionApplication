@@ -9,12 +9,12 @@ JewelryAuctionApplication
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Coding stuff\JewelryAuctionApplication\App.xaml
-4301874381
 
-47141965952
-24134521974
-Components\BindablePasswordBox.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;
+81254020043
 
-True
+751766228716
+242-1330167443
+JewelryAuctionApplicationGUI\App.xaml;JewelryAuctionApplicationGUI\Components\BindablePasswordBox.xaml;JewelryAuctionApplicationGUI\Components\NavigationBar.xaml;JewelryAuctionApplicationGUI\Themes\Generic.xaml;JewelryAuctionApplicationGUI\Views\HomeView.xaml;JewelryAuctionApplicationGUI\Views\LayoutView.xaml;JewelryAuctionApplicationGUI\Views\LoginView.xaml;JewelryAuctionApplicationGUI\Views\MainWindow.xaml;
+
+False
 

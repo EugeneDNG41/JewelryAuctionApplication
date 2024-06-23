@@ -16,7 +16,8 @@
           "Microsoft.Extensions.Configuration.FileExtensions": "8.0.0",
           "Microsoft.Extensions.Configuration.Json": "8.0.0",
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
-          "Microsoft.Extensions.Hosting.Abstractions": "7.0.0"
+          "Microsoft.Extensions.Hosting.Abstractions": "7.0.0",
+          "SimpleModal.WPF": "1.0.0"
         },
         "runtime": {
           "JewelryAuctionApplication.dll": {}
@@ -577,6 +578,14 @@
           }
         }
       },
+      "SimpleModal.WPF/1.0.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/ModalControl.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "System.CodeDom/4.4.0": {},
       "System.Configuration.ConfigurationManager/6.0.1": {
         "dependencies": {
@@ -1057,6 +1066,13 @@
       "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
+    },
+    "SimpleModal.WPF/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dtTvUl6O2peKZz2oCh5Y6mRjYL+q/Izxm6+z/Nzdpbcgxdo/qTD39stwegu/sY0uBTAYGJEy2P9X8mwpOMM+rw==",
+      "path": "simplemodal.wpf/1.0.0",
+      "hashPath": "simplemodal.wpf.1.0.0.nupkg.sha512"
     },
     "System.CodeDom/4.4.0": {
       "type": "package",
