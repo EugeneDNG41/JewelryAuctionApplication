@@ -1,4 +1,5 @@
-﻿using JewelryAuctionApplicationDAL.Models;
+﻿using JewelryAuctionApplicationDAL.Context;
+using JewelryAuctionApplicationDAL.Models;
 
 namespace JewelryAuctionApplicationDAL.Repositories;
 

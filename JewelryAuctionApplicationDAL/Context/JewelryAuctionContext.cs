@@ -3,7 +3,7 @@ using JewelryAuctionApplicationDAL.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace JewelryAuctionApplicationDAL;
+namespace JewelryAuctionApplicationDAL.Context;
 
 public class JewelryAuctionContext : DbContext
 {
@@ -13,7 +13,7 @@ public class JewelryAuctionContext : DbContext
     public virtual DbSet<Jewelry> Jewelries { get; set; }
     public virtual DbSet<Payment> Payments { get; set; }
     public virtual DbSet<Request> Requests { get; set; }
-    public JewelryAuctionContext(DbContextOptions<JewelryAuctionContext> options) :base(options) { }
+    public JewelryAuctionContext(DbContextOptions<JewelryAuctionContext> options) : base(options) { }
     public JewelryAuctionContext() { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -35,7 +35,6 @@ public class JewelryAuctionContext : DbContext
         modelBuilder.ApplyConfiguration(new JewelryConfiguration());
         modelBuilder.ApplyConfiguration(new PaymentConfiguration());
         modelBuilder.ApplyConfiguration(new RequestConfiguration());
-
         // Apply other configurations if necessary      
     }
 }
