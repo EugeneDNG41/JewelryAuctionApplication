@@ -24,11 +24,14 @@ public class ServiceRegistration
         services.AddScoped<IPasswordHasher, PasswordHasher>();
         services.AddScoped<IAccountService, AccountService>();
         services.AddScoped<IAccountRepository, AccountRepository>();
+        services.AddScoped<IJewelryRepository, JewelryRepository>();
+        services.AddScoped<IJewelryService, JewelryService>();
 
-        services.AddTransient(s => new HomeViewModel(CreateLoginNavigationService(s)));
+        services.AddTransient(s => new HomeViewModel(CreateLoginNavigationService(s), s.GetRequiredService<IJewelryService>()));
         services.AddTransient(CreateLoginViewModel);
         services.AddTransient(CreateNavigationBarViewModel);
         services.AddTransient(CreateSignupViewModel);
+        services.AddTransient(CreateAddJewelryViewModel);
 
 
         var connectionString = Configuration.GetConnectionString("JewelryAuctionDatabase");
@@ -44,13 +47,29 @@ public class ServiceRegistration
             DataContext = s.GetRequiredService<MainViewModel>()
         });
     }
+
+    private AddJewelryViewModel CreateAddJewelryViewModel(IServiceProvider serviceProvider)
+    {
+        return new AddJewelryViewModel(serviceProvider.GetRequiredService<IJewelryService>(),
+            serviceProvider.GetRequiredService<CloseModalNavigationService>());
+    }
+
     private NavigationBarViewModel CreateNavigationBarViewModel(IServiceProvider serviceProvider)
     {
         return new NavigationBarViewModel(serviceProvider.GetRequiredService<AccountStore>(),
             CreateHomeNavigationService(serviceProvider),
             CreateLoginNavigationService(serviceProvider),
-            CreateSignupNavigationService(serviceProvider));
+            CreateSignupNavigationService(serviceProvider),
+            CreateAddJewelryNavigationService(serviceProvider));
     }
+
+    private INavigationService CreateAddJewelryNavigationService(IServiceProvider serviceProvider)
+    {
+        return new ModalNavigationService<AddJewelryViewModel>(
+            serviceProvider.GetRequiredService<ModalNavigationStore>(),
+            () => serviceProvider.GetRequiredService<AddJewelryViewModel>());
+    }
+
     private INavigationService CreateHomeNavigationService(IServiceProvider serviceProvider)
     {
         return new LayoutNavigationService<HomeViewModel>(

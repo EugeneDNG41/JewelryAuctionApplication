@@ -36,9 +36,9 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
                .HasMaxLength(100)
                .HasAnnotation("EmailAddress", true);
 
-        builder.Property(a => a.Birthday)
+        /*builder.Property(a => a.Birthday)
                 .HasConversion(dateOnlyConverter)
-                .HasColumnType("Date");
+                .HasColumnType("Date");*/
 
         /*builder.Property(a => a.PhoneNumber)
                .HasMaxLength(12);

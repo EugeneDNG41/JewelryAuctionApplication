@@ -30,9 +30,6 @@ namespace JewelryAuctionApplicationDAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AccountId"));
 
-                    b.Property<DateTime>("Birthday")
-                        .HasColumnType("Date");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -141,9 +138,9 @@ namespace JewelryAuctionApplicationDAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Estimate")
+                    b.Property<byte[]>("Image")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<int>("JewelryCategory")
                         .HasColumnType("int");

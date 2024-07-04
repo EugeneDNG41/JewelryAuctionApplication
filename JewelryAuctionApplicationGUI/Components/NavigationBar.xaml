@@ -6,13 +6,14 @@
              xmlns:local="clr-namespace:JewelryAuctionApplicationGUI.Components"
              Background="DarkSlateBlue"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="800">
+             d:DesignHeight="50" d:DesignWidth="800">
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -37,6 +38,8 @@
     <Grid MaxWidth="1000" Margin="20 10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
@@ -46,24 +49,38 @@
         </Grid.ColumnDefinitions>
         <TextBlock
             Grid.Column="0"
-            FontSize="14"
+            FontSize="16"
             Foreground="White"
-            Text="Placeholder name" />
+            FontWeight="Bold"
+            Text="Gem Gambit"
+            VerticalAlignment="Center"/>
 
-        <Button
+        <TextBox
             Grid.Column="1"
             Margin="10 0 0 0"
-            Command="{Binding NavigateHomeCommand}"
-            Content="Home" />
+            Width="200"
+            Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
+        <Button 
+            Grid.Column="2"
+            Margin="10 0 100 0"
+            Background="AliceBlue"
+            Command="{Binding SearchCommand}"
+            Content="Search" />
 
         <Button
             Grid.Column="3"
+            Margin="10 0 0 0"
+            Command="{Binding NavigateAddJewelryCommand}"
+            Content="Add Jewelry" />
+
+        <Button
+            Grid.Column="4"
             Margin="10 0 0 0"
             Command="{Binding NavigateLoginCommand}"
             Content="Login" 
             Visibility="{Binding IsLoggedOut, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         <Button
-            Grid.Column="4"
+            Grid.Column="5"
             Margin="10 0 0 0"
             Command="{Binding NavigateSignupCommand}"
             Content="Sign up" 

@@ -8,11 +8,22 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 public class NavigationBarViewModel : BaseViewModel
 {
     private readonly AccountStore _accountStore;
+    private string _searchText = string.Empty;
+    public string SearchText
+    {
+        get => _searchText;
+        set
+        {
+            _searchText = value;
+            OnPropertyChanged();
+        }
+    }
 
     public ICommand NavigateHomeCommand { get; }
     public ICommand NavigateLoginCommand { get; }
     public ICommand NavigateLogoutCommand { get; }
     public ICommand NavigateSignupCommand { get; }
+    public ICommand NavigateAddJewelryCommand { get; }
 
     public bool IsLoggedIn => _accountStore.IsLoggedIn;
     public bool IsLoggedOut => !IsLoggedIn;
@@ -20,13 +31,15 @@ public class NavigationBarViewModel : BaseViewModel
     public NavigationBarViewModel(AccountStore accountStore, 
         INavigationService homeNavigationService, 
         INavigationService loginNavigationService,
-        INavigationService signupNavigationService)
+        INavigationService signupNavigationService,
+        INavigationService addJewelryNavigationService)
     {
         _accountStore = accountStore;
         NavigateHomeCommand = new NavigateCommand(homeNavigationService);
         NavigateLoginCommand = new NavigateCommand(loginNavigationService);
         NavigateSignupCommand = new NavigateCommand(signupNavigationService);
         NavigateLogoutCommand = new LogoutCommand(_accountStore, homeNavigationService);
+        NavigateAddJewelryCommand = new NavigateCommand(addJewelryNavigationService);
 
         _accountStore.CurrentAccountChanged += OnCurrentAccountChanged;
     }

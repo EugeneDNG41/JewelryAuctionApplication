@@ -84,6 +84,7 @@ D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\JewelryAuctionApplicationGUI_MarkupCompile.lref
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Components\BindablePasswordBox.baml
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Components\NavigationBar.baml
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Themes\Generic.baml
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\HomeView.baml
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\LayoutView.baml
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\LoginView.baml
@@ -101,4 +102,7 @@ D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\JewelryAuctionApplicationGUI.pdb
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\JewelryAuctionApplicationGUI.genruntimeconfig.cache
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\ref\JewelryAuctionApplicationGUI.dll
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Themes\Generic.baml
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Components\JewelryCard.g.cs
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Components\JewelryCard.baml
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\AddJewelryView.g.cs
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\AddJewelryView.baml

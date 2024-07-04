@@ -27,11 +27,12 @@ public class Jewelry
     //[Required]
     public string Condition { get; set; }
     //[Required]
-    public string Estimate {  get; set; }
+    //public string Estimate {  get; set; }
     //[Required]
     public decimal StartingPrice { get; set; }
     //[Required]
     public bool Status { get; set; }
+    public byte[] Image { get; set; }
     public ICollection<Auction> Auctions { get; set; }
     public ICollection<Request> Requests { get; set; }
 }

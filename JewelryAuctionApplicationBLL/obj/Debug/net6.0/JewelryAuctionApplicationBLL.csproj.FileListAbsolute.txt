@@ -1,4 +1,3 @@
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\bin\Debug\net6.0\appsettings.json
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\bin\Debug\net6.0\JewelryAuctionApplicationBLL.deps.json
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\bin\Debug\net6.0\JewelryAuctionApplicationBLL.dll
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationBLL\bin\Debug\net6.0\JewelryAuctionApplicationBLL.pdb

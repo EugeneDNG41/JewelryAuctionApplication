@@ -4,11 +4,8 @@ using System.Windows.Controls;
 using System.Windows.Data;
 
 
-namespace JewelryAuctionApplicationGUI;
+namespace JewelryAuctionApplicationGUI.Components;
 
-/// <summary>
-/// Interaction logic for BindablePasswordBox.xaml
-/// </summary>
 public partial class BindablePasswordBox : UserControl
 {
     private bool _isPasswordChanging;

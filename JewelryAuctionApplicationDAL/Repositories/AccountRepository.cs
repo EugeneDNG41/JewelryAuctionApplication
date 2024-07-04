@@ -37,7 +37,13 @@ public class AccountRepository : IAccountRepository
         var existingAccount = GetById(account.AccountId);
         if (existingAccount != null)
         {
-            _context.Update(account);
+            existingAccount.Email = account.Email;
+            existingAccount.Username = account.Username;
+            existingAccount.Email = existingAccount.Email;
+            existingAccount.Role = account.Role;
+            //existingAccount.Birthday = account.Birthday;
+            existingAccount.Status = account.Status;
+            _context.Update(existingAccount);
             _context.SaveChanges();
         }
     }

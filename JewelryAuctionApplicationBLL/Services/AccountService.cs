@@ -43,7 +43,6 @@ public class AccountService : IAccountService
             Username = account.Username,
             Email = account.Email,
             Password = hashPassword,
-            //PhoneNumber = account.PhoneNumber,
             FullName = account.FullName,
             Role = Role.USER,
             Status = true
