@@ -35,7 +35,8 @@ public class JewelryConfiguration : IEntityTypeConfiguration<Jewelry>
                .HasColumnType("decimal(18,2)"); // Specifies the decimal precision and scale
 
         builder.Property(j => j.Status)
-               .IsRequired();
+               .IsRequired()
+               .HasConversion<int>();
         builder.Property(j => j.Image)
                .IsRequired();
 

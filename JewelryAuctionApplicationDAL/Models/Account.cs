@@ -36,6 +36,5 @@ public class Account
     public Role Role { get; set; }
     public ICollection<Bid> Bids { get; set; }
     public ICollection<Request> Requests { get; set; }
-    public ICollection<Payment> Payments { get; set; }
     
 }

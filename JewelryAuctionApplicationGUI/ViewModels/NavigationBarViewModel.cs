@@ -24,6 +24,7 @@ public class NavigationBarViewModel : BaseViewModel
     public ICommand NavigateLogoutCommand { get; }
     public ICommand NavigateSignupCommand { get; }
     public ICommand NavigateAddJewelryCommand { get; }
+    public ICommand NavigateAddAuctionCommand { get; }
 
     public bool IsLoggedIn => _accountStore.IsLoggedIn;
     public bool IsLoggedOut => !IsLoggedIn;
@@ -32,7 +33,8 @@ public class NavigationBarViewModel : BaseViewModel
         INavigationService homeNavigationService, 
         INavigationService loginNavigationService,
         INavigationService signupNavigationService,
-        INavigationService addJewelryNavigationService)
+        INavigationService addJewelryNavigationService,
+        INavigationService addAuctionNavigationService)
     {
         _accountStore = accountStore;
         NavigateHomeCommand = new NavigateCommand(homeNavigationService);
@@ -40,6 +42,7 @@ public class NavigationBarViewModel : BaseViewModel
         NavigateSignupCommand = new NavigateCommand(signupNavigationService);
         NavigateLogoutCommand = new LogoutCommand(_accountStore, homeNavigationService);
         NavigateAddJewelryCommand = new NavigateCommand(addJewelryNavigationService);
+        NavigateAddAuctionCommand = new NavigateCommand(addAuctionNavigationService);
 
         _accountStore.CurrentAccountChanged += OnCurrentAccountChanged;
     }

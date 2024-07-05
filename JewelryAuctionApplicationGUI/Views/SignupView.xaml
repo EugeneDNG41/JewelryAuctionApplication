@@ -189,7 +189,9 @@
                         BorderThickness="0"
                         Background="Transparent"
                         Margin="0 10 0 0"
-                        Cursor="Hand">
+                        Cursor="Hand"
+                        >
+                    
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Foreground" Value="Black"/>

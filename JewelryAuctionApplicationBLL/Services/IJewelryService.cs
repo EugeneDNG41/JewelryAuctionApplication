@@ -10,5 +10,6 @@ namespace JewelryAuctionApplicationBLL.Services;
 public interface IJewelryService
 {
     void Add(Jewelry jewelry);
+    void Update(Jewelry jewelry);
     IEnumerable<Jewelry> GetAll();
 }

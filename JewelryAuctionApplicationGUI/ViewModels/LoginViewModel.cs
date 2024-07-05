@@ -67,12 +67,6 @@ public class LoginViewModel : BaseViewModel, INotifyDataErrorInfo
     }
     public ICommand LoginCommand { get; }
     public ICommand CloseModalCommand { get; }
-
-    private readonly Dictionary<string, List<string>> _propertyErrors = new();
-    public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
-    public bool HasErrors => _propertyErrors.Any();
-    public bool CanClick => !HasErrors;
-
     public LoginViewModel(AccountStore accountStore, 
         INavigationService loginNavigationService, 
         IAccountService accountService,
@@ -85,7 +79,10 @@ public class LoginViewModel : BaseViewModel, INotifyDataErrorInfo
         _password = string.Empty;
         _errorMessage = string.Empty;*/
     }
-
+    private readonly Dictionary<string, List<string>> _propertyErrors = new();
+    public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
+    public bool HasErrors => _propertyErrors.Any();
+    public bool CanClick => !HasErrors;
     public IEnumerable GetErrors(string propertyName)
     {
         return _propertyErrors.GetValueOrDefault(propertyName, null);

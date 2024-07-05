@@ -1,0 +1,219 @@
+﻿<UserControl x:Class="JewelryAuctionApplicationGUI.Views.AddAuctionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JewelryAuctionApplicationGUI.Views" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="400"
+             Background="LightGray">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ValidationErrorTemplate">
+            <StackPanel>
+                <AdornedElementPlaceholder/>
+                <ItemsControl ItemsSource="{Binding}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ErrorContent}" Foreground="Red" HorizontalAlignment="Right"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ControlTemplate>
+
+        <!-- Style for TextBox to use the Validation ErrorTemplate -->
+        <Style TargetType="TextBox">
+            <Setter Property="Validation.ErrorTemplate" Value="{StaticResource ValidationErrorTemplate}"/>
+        </Style>
+        <Style TargetType="xctk:DateTimePicker">
+            <Setter Property="Validation.ErrorTemplate" Value="{StaticResource ValidationErrorTemplate}"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="ADD AUCTION"
+               Foreground="Black"
+               FontSize="10"
+               FontFamily="Montserrat"
+               Grid.Column="0"
+               VerticalAlignment="Center"
+               Margin="10,0,0,0"/>
+
+            <Button BorderThickness="0"
+            Content="X"
+            Foreground="White"
+            FontSize="12"
+            FontFamily="Montserrat"
+            Cursor="Hand"
+            Grid.Column="1"
+            Command="{Binding CloseModalCommand}">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Black"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DimGray"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="18" Height="18"
+                        CornerRadius="9"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <StackPanel Width="320"
+            Grid.Row="1"
+            Orientation="Vertical">
+            <TextBlock Text="Add A New Auction"                  
+               FontSize="25"                   
+               FontWeight="Bold"
+               FontFamily="Montserrat"
+               HorizontalAlignment="Center"/>
+
+            <TextBlock Text="End Date:"                   
+               FontSize="12"
+               FontWeight="Medium"
+               FontFamily="Montserrat"                             
+               Margin="0,35,0,0"/>
+
+            <xctk:DateTimePicker Text="{Binding EndDate, UpdateSourceTrigger=PropertyChanged}"
+                                 
+                                 Height="28"
+                                 FontSize="13"
+                                 FontWeight="Medium"
+                                 FontFamily="Montserrat"
+                                 BorderThickness="0,0,0,2"     
+                                 VerticalContentAlignment="Center"
+                                 Margin="0,5,0,0"
+                                >
+            </xctk:DateTimePicker>
+
+            <TextBlock Text="Current Price"                   
+                   FontSize="12"
+                   FontWeight="Medium"
+                   FontFamily="Montserrat"                             
+                   Margin="0,10,0,0"/>
+            <TextBox Text="{Binding CurrentPrice, UpdateSourceTrigger=PropertyChanged}"
+                     FontSize="13"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     BorderThickness="0,0,0,2"     
+                     Height="28"
+                     VerticalContentAlignment="Center"
+                     Margin="0,5,0,0"
+                     PreviewTextInput="OnPreviewTextInput"
+                     TextChanged="OnTextChanged"/>
+            <TextBlock Text="Selected Jewelry"                   
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"                             
+                       Margin="0,10,0,0"/>
+            <ComboBox HorizontalAlignment="Left"
+                      Width="320"
+                      FontSize="13"
+                      FontWeight="Medium"
+                      FontFamily="Montserrat"
+                      BorderThickness="0,0,0,2"     
+                      Height="28"
+                      VerticalContentAlignment="Center"
+                      Margin="0,5,0,0"
+                      ItemsSource="{Binding Path=Jewelries}"    
+                      SelectedItem="{Binding Path=Jewelry}"  
+                      DisplayMemberPath="JewelryName"/>
+            <Grid Margin="0 20 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="{Binding DisplayedImage, UpdateSourceTrigger=PropertyChanged}" 
+                       Grid.Column="0"
+                       Height="80" 
+                       Width="80"                      
+                       HorizontalAlignment="Left"/>
+                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="10 0 0 0">
+                    <StackPanel Orientation="Horizontal" Height="auto">
+                        <TextBlock Text="ID: "/>
+                        <TextBlock Text="{Binding Jewelry.JewelryId, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="auto">
+                        <TextBlock Text="Category: "/>
+                        <TextBlock Text="{Binding Jewelry.JewelryCategory, UpdateSourceTrigger=PropertyChanged}"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="auto">
+                        <TextBlock Text="Condition: "/>
+                        <TextBlock Text="{Binding Jewelry.Condition, UpdateSourceTrigger=PropertyChanged}"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="auto">
+                        <TextBlock Text="Starting Price: "/>
+                        <TextBlock Text="{Binding Jewelry.StartingPrice, StringFormat={}{0:C}, UpdateSourceTrigger=PropertyChanged}"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="auto">
+                        <TextBlock Text="Status: "/>
+                        <TextBlock Text="{Binding Jewelry.Status, UpdateSourceTrigger=PropertyChanged}"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Button Command="{Binding AddAuctionCommand}"
+            IsEnabled="{Binding CanClick}"
+            BorderThickness="0"
+            Content="ADD"
+            Foreground="White"
+            FontSize="12"
+            FontFamily="Montserrat"
+            Cursor="Hand"                           
+            Margin="0,10,0,0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Black"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DimGray"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="Gray"/>
+                                <Setter Property="Foreground" Value="DarkGray"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" Height="40"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

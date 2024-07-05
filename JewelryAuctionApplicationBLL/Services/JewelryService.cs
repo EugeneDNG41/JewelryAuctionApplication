@@ -19,6 +19,10 @@ public class JewelryService : IJewelryService
     {
         _jewelryRepository.Add(jewelry);
     }
+    public void Update(Jewelry jewelry)
+    {
+        _jewelryRepository.Update(jewelry);
+    }
     public IEnumerable<Jewelry> GetAll()
     {
         return _jewelryRepository.GetAll();

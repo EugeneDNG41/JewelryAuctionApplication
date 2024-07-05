@@ -10,5 +10,6 @@ namespace JewelryAuctionApplicationDAL.Repositories;
 public interface IJewelryRepository
 {
     void Add(Jewelry jewelry);
+    void Update(Jewelry jewelry);
     IEnumerable<Jewelry> GetAll();
 }

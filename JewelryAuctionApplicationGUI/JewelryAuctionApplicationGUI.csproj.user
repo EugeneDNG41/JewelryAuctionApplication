@@ -5,7 +5,13 @@
     <Compile Update="Components\JewelryCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\AddAuctionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AddJewelryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\JewelryPageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -25,10 +31,16 @@
     <Page Update="Themes\Generic.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\AddAuctionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\AddJewelryView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\HomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\JewelryPageView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\LayoutView.xaml">

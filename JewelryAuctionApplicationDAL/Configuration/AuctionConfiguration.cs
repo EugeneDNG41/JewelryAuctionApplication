@@ -20,9 +20,6 @@ public class AuctionConfiguration : IEntityTypeConfiguration<Auction>
         builder.Property(a => a.AuctionId)
                .ValueGeneratedOnAdd();
 
-        builder.Property(a => a.StartDate)
-               .IsRequired();
-
         builder.Property(a => a.EndDate)
                .IsRequired();
 
@@ -32,7 +29,8 @@ public class AuctionConfiguration : IEntityTypeConfiguration<Auction>
                .HasDefaultValue(0);
 
         builder.Property(a => a.Status)
-               .IsRequired();
+               .IsRequired()
+               .HasConversion<int>();
 
         builder.HasOne(a => a.Jewelry)
                .WithMany(j => j.Auctions)
@@ -42,9 +40,5 @@ public class AuctionConfiguration : IEntityTypeConfiguration<Auction>
         builder.HasMany(a => a.Bids)
                .WithOne(b => b.Auction)
                .HasForeignKey(b => b.AuctionId);
-
-        builder.HasMany(a => a.Payments)
-               .WithOne(p => p.Auction)
-               .HasForeignKey(p => p.AuctionId);
     }
 }

@@ -58,9 +58,5 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
         builder.HasMany(a => a.Requests)
                .WithOne()
                .HasForeignKey(r => r.AccountId);
-
-        builder.HasMany(a => a.Payments)
-               .WithOne()
-               .HasForeignKey(p => p.AccountId);
     }
 }

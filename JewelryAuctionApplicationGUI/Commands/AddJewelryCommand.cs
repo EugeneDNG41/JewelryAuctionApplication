@@ -2,13 +2,8 @@
 using JewelryAuctionApplicationDAL.Models;
 using JewelryAuctionApplicationGUI.Navigation;
 using JewelryAuctionApplicationGUI.ViewModels;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace JewelryAuctionApplicationGUI.Commands;
@@ -58,11 +53,11 @@ public class AddJewelryCommand : BaseCommand
             Condition = _viewModel.Condition,
             StartingPrice = _viewModel.StartingPrice,
             JewelryCategory = JewelryCategory.RINGS,
-            Status = true,
+            Status = JewelryStatus.READY,
             // Convert the memory stream to a byte array
             Image = stream.ToArray()
         };
         _jewelryService.Add(jewelry);
-        
+        MessageBox.Show("Auction added successfully!");
     }
 }

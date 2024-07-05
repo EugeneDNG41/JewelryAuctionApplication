@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:JewelryAuctionApplicationGUI.Views" 
              xmlns:components="clr-namespace:JewelryAuctionApplicationGUI.Components"
              mc:Ignorable="d" 
-             Background="AliceBlue"
+             Background="WhiteSmoke"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>

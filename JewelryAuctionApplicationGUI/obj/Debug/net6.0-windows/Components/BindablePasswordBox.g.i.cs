@@ -61,7 +61,8 @@ namespace JewelryAuctionApplicationGUI.Components {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/JewelryAuctionApplicationGUI;component/components/bindablepasswordbox.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/JewelryAuctionApplicationGUI;V1.0.0.0;component/components/bindablepasswordbox.x" +
+                    "aml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Components\BindablePasswordBox.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

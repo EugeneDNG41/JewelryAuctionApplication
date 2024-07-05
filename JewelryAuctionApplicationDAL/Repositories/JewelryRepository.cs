@@ -20,5 +20,10 @@ public class JewelryRepository : IJewelryRepository
         _context.Jewelries.Add(jewelry);
         _context.SaveChanges();
     }
+    public void Update(Jewelry jewelry)
+    {
+        _context.Jewelries.Update(jewelry);
+        _context.SaveChanges();
+    }
     public IEnumerable<Jewelry> GetAll() => _context.Jewelries;
 }

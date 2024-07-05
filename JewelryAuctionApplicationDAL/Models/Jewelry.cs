@@ -13,6 +13,13 @@ public enum JewelryCategory
     NECKLACES_PENDANTS,
     WATCHES
 }
+public enum JewelryStatus {
+    VALUATING,
+    READY,
+    ACTIVE,
+    SOLD,
+    DELETED
+}
 //[Table("Jewelry")]
 public class Jewelry
 {
@@ -31,7 +38,7 @@ public class Jewelry
     //[Required]
     public decimal StartingPrice { get; set; }
     //[Required]
-    public bool Status { get; set; }
+    public JewelryStatus Status { get; set; }
     public byte[] Image { get; set; }
     public ICollection<Auction> Auctions { get; set; }
     public ICollection<Request> Requests { get; set; }

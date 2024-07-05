@@ -28,6 +28,12 @@
             <DataTemplate DataType="{x:Type viewmodels:AddJewelryViewModel}">
                 <views:AddJewelryView />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:JewelryPageViewModel}">
+                <views:JewelryPageView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:AddAuctionViewModel}">
+                <views:AddAuctionView/>
+            </DataTemplate>
         </Grid.Resources>
         
         <resources:Modal  Panel.ZIndex="1" IsOpen="{Binding IsOpen}">

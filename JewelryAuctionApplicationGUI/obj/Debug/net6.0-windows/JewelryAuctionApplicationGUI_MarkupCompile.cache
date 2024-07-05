@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\App.xaml
-10987537908
+12553121827
 
-40-587456676
-242240026546
-Components\BindablePasswordBox.xaml;Components\JewelryCard.xaml;Components\NavigationBar.xaml;Themes\Generic.xaml;Views\AddJewelryView.xaml;Views\HomeView.xaml;Views\LayoutView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\SignupView.xaml;
+47671932424
+250-2067597513
+Components\BindablePasswordBox.xaml;Components\JewelryCard.xaml;Components\NavigationBar.xaml;Themes\Generic.xaml;Views\AddAuctionView.xaml;Views\AddJewelryView.xaml;Views\HomeView.xaml;Views\JewelryPageView.xaml;Views\LayoutView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\SignupView.xaml;
 
 False
 
