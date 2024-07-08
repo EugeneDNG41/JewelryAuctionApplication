@@ -100,7 +100,7 @@ public class AddAuctionViewModel : BaseViewModel
         IJewelryService jewelryService,
         INavigationService closeModalNavigationService)
     {
-        Jewelries = new ObservableCollection<Jewelry>(jewelryService.GetAll());
+        Jewelries = new ObservableCollection<Jewelry>(jewelryService.GetForAuction());
         AddAuctionCommand = new AddAuctionCommand(this, auctionService, jewelryService);
         CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
         EndDate = DateTime.Now;

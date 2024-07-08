@@ -80,9 +80,6 @@ namespace JewelryAuctionApplicationDAL.Migrations
                     b.Property<int>("JewelryId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
                     b.HasKey("AuctionId");
 
                     b.HasIndex("JewelryId");

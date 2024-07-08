@@ -8,6 +8,9 @@
     <Compile Update="Views\AddAuctionView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\AddBidView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AddJewelryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -32,6 +35,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\AddAuctionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddBidView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\AddJewelryView.xaml">

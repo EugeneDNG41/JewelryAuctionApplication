@@ -45,8 +45,7 @@ public class AddAuctionCommand : BaseCommand
         {
             CurrentPrice = _viewModel.CurrentPrice,
             EndDate = _viewModel.EndDate,
-            JewelryId = _viewModel.Jewelry.JewelryId,
-            Status = AuctionStatus.LIVE
+            JewelryId = _viewModel.Jewelry.JewelryId
         };
         _viewModel.Jewelry.Status = JewelryStatus.ACTIVE;
         _jewelryService.Update(_viewModel.Jewelry);

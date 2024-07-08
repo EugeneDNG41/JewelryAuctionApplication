@@ -25,6 +25,7 @@ public class NavigationBarViewModel : BaseViewModel
     public ICommand NavigateSignupCommand { get; }
     public ICommand NavigateAddJewelryCommand { get; }
     public ICommand NavigateAddAuctionCommand { get; }
+    public ICommand SearchCommand { get; }
 
     public bool IsLoggedIn => _accountStore.IsLoggedIn;
     public bool IsLoggedOut => !IsLoggedIn;

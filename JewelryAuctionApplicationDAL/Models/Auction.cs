@@ -1,12 +1,6 @@
 ﻿
 namespace JewelryAuctionApplicationDAL.Models;
 //[Table("Auction")]
-public enum AuctionStatus
-{
-    LIVE,
-    COMPLETED,
-    FAILED
-}
 public class Auction
 {
     //[Key]
@@ -17,8 +11,6 @@ public class Auction
     //[Required]
     //[Range(0, double.MaxValue)]
     public decimal CurrentPrice { get; set; }
-    //[Required]
-    public AuctionStatus Status { get; set; }
     //[Required]
     //[ForeignKey(nameof(Jewelry))]
     public int JewelryId { get; set; }

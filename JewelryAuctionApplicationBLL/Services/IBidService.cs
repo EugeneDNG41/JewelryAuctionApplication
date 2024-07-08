@@ -9,6 +9,8 @@ namespace JewelryAuctionApplicationBLL.Services;
 
 public interface IBidService
 {
-    void AddBid(Bid bid);
+    void Add(Bid bid);
     IEnumerable<Bid> GetAll();
+    Bid? GetHighestBid(int auctionId);
+    IEnumerable<Bid> GetByAuctionId(int id);
 }

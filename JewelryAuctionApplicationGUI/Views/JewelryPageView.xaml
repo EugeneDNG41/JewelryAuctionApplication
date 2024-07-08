@@ -54,7 +54,7 @@
                                 <TextBlock Text="Description:"
                                        FontWeight="Medium"/>
                                 <ScrollViewer>
-                                    <TextBlock Text="Input here"
+                                    <TextBlock Text="{Binding JewelryListing.Jewelry.Description}"
                                            FontWeight="Regular"
                                            TextWrapping="Wrap"
                                            />
@@ -87,25 +87,26 @@
                                 BorderBrush="DimGray"
                                 BorderThickness="1">
                             <StackPanel>
-                                <TextBlock Text="Current Price (1 bid)"
+                                <TextBlock Text="{Binding JewelryListing.BidBoxTitle, UpdateSourceTrigger=PropertyChanged}"
                                            FontWeight="Regular"
                                            FontSize="16"
                                            Margin="10 5 0 0"/>
-                                <TextBlock Text="{Binding JewelryListing.Jewelry.StartingPrice, StringFormat={}{0:C}}"
+                                <TextBlock Text="{Binding JewelryListing.ActiveAuction.CurrentPrice, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C}}"
                                            FontWeight="DemiBold"
                                            FontSize="22"
                                            Margin="10 0 0 0"/>
-                                
-                                <Button Command="{Binding PlaceBidCommand}"
+
+                                <Button Command="{Binding NavigateAddBidCommand}"
                                         Background="Teal"
                                         VerticalAlignment="Center"
-                                        Margin="10 5 10 0">
+                                        Margin="10 5 10 0"
+                                        IsEnabled="{Binding CanBid}">
                                     <TextBlock Text="PLACE BID"
                                                FontWeight="Bold"
                                                Margin="2"
                                                Foreground="White"/>
                                 </Button>
-                                <TextBlock Text="Ends in 21h"
+                                <TextBlock Text="{Binding JewelryListing.TimeLeft, UpdateSourceTrigger=PropertyChanged}"
                                            Margin="10 0 10 5"
                                            FontSize="12"
                                            FontWeight="Light"

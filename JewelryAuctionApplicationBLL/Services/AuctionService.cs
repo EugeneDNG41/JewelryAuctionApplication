@@ -19,4 +19,12 @@ public class AuctionService : IAuctionService
     {
         _repository.Add(auction);
     }
+    public Auction? GetOngoingByJewelryId(int id)
+    {
+        return _repository.GetOngoingByJewelryId(id);
+    }
+    public Auction? GetById(int id)
+    {
+        return _repository.GetById(id);
+    }
 }

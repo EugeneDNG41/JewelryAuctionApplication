@@ -62,9 +62,10 @@
                 Stretch="Fill"
                 Source="{Binding DisplayedImage}" />
             <TextBlock
-                Grid.Row="1"                
-                FontSize="18"
-                Text="{Binding Jewelry.Condition}" />
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                FontSize="12"
+                Text="{Binding TimeLeft, UpdateSourceTrigger=PropertyChanged}" />
             <Button Command="{Binding NavigateJewelryPageCommand}"
                 Grid.Row="2"
                 Grid.ColumnSpan="2"
@@ -84,7 +85,7 @@
                 Grid.Row="3"
                 Margin="0 10 0 0"
                 FontWeight="Bold"
-                Text="{Binding Jewelry.StartingPrice, StringFormat={}{0:C}}" />
+                Text="{Binding ActiveAuction.CurrentPrice, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C}}" />
         </Grid>
     </Border>
 </UserControl>

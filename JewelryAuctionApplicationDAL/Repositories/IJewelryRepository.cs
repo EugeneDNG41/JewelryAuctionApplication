@@ -12,4 +12,7 @@ public interface IJewelryRepository
     void Add(Jewelry jewelry);
     void Update(Jewelry jewelry);
     IEnumerable<Jewelry> GetAll();
+    IEnumerable<Jewelry> GetByStatus(JewelryStatus status);
+    IEnumerable<Jewelry> GetForAuction();
+    IEnumerable<Jewelry> GetOnAuction();
 }

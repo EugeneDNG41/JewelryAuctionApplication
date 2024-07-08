@@ -58,6 +58,6 @@ public class AddJewelryCommand : BaseCommand
             Image = stream.ToArray()
         };
         _jewelryService.Add(jewelry);
-        MessageBox.Show("Auction added successfully!");
+        MessageBox.Show("Jewelry added successfully!");
     }
 }

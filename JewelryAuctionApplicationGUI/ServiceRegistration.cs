@@ -57,13 +57,28 @@ public class ServiceRegistration
     private HomeViewModel CreateHomeViewModel(IServiceProvider serviceProvider)
     {
         return new HomeViewModel(serviceProvider.GetRequiredService<IJewelryService>(),
-            CreateJewelryPageNavigationService(serviceProvider));
+            CreateJewelryPageNavigationService(serviceProvider),
+            serviceProvider.GetRequiredService<IAuctionService>(),
+            serviceProvider.GetRequiredService<IBidService>());
     }
     private ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> CreateJewelryPageNavigationService(IServiceProvider serviceProvider)
     {
         return new ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel>(
-            serviceProvider.GetRequiredService<NavigationStore>(),
-            (parameter) => new JewelryPageViewModel(parameter, serviceProvider.GetRequiredService<IBidService>(), serviceProvider.GetRequiredService<NavigationBarViewModel>()));
+            serviceProvider.GetRequiredService<NavigationStore>(), null,
+            (parameter) => new JewelryPageViewModel(parameter, 
+            serviceProvider.GetRequiredService<IBidService>(), 
+            serviceProvider.GetRequiredService<NavigationBarViewModel>(),
+            CreateAddBidNavigationService(serviceProvider),
+            CreateLoginNavigationService(serviceProvider),
+            serviceProvider.GetRequiredService<AccountStore>()));
+    }
+    private ParameterNavigationService<JewelryListingViewModel, AddBidViewModel> CreateAddBidNavigationService(IServiceProvider serviceProvider)
+    {
+        return new ParameterNavigationService<JewelryListingViewModel, AddBidViewModel>(
+             null, serviceProvider.GetRequiredService<ModalNavigationStore>(),
+             (parameter) => new AddBidViewModel(parameter, serviceProvider.GetRequiredService<IBidService>(),
+             serviceProvider.GetRequiredService<CloseModalNavigationService>(),
+             serviceProvider.GetRequiredService<AccountStore>()));
     }
     private AddJewelryViewModel CreateAddJewelryViewModel(IServiceProvider serviceProvider)
     {

@@ -27,4 +27,20 @@ public class JewelryService : IJewelryService
     {
         return _jewelryRepository.GetAll();
     }
+
+    public IEnumerable<Jewelry> GetByStatus(JewelryStatus status)
+    {
+        return _jewelryRepository.GetByStatus(status);
+    }
+
+    public IEnumerable<Jewelry> GetForAuction()
+    {
+        return _jewelryRepository.GetForAuction();
+    }
+
+    public IEnumerable<Jewelry> GetOnAuction()
+    {
+        return _jewelryRepository.GetOnAuction();
+    }
+
 }

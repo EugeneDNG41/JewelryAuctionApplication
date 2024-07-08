@@ -1,5 +1,7 @@
 ﻿using JewelryAuctionApplicationDAL.Context;
 using JewelryAuctionApplicationDAL.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,4 +22,24 @@ public class AuctionRepository : IAuctionRepository
         _context.Auctions.Add(auction);
         _context.SaveChanges();
     }
+    public IEnumerable<Auction> GetByJewelryId(int jewelryId)
+    {
+        return _context.Auctions.Where(a => a.JewelryId == jewelryId);
+    }
+    public Bid? GetHighestBid(int auctionId)
+    {
+        var bids = _context.Bids.Where(b => b.AuctionId == auctionId);
+        if (bids.IsNullOrEmpty())
+        {
+            return null;
+        } else
+        {
+            return bids.OrderByDescending(b => b.BidAmount).FirstOrDefault();
+        }       
+    }
+    public Auction? GetOngoingByJewelryId(int id)
+    {
+        return _context.Auctions.Include(a => a.Bids).FirstOrDefault(a => a.JewelryId == id && a.EndDate > DateTime.Now);
+    }
+    public Auction? GetById(int id) => _context.Auctions.Include(a => a.Bids).FirstOrDefault(a => a.AuctionId == id);
 }

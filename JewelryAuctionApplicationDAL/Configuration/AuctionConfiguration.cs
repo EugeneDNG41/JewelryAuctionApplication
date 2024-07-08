@@ -28,10 +28,6 @@ public class AuctionConfiguration : IEntityTypeConfiguration<Auction>
                .HasColumnType("decimal(18,2)") // Specifies the decimal precision and scale
                .HasDefaultValue(0);
 
-        builder.Property(a => a.Status)
-               .IsRequired()
-               .HasConversion<int>();
-
         builder.HasOne(a => a.Jewelry)
                .WithMany(j => j.Auctions)
                .HasForeignKey(a => a.JewelryId)

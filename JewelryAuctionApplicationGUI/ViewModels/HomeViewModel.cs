@@ -21,11 +21,13 @@ public class HomeViewModel : BaseViewModel
 
     public HomeViewModel(
         IJewelryService jewelryService, 
-        ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService 
+        ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService,
+        IAuctionService auctionService, IBidService bidService
         )
     {        
         _jewelryService = jewelryService;
-        _jewelries = new ObservableCollection<JewelryListingViewModel>(_jewelryService.GetAll().Select(j => new JewelryListingViewModel(j, navigateJewelryPageService)));
+        _jewelries = new ObservableCollection<JewelryListingViewModel>(
+            _jewelryService.GetOnAuction().Select(j => new JewelryListingViewModel(j, navigateJewelryPageService, auctionService, bidService)));
         
     }
     

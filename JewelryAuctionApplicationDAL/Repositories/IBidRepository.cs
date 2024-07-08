@@ -11,4 +11,6 @@ public interface IBidRepository
 {
     void AddBid(Bid bid);
     IEnumerable<Bid> GetAll();
+    Bid? GetHighestBid(int auctionId);
+    IEnumerable<Bid> GetByAuctionId(int id);
 }

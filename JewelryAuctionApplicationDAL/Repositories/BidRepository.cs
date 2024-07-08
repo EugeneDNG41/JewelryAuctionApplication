@@ -1,5 +1,6 @@
 ﻿using JewelryAuctionApplicationDAL.Context;
 using JewelryAuctionApplicationDAL.Models;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,5 +24,21 @@ public class BidRepository : IBidRepository
     public IEnumerable<Bid> GetAll()
     {
         return _context.Bids;
+    }
+    public Bid? GetHighestBid(int auctionId)
+    {
+        var bids = _context.Bids.Where(b => b.AuctionId == auctionId);
+        if (bids.IsNullOrEmpty())
+        {
+            return null;
+        }
+        else
+        {
+            return bids.OrderByDescending(b => b.BidAmount).FirstOrDefault();
+        }
+    }
+    public IEnumerable<Bid> GetByAuctionId(int id)
+    {
+        return _context.Bids.Where(b => b.AuctionId == id);
     }
 }

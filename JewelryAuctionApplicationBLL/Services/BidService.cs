@@ -15,12 +15,20 @@ public class BidService : IBidService
     {
         _bidRepository = bidRepository;
     }
-    public void AddBid(Bid bid)
+    public void Add(Bid bid)
     {
         _bidRepository.AddBid(bid);
     }
     public IEnumerable<Bid> GetAll()
     {
         return _bidRepository.GetAll();
+    }
+    public Bid? GetHighestBid(int auctionId)
+    {
+        return _bidRepository.GetHighestBid(auctionId);
+    }
+    public IEnumerable<Bid> GetByAuctionId(int id)
+    {
+        return _bidRepository.GetByAuctionId(id);
     }
 }
