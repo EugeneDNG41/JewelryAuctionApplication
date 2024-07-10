@@ -86,7 +86,9 @@
                           ItemStringFormat="{}{0:C}"
                           IsEditable="False"
                           ItemsSource="{Binding Path=BidAmounts}"    
-                          SelectedItem="{Binding Path=SelectedBidAmount}"  
+                          SelectedItem="{Binding Path=SelectedBidAmount}"
+                          IsSynchronizedWithCurrentItem="True"
+                          SelectedIndex="0"
                           />
             </StackPanel>
             <TextBlock Text="Bid Increment Rule"
@@ -174,7 +176,7 @@
             </Grid>
             
             <Button Command="{Binding AddBidCommand}"
-                    IsEnabled="{Binding CanClick}"
+                    IsEnabled="{Binding JewelryList.CanBid}"
                     BorderThickness="0"
                     Content="ADD"
                     Foreground="White"

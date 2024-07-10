@@ -15,7 +15,7 @@ public class NavigationBarViewModel : BaseViewModel
         set
         {
             _searchText = value;
-            OnPropertyChanged();
+            OnPropertyChanged(nameof(SearchText));
         }
     }
 

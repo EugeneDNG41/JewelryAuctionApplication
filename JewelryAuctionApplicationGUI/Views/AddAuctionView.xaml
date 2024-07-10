@@ -139,7 +139,9 @@
                       VerticalContentAlignment="Center"
                       Margin="0,5,0,0"
                       ItemsSource="{Binding Path=Jewelries}"    
-                      SelectedItem="{Binding Path=Jewelry}"  
+                      SelectedItem="{Binding Path=Jewelry}"
+                      IsSynchronizedWithCurrentItem="True"
+                      SelectedIndex="0"
                       DisplayMemberPath="JewelryName"/>
             <Grid Margin="0 20 0 0">
                 <Grid.ColumnDefinitions>

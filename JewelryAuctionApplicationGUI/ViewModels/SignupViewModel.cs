@@ -37,10 +37,10 @@ public class SignupViewModel : BaseViewModel, INotifyDataErrorInfo
             if (string.IsNullOrEmpty(Username)) //check for error
             {
                 AddError("Required", nameof(Username));
-            } else if (!Regex.IsMatch(Username, @"^[a-zA-Z0-9_]{6,20}$") || Username.Contains("admin", StringComparison.OrdinalIgnoreCase))
+            } /*else if (!Regex.IsMatch(Username, @"^[a-zA-Z0-9_]{6,20}$") || Username.Contains("admin", StringComparison.OrdinalIgnoreCase))
             {
                 AddError("Invalid username", nameof(Username));
-            }
+            }*/
             OnErrorsChanged(nameof(Username));
         }
     }
@@ -61,10 +61,10 @@ public class SignupViewModel : BaseViewModel, INotifyDataErrorInfo
             if (string.IsNullOrEmpty(Password)) //check for error
             {
                 AddError("Required", nameof(Password));
-            } else if (!Regex.IsMatch(Password, @"^(?=.*[A-Z])(?=.*\d)[^\s]{6,20}$"))
+            } /*else if (!Regex.IsMatch(Password, @"^(?=.*[A-Z])(?=.*\d)[^\s]{6,20}$"))
             {
                 AddError("Invalid Password", nameof(Password));
-            }
+            }*/
             
             OnErrorsChanged(nameof(Password));
         }
@@ -87,10 +87,10 @@ public class SignupViewModel : BaseViewModel, INotifyDataErrorInfo
             {
                 AddError("Required", nameof(FullName));
             }
-            else if (!Regex.IsMatch(FullName, @"^[a-zA-Z\s]{6,50}$"))
+            /*else if (!Regex.IsMatch(FullName, @"^[a-zA-Z\s]{6,50}$"))
             {
                 AddError("Invalid name format", nameof(FullName));
-            }
+            }*/
             OnErrorsChanged(nameof(FullName));
         }
     }

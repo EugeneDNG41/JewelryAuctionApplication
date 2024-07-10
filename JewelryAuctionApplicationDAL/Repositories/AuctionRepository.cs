@@ -26,17 +26,6 @@ public class AuctionRepository : IAuctionRepository
     {
         return _context.Auctions.Where(a => a.JewelryId == jewelryId);
     }
-    public Bid? GetHighestBid(int auctionId)
-    {
-        var bids = _context.Bids.Where(b => b.AuctionId == auctionId);
-        if (bids.IsNullOrEmpty())
-        {
-            return null;
-        } else
-        {
-            return bids.OrderByDescending(b => b.BidAmount).FirstOrDefault();
-        }       
-    }
     public Auction? GetOngoingByJewelryId(int id)
     {
         return _context.Auctions.Include(a => a.Bids).FirstOrDefault(a => a.JewelryId == id && a.EndDate > DateTime.Now);

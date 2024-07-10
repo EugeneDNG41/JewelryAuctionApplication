@@ -32,7 +32,7 @@ public class AddBidCommand : BaseCommand
 
     public override void Execute(object parameter)
     {
-        if (_accountStore.CurrentAccount != null && _accountStore.CurrentAccount.Role != Role.USER)
+        if (_accountStore.IsUser)
         {   
             Bid? highestBid = _bidService.GetHighestBid(_jewelryListing.ActiveAuction.AuctionId);         
             if (highestBid != null && _viewModel.SelectedBidAmount < highestBid.BidAmount)
@@ -47,11 +47,10 @@ public class AddBidCommand : BaseCommand
                 BidTime = DateTime.Now,
                 AccountId = _accountStore.CurrentAccount.AccountId
             };
-            _bidService.Add(bid);
-            _jewelryListing.UpdateListing();
-            
+            _bidService.Add(bid);           
             MessageBox.Show("Bid added successfully");
             _closeModalCommand.Execute(null);
+            return;
         } else
         {
             MessageBox.Show("You must be logged in as a user to place a bid");

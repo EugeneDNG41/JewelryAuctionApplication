@@ -67,7 +67,7 @@ public class ServiceRegistration
             serviceProvider.GetRequiredService<NavigationStore>(), null,
             (parameter) => new JewelryPageViewModel(parameter, 
             serviceProvider.GetRequiredService<IBidService>(), 
-            serviceProvider.GetRequiredService<NavigationBarViewModel>(),
+            () => serviceProvider.GetRequiredService<NavigationBarViewModel>(),
             CreateAddBidNavigationService(serviceProvider),
             CreateLoginNavigationService(serviceProvider),
             serviceProvider.GetRequiredService<AccountStore>()));
@@ -129,8 +129,8 @@ public class ServiceRegistration
     private LoginViewModel CreateLoginViewModel(IServiceProvider serviceProvider)
     {
         CompositeNavigationService navigationService = new(
-            serviceProvider.GetRequiredService<CloseModalNavigationService>(),
-            CreateHomeNavigationService(serviceProvider));
+            serviceProvider.GetRequiredService<CloseModalNavigationService>()/*,
+            CreateHomeNavigationService(serviceProvider)*/);
 
         return new LoginViewModel(
             serviceProvider.GetRequiredService<AccountStore>(),

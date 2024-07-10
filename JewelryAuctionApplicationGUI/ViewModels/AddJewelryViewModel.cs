@@ -5,7 +5,9 @@ using JewelryAuctionApplicationGUI.Navigation;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,21 +61,6 @@ public class AddJewelryViewModel : BaseViewModel
             OnErrorsChanged(nameof(Description));
         }
     }
-    /*private JewelryCategory jewelryCategory;
-    public JewelryCategory JewelryCategory
-    {
-        get
-        {
-            return jewelryCategory;
-        }
-
-        set
-        {
-            jewelryCategory = value;
-            OnPropertyChanged(nameof(JewelryCategory));
-            ClearErrors(nameof(JewelryCategory)); //clear previous error
-        }
-    }*/
     private string condition;
     public string Condition
     {
@@ -116,21 +103,23 @@ public class AddJewelryViewModel : BaseViewModel
             OnErrorsChanged(nameof(StartingPrice));
         }
     }
-    /*private bool status;
-    public bool Status
+    public ObservableCollection<string> Categories =>
+       new ObservableCollection<string>(GenerateCategoryList());
+    private int category;
+    public int Category
     {
         get
         {
-            return status;
+            return category;
         }
 
         set
         {
-            status = value;
-            OnPropertyChanged(nameof(Status));
-            ClearErrors(nameof(Status)); //clear previous error
+            category = value;
+            OnPropertyChanged(nameof(Category));
+            ClearErrors(nameof(Category)); //clear previous error
         }
-    }*/
+    }
     private BitmapImage image;
     public BitmapImage Image
     {
@@ -159,6 +148,7 @@ public class AddJewelryViewModel : BaseViewModel
         AddJewelryCommand = new AddJewelryCommand(this, jewelryService, closeModalNavigationService);
         UploadImageCommand = new UploadImageCommand(this);
         CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
+
     }
     public IEnumerable GetErrors(string propertyName)
     {
@@ -186,5 +176,16 @@ public class AddJewelryViewModel : BaseViewModel
         {
             OnErrorsChanged(propertyName); //make sure that the change should be notified accordingly
         }
+    }
+    private List<string> GenerateCategoryList()
+    {
+        var categories = new List<string>();
+        foreach (JewelryCategory category in Enum.GetValues(typeof(JewelryCategory)))
+        {
+            string categoryString = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(category.ToString().Replace("_", " and ").ToLower());
+            categoryString = categoryString.Replace(" And ", " and ");
+            categories.Add(categoryString);
+        }
+        return categories;
     }
 }

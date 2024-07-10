@@ -1,5 +1,6 @@
 ﻿using JewelryAuctionApplicationDAL.Context;
 using JewelryAuctionApplicationDAL.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ public class BidRepository : IBidRepository
     }
     public Bid? GetHighestBid(int auctionId)
     {
-        var bids = _context.Bids.Where(b => b.AuctionId == auctionId);
+        var bids = _context.Bids.Include(b => b.Account).Where(b => b.AuctionId == auctionId);
         if (bids.IsNullOrEmpty())
         {
             return null;

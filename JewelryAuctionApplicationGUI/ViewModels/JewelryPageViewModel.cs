@@ -9,24 +9,48 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 
 public class JewelryPageViewModel : BaseViewModel
 {
+    private readonly AccountStore _accountStore;
+    private readonly ParameterNavigationService<JewelryListingViewModel, AddBidViewModel> _navigationAddBidCommand;
+    private readonly INavigationService _loginNavigationService;
+    private readonly Func<NavigationBarViewModel> _createNavigationBarViewModel;
     public JewelryListingViewModel JewelryListing { get; }
-    public NavigationBarViewModel NavigationBarViewModel { get; }
-    public ICommand NavigateAddBidCommand { get; }
+    public NavigationBarViewModel NavigationBarViewModel { get; private set; }
+    public ICommand NavigateAddBidCommand { get; private set; }
     public JewelryPageViewModel(JewelryListingViewModel jewelryListing, 
-        IBidService bidService, NavigationBarViewModel navigationBarViewModel,
+        IBidService bidService, Func<NavigationBarViewModel> navigationBarViewModel,
         ParameterNavigationService<JewelryListingViewModel, AddBidViewModel> navigateAddBidCommand,
         INavigationService loginNavigationService,
         AccountStore accountStore)
     {
         JewelryListing = jewelryListing;
-        NavigationBarViewModel = navigationBarViewModel;
-        if (accountStore.CurrentAccount != null && accountStore.CurrentAccount.Role == Role.USER)
+        _accountStore = accountStore;
+        _navigationAddBidCommand = navigateAddBidCommand;
+        _loginNavigationService = loginNavigationService;
+        _createNavigationBarViewModel = navigationBarViewModel;
+        _accountStore.CurrentAccountChanged += OnCurrentAccountChanged;
+        UpdateButtonAndNavBar();
+    }
+    private void OnCurrentAccountChanged()
+    {
+        UpdateButtonAndNavBar();
+        OnPropertyChanged(nameof(NavigateAddBidCommand));
+        OnPropertyChanged(nameof(NavigationBarViewModel));
+    }
+    private void UpdateButtonAndNavBar()
+    {
+        if (_accountStore.CurrentAccount != null && _accountStore.CurrentAccount.Role == Role.USER)
         {
-            NavigateAddBidCommand = new NavigateAddBidCommand(jewelryListing, navigateAddBidCommand);
-        } else
-        {
-            NavigateAddBidCommand = new NavigateCommand(loginNavigationService);
+            NavigateAddBidCommand = new NavigateAddBidCommand(JewelryListing, _navigationAddBidCommand);
         }
-
+        else
+        {
+            NavigateAddBidCommand = new NavigateCommand(_loginNavigationService);
+        }
+        NavigationBarViewModel = _createNavigationBarViewModel();
+    }
+    public override void Dispose()
+    {
+        _accountStore.CurrentAccountChanged -= OnCurrentAccountChanged;
+        base.Dispose();
     }
 }

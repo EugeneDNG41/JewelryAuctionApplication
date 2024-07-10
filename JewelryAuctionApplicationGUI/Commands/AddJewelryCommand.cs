@@ -36,6 +36,11 @@ public class AddJewelryCommand : BaseCommand
             _viewModel.AddError("Required", nameof(_viewModel.Condition));
             return;
         }
+        if (_viewModel.StartingPrice <= 0)
+        {
+            _viewModel.AddError("Invalid", nameof(_viewModel.StartingPrice));
+            return;
+        }
         if (_viewModel.Image == null)
         {
             _viewModel.AddError("Required", nameof(_viewModel.Image));
@@ -52,7 +57,7 @@ public class AddJewelryCommand : BaseCommand
             Description = _viewModel.Description,
             Condition = _viewModel.Condition,
             StartingPrice = _viewModel.StartingPrice,
-            JewelryCategory = JewelryCategory.RINGS,
+            JewelryCategory = (JewelryCategory)_viewModel.Category,
             Status = JewelryStatus.READY,
             // Convert the memory stream to a byte array
             Image = stream.ToArray()

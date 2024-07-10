@@ -13,16 +13,52 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
-        <TextBlock
+        <StackPanel Orientation="Horizontal"
+                    Margin="10">
+            <TextBlock
             Grid.Row="0"
             FontSize="28"
-            Text="Products" />
+            Text="Jewelries" />
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Search:"
+                           Margin="0 0 0 5"/>
+                <TextBox Width="200"
+                         Text="{Binding JewelryNameFilter, UpdateSourceTrigger=PropertyChanged}"
+                         Height="20"/>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Filter"
+                           Margin="0 0 0 5"/>
+                <ComboBox Width="150"
+                          ItemsSource="{Binding Categories}"                         
+                          IsSynchronizedWithCurrentItem="True"
+                          SelectedIndex="{Binding JewelryCategoryFilter}"
+                          Height="20"/>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Sort"
+               Margin="0 0 0 5"/>
+                <ComboBox Width="120"
+              ItemsSource="{Binding SortOptions}"                         
+              IsSynchronizedWithCurrentItem="True"
+              SelectedIndex="{Binding SelectedSortOption}"
+              Height="20"/>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Order"
+               Margin="0 0 0 5"/>
+                <ComboBox Width="100"
+              ItemsSource="{Binding SortOrder}"                         
+              IsSynchronizedWithCurrentItem="True"
+              SelectedIndex="{Binding SelectedSortOrder}"
+              Height="20"/>
+            </StackPanel>
+        </StackPanel>
         <ScrollViewer
             Grid.Row="1"
             Margin="0 20 0 0"
             VerticalScrollBarVisibility="Auto">
-            <ItemsControl ItemsSource="{Binding Jewelries}">
+            <ItemsControl ItemsSource="{Binding JewelryCollectionView}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <components:JewelryCard />

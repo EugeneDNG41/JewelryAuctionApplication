@@ -16,5 +16,5 @@ D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\App.xaml
 247-2139162855
 Components\BindablePasswordBox.xaml;Components\JewelryCard.xaml;Components\NavigationBar.xaml;Themes\Generic.xaml;Views\AddAuctionView.xaml;Views\AddBidView.xaml;Views\AddJewelryView.xaml;Views\HomeView.xaml;Views\JewelryPageView.xaml;Views\LayoutView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\SignupView.xaml;
 
-False
+True
 
