@@ -8,6 +8,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="900"
              Background="WhiteSmoke">
+    <UserControl.Resources>
+        <Style x:Key="MyButtonContentStyle" TargetType="TextBlock">
+            <Style.Triggers>
+                
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Foreground" Value="DimGray" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -85,33 +97,47 @@
                                 Height="auto"
                                 Background="LightGray"
                                 BorderBrush="DimGray"
-                                BorderThickness="1">
+                                BorderThickness="1"
+                                >
                             <StackPanel>
-                                <TextBlock Text="{Binding JewelryListing.BidBoxTitle, UpdateSourceTrigger=PropertyChanged}"
+                                <TextBlock Text="{Binding BidBoxTitle, UpdateSourceTrigger=PropertyChanged}"
                                            FontWeight="Regular"
                                            FontSize="16"
                                            Margin="10 5 0 0"/>
-                                <TextBlock Text="{Binding JewelryListing.ActiveAuction.CurrentPrice, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C}}"
+                                <TextBlock Text="{Binding JewelryListing.LatestAuction.CurrentPrice, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C}}"
                                            FontWeight="DemiBold"
                                            FontSize="22"
                                            Margin="10 0 0 0"/>
 
                                 <Button Command="{Binding NavigateAddBidCommand}"
-                                        Background="Teal"
                                         VerticalAlignment="Center"
                                         Margin="10 5 10 0"
-                                        IsEnabled="{Binding CanBid}">
+                                        Foreground="White"
+                                        Background="Teal"
+                                        Cursor="Hand"
+                                        IsEnabled="{Binding CanBid, UpdateSourceTrigger=PropertyChanged}">
                                     <TextBlock Text="PLACE BID"
                                                FontWeight="Bold"
+                                               Style="{StaticResource MyButtonContentStyle}"
                                                Margin="2"
-                                               Foreground="White"/>
+                                               />
+                                    
                                 </Button>
-                                <TextBlock Text="{Binding JewelryListing.TimeLeft, UpdateSourceTrigger=PropertyChanged}"
+                                <TextBlock Text="{Binding TickingTimeLeft, UpdateSourceTrigger=PropertyChanged}"
                                            Margin="10 0 10 5"
                                            FontSize="12"
                                            FontWeight="Light"
                                            HorizontalAlignment="Right"/>
                             </StackPanel>
+                        </Border>
+                        <Border Margin="0 30 30 0"
+                                Height="auto"
+                                Background="LightGray"
+                                BorderBrush="DimGray"
+                                BorderThickness="1">
+                            <!--<ListView ItemStringFormat="{Binding BidHistory, UpdateSourceTrigger=PropertyChanged}">
+                                
+                            </ListView>-->
                         </Border>
                     </StackPanel>
                 </StackPanel>

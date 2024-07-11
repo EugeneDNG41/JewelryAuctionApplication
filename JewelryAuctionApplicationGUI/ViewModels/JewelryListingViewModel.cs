@@ -14,97 +14,57 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 
 public class JewelryListingViewModel : BaseViewModel
 {
-    private DispatcherTimer _auctionTimer;
     public Jewelry Jewelry { get; }
-    public Auction? ActiveAuction => AuctionService.GetOngoingByJewelryId(Jewelry.JewelryId);
+    public Auction? LatestAuction => AuctionService.GetLatestByJewelryId(Jewelry.JewelryId);
     public BitmapImage DisplayedImage => ByteArrayToBitmapImage(Jewelry.Image);
-    private Account? _winner;
-    public Account? Winner
-    {
-        get => _winner;
-        private set
-        {
-            _winner = value;
-            OnPropertyChanged(nameof(Winner));
-        }
-    }
-
-    private string _timeLeft;
+    
     public string TimeLeft
-    {
-        get => _timeLeft;
-        private set
-        {
-            _timeLeft = value;
-            OnPropertyChanged(nameof(TimeLeft));
-        }
-    }
-
-    private string _bidBoxTitle;
-    public string BidBoxTitle
     {
         get
         {
-            int bidCount = ActiveAuction?.Bids.Count ?? 0;
-            _bidBoxTitle = bidCount > 0 ? $"Current Price ({bidCount} bids)" : "Starting Price";
-            return _bidBoxTitle;
+            if (LatestAuction.EndDate < DateTime.Now)
+            {
+                return "Ended";
+            } else
+            {
+                TimeSpan timeDifference = LatestAuction.EndDate.Subtract(DateTime.Now);
+                return $"Ends in {timeDifference.Days}d {timeDifference.Hours}h {timeDifference.Minutes}m";
+            }
+            
+        }
+
+    }
+    private string _bidNumber;
+    public string BidNumber
+    {
+        get
+        {
+            int bidCount = LatestAuction?.Bids.Count ?? 0;
+            _bidNumber = bidCount > 1 ? $"{bidCount} bids" : $"{bidCount} bid";
+            return _bidNumber;
         }
         set
         {
-            _bidBoxTitle = value;
-            OnPropertyChanged(nameof(BidBoxTitle));
+            _bidNumber = value;
+            OnPropertyChanged(nameof(BidNumber));
         }
     }
-
-    public bool CanBid => ActiveAuction != null && ActiveAuction.EndDate > DateTime.Now;
     public ICommand NavigateJewelryPageCommand { get; }
     public IAuctionService AuctionService { get; }
     public IBidService BidService { get; }
+    public IJewelryService JewelryService { get; }
 
     public JewelryListingViewModel(Jewelry jewelry,
         ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService,
-        IAuctionService auctionService, IBidService bidService)
+        IAuctionService auctionService, IBidService bidService, IJewelryService jewelryService)
     {
         Jewelry = jewelry;
         AuctionService = auctionService;
         BidService = bidService;
+        JewelryService = jewelryService;
         NavigateJewelryPageCommand = new NavigateJewelryPageCommand(this, navigateJewelryPageService);
-
-        InitializeTimer();
     }
 
-    private void InitializeTimer()
-    {
-        _auctionTimer = new DispatcherTimer
-        {
-            Interval = TimeSpan.FromMilliseconds(100)
-        };
-        _auctionTimer.Tick += AuctionTimer_Tick;
-        _auctionTimer.Start();
-    }
-
-    private void AuctionTimer_Tick(object sender, EventArgs e)
-    {
-        if (ActiveAuction != null && ActiveAuction.EndDate > DateTime.Now)
-        {
-            TimeSpan timeDifference = ActiveAuction.EndDate.Subtract(DateTime.Now);
-            TimeLeft = $"Ends in {timeDifference.Days}d {timeDifference.Hours}h {timeDifference.Minutes}m {timeDifference.Seconds}s";
-            Bid? bid = BidService.GetHighestBid(ActiveAuction.AuctionId);
-            if (ActiveAuction.CurrentPrice < bid?.BidAmount)
-            {
-                ActiveAuction.CurrentPrice = bid.BidAmount;
-                OnPropertyChanged(nameof(ActiveAuction));
-                OnPropertyChanged(nameof(BidBoxTitle));
-            }
-        }
-        else
-        {
-            TimeLeft = "Ended";
-            _auctionTimer.Stop();
-            OnPropertyChanged(nameof(CanBid));
-            Winner = BidService.GetHighestBid(ActiveAuction.AuctionId)?.Account;
-        }
-    }
     private BitmapImage ByteArrayToBitmapImage(byte[] byteArray)
     {
         using (MemoryStream stream = new MemoryStream(byteArray))
@@ -115,6 +75,15 @@ public class JewelryListingViewModel : BaseViewModel
             image.StreamSource = stream;
             image.EndInit();
             return image;
+        }
+    }
+    public void UpdateCurrentPrice()
+    {
+        if (LatestAuction != null)
+        {
+            var highestBid = BidService.GetHighestBid(LatestAuction.AuctionId);
+            LatestAuction.CurrentPrice = highestBid != null ? highestBid.BidAmount : LatestAuction.CurrentPrice;
+            OnPropertyChanged(nameof(LatestAuction));
         }
     }
 }

@@ -10,7 +10,11 @@ namespace JewelryAuctionApplicationDAL.Repositories;
 public interface IAuctionRepository
 {
     void Add(Auction auction);
+    void Update(Auction auction);
+    IEnumerable<Auction> GetAllLatest();
     IEnumerable<Auction> GetByJewelryId(int jewelryId);
     Auction? GetOngoingByJewelryId(int id);
     Auction? GetById(int id);
+    Auction? GetLatestByJewelryId(int jewelryId);
+
 }

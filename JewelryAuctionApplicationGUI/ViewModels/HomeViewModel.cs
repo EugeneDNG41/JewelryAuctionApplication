@@ -67,7 +67,7 @@ public class HomeViewModel : BaseViewModel
     public ObservableCollection<string> Categories =>
         new ObservableCollection<string>(GenerateCategoryList());
     public ObservableCollection<string> SortOptions => 
-        new ObservableCollection<string> { "Default", "Price", "Bid Amount", "Auction Time" };
+        new ObservableCollection<string> { "All", "Price", "Bid Number", "Auction Time" };
     public ObservableCollection<string> SortOrder =>
         new ObservableCollection<string> { "Default", "Ascending", "Descending"};
     public HomeViewModel(
@@ -78,7 +78,7 @@ public class HomeViewModel : BaseViewModel
     {        
         _jewelryService = jewelryService;
         _jewelries = new ObservableCollection<JewelryListingViewModel>(
-            _jewelryService.GetOnAuction().Select(j => new JewelryListingViewModel(j, navigateJewelryPageService, auctionService, bidService)));
+            _jewelryService.GetOnAuction().Select(j => new JewelryListingViewModel(j, navigateJewelryPageService, auctionService, bidService, jewelryService)));
         JewelryCollectionView = CollectionViewSource.GetDefaultView(_jewelries);
         JewelryCollectionView.Filter = FilterJewelryName;
         JewelryCollectionView.Filter = FilterJewelryCategory;
@@ -118,13 +118,13 @@ public class HomeViewModel : BaseViewModel
             switch (SelectedSortOption)
             {
                 case 1:
-                    JewelryCollectionView.SortDescriptions.Add(new SortDescription("ActiveAuction.CurrentPrice", direction));
+                    JewelryCollectionView.SortDescriptions.Add(new SortDescription("LatestAuction.CurrentPrice", direction));
                     break;
                 case 2:
-                    JewelryCollectionView.SortDescriptions.Add(new SortDescription("ActiveAuction.Bids.Count", direction));
+                    JewelryCollectionView.SortDescriptions.Add(new SortDescription("LatestAuction.Bids.Count", direction));
                     break;
                 case 3:
-                    JewelryCollectionView.SortDescriptions.Add(new SortDescription("ActiveAuction.EndDate", direction));
+                    JewelryCollectionView.SortDescriptions.Add(new SortDescription("LatestAuction.EndDate", direction));
                     break;
                 default:
                     

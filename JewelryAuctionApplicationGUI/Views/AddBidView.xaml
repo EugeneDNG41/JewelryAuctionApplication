@@ -87,7 +87,6 @@
                           IsEditable="False"
                           ItemsSource="{Binding Path=BidAmounts}"    
                           SelectedItem="{Binding Path=SelectedBidAmount}"
-                          IsSynchronizedWithCurrentItem="True"
                           SelectedIndex="0"
                           />
             </StackPanel>
@@ -176,7 +175,6 @@
             </Grid>
             
             <Button Command="{Binding AddBidCommand}"
-                    IsEnabled="{Binding JewelryList.CanBid}"
                     BorderThickness="0"
                     Content="ADD"
                     Foreground="White"

@@ -37,6 +37,9 @@
             <DataTemplate DataType="{x:Type viewmodels:AddBidViewModel}">
                 <views:AddBidView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:PastAuctionsViewModel}">
+                <views:PastAuctionsView/>
+            </DataTemplate>
         </Grid.Resources>
         
         <resources:Modal  Panel.ZIndex="1" IsOpen="{Binding IsOpen}">

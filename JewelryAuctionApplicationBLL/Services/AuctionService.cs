@@ -19,6 +19,10 @@ public class AuctionService : IAuctionService
     {
         _repository.Add(auction);
     }
+    public void Update(Auction auction)
+    {
+        _repository.Update(auction);
+    }
     public Auction? GetOngoingByJewelryId(int id)
     {
         return _repository.GetOngoingByJewelryId(id);
@@ -26,5 +30,13 @@ public class AuctionService : IAuctionService
     public Auction? GetById(int id)
     {
         return _repository.GetById(id);
+    }
+    public Auction? GetLatestByJewelryId(int id)
+    {
+        return _repository.GetLatestByJewelryId(id);
+    }
+    public IEnumerable<Auction> GetAllLatest()
+    {
+        return _repository.GetAllLatest();
     }
 }

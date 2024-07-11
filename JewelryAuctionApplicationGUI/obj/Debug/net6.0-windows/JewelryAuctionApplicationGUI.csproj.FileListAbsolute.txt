@@ -129,3 +129,5 @@ D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\bin\Debug
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\bin\Debug\net6.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.NET5.resources.dll
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\AddBidView.g.cs
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\AddBidView.baml
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\PastAuctionsView.g.cs
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\PastAuctionsView.baml

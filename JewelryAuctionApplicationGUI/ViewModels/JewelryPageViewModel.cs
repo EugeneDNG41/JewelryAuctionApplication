@@ -4,17 +4,75 @@ using JewelryAuctionApplicationDAL.Models;
 using JewelryAuctionApplicationGUI.Commands;
 using JewelryAuctionApplicationGUI.Navigation;
 using System.Windows.Input;
+using System.Windows.Threading;
+using Xceed.Wpf.Toolkit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace JewelryAuctionApplicationGUI.ViewModels;
 
 public class JewelryPageViewModel : BaseViewModel
 {
+    private DispatcherTimer _auctionTimer;
     private readonly AccountStore _accountStore;
+    private readonly IBidService _bidService;
     private readonly ParameterNavigationService<JewelryListingViewModel, AddBidViewModel> _navigationAddBidCommand;
     private readonly INavigationService _loginNavigationService;
     private readonly Func<NavigationBarViewModel> _createNavigationBarViewModel;
     public JewelryListingViewModel JewelryListing { get; }
     public NavigationBarViewModel NavigationBarViewModel { get; private set; }
+    public Account? Winner
+    {
+        get
+        {
+            var highestBid = _bidService.GetHighestBid(JewelryListing.LatestAuction.AuctionId);
+            if (JewelryListing.LatestAuction?.EndDate < DateTime.Now && highestBid != null)
+            {
+                return highestBid.Account;
+            } else
+            {
+                return null;
+            }
+        }
+    }
+    private string _tickingTimeLeft;
+    public string TickingTimeLeft
+    {
+        get => _tickingTimeLeft;
+        private set
+        {
+            _tickingTimeLeft = value;
+            OnPropertyChanged(nameof(TickingTimeLeft));
+        }
+    }
+    private string _bidBoxTitle;
+    public string BidBoxTitle
+    {
+        get
+        {
+            int bidCount = JewelryListing.LatestAuction?.Bids.Count ?? 0;
+            if (JewelryListing.LatestAuction?.EndDate < DateTime.Now && bidCount == 0)
+            {
+                _bidBoxTitle = "No bids";
+                return _bidBoxTitle;
+            }
+            else if (JewelryListing.LatestAuction?.EndDate < DateTime.Now && bidCount > 0)
+            {
+                _bidBoxTitle = $"Winning bid ({JewelryListing.BidNumber})";
+                return _bidBoxTitle;
+            }
+            else
+            {
+                _bidBoxTitle = bidCount > 0 ? $"Current Price ({JewelryListing.BidNumber})" : "Starting Price";
+                return _bidBoxTitle;
+            }
+        }
+        set
+        {
+            _bidBoxTitle = value;
+            OnPropertyChanged(nameof(BidBoxTitle));
+        }
+    }
+    public bool CanBid => JewelryListing.LatestAuction?.EndDate > DateTime.Now;
     public ICommand NavigateAddBidCommand { get; private set; }
     public JewelryPageViewModel(JewelryListingViewModel jewelryListing, 
         IBidService bidService, Func<NavigationBarViewModel> navigationBarViewModel,
@@ -23,12 +81,14 @@ public class JewelryPageViewModel : BaseViewModel
         AccountStore accountStore)
     {
         JewelryListing = jewelryListing;
+        _bidService = bidService;
         _accountStore = accountStore;
         _navigationAddBidCommand = navigateAddBidCommand;
         _loginNavigationService = loginNavigationService;
         _createNavigationBarViewModel = navigationBarViewModel;
         _accountStore.CurrentAccountChanged += OnCurrentAccountChanged;
         UpdateButtonAndNavBar();
+        InitializeTimer();
     }
     private void OnCurrentAccountChanged()
     {
@@ -47,6 +107,39 @@ public class JewelryPageViewModel : BaseViewModel
             NavigateAddBidCommand = new NavigateCommand(_loginNavigationService);
         }
         NavigationBarViewModel = _createNavigationBarViewModel();
+    }
+    private void InitializeTimer()
+    {
+        _auctionTimer = new DispatcherTimer
+        {
+            Interval = TimeSpan.FromMilliseconds(100)
+        };
+        _auctionTimer.Tick += AuctionTimer_Tick;
+        _auctionTimer.Start();
+    }
+    private void AuctionTimer_Tick(object sender, EventArgs e)
+    {
+        if (JewelryListing.LatestAuction?.EndDate > DateTime.Now)
+        {
+            TimeSpan timeDifference = JewelryListing.LatestAuction.EndDate.Subtract(DateTime.Now);
+            TickingTimeLeft = $"Ends in {timeDifference.Days}d {timeDifference.Hours}h {timeDifference.Minutes}m {timeDifference.Seconds}s";
+            JewelryListing.UpdateCurrentPrice();
+            OnPropertyChanged(nameof(TickingTimeLeft));
+            OnPropertyChanged(nameof(BidBoxTitle));
+        }
+        else if (JewelryListing.LatestAuction?.EndDate < DateTime.Now)
+        {
+            TickingTimeLeft = "Ended";
+            _auctionTimer.Stop();
+            OnPropertyChanged(nameof(Winner));
+            OnPropertyChanged(nameof(BidBoxTitle));
+            OnPropertyChanged(nameof(CanBid));
+        }
+        else
+        {
+            TickingTimeLeft = "No auction found";
+            _auctionTimer.Stop();
+        }
     }
     public override void Dispose()
     {

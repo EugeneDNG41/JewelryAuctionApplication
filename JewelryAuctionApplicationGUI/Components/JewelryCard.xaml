@@ -85,7 +85,13 @@
                 Grid.Row="3"
                 Margin="0 10 0 0"
                 FontWeight="Bold"
-                Text="{Binding ActiveAuction.CurrentPrice, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C}}" />
+                Text="{Binding LatestAuction.CurrentPrice, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C}}" />
+            <TextBlock Text="{Binding BidNumber, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Row="3"
+                       Grid.Column="1"
+                       Margin="0 10 0 0"
+                       HorizontalAlignment="Right"/>
+            
         </Grid>
     </Border>
 </UserControl>

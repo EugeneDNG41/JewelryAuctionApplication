@@ -23,6 +23,10 @@ public class JewelryService : IJewelryService
     {
         _jewelryRepository.Update(jewelry);
     }
+    public Jewelry? GetById(int id)
+    {
+        return _jewelryRepository.GetById(id);
+    }
     public IEnumerable<Jewelry> GetAll()
     {
         return _jewelryRepository.GetAll();
@@ -42,5 +46,8 @@ public class JewelryService : IJewelryService
     {
         return _jewelryRepository.GetOnAuction();
     }
-
+    public IEnumerable<Jewelry> GetByEndedAuction()
+    {
+        return _jewelryRepository.GetByEndedAuction();
+    }
 }

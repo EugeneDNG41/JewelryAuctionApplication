@@ -39,6 +39,7 @@ public class ServiceRegistration
         services.AddTransient(CreateSignupViewModel);
         services.AddTransient(CreateAddJewelryViewModel);
         services.AddTransient(CreateAddAuctionViewModel);
+        services.AddTransient(CreatePastAuctionsViewModel);
 
 
         var connectionString = Configuration.GetConnectionString("JewelryAuctionDatabase");
@@ -61,6 +62,13 @@ public class ServiceRegistration
             serviceProvider.GetRequiredService<IAuctionService>(),
             serviceProvider.GetRequiredService<IBidService>());
     }
+    private PastAuctionsViewModel CreatePastAuctionsViewModel(IServiceProvider serviceProvider)
+    {
+        return new PastAuctionsViewModel(serviceProvider.GetRequiredService<IJewelryService>(),
+            CreateJewelryPageNavigationService(serviceProvider),
+            serviceProvider.GetRequiredService<IAuctionService>(),
+            serviceProvider.GetRequiredService<IBidService>());
+    }
     private ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> CreateJewelryPageNavigationService(IServiceProvider serviceProvider)
     {
         return new ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel>(
@@ -76,7 +84,9 @@ public class ServiceRegistration
     {
         return new ParameterNavigationService<JewelryListingViewModel, AddBidViewModel>(
              null, serviceProvider.GetRequiredService<ModalNavigationStore>(),
-             (parameter) => new AddBidViewModel(parameter, serviceProvider.GetRequiredService<IBidService>(),
+             (parameter) => new AddBidViewModel(parameter,
+             serviceProvider.GetRequiredService<IAuctionService>(),
+             serviceProvider.GetRequiredService<IBidService>(),
              serviceProvider.GetRequiredService<CloseModalNavigationService>(),
              serviceProvider.GetRequiredService<AccountStore>()));
     }
@@ -98,7 +108,8 @@ public class ServiceRegistration
             CreateLoginNavigationService(serviceProvider),
             CreateSignupNavigationService(serviceProvider),
             CreateAddJewelryNavigationService(serviceProvider),
-            CreateAddAuctionNavigationService(serviceProvider));
+            CreateAddAuctionNavigationService(serviceProvider),
+            CreatePastAuctionsNavigationService(serviceProvider));
     }
     private INavigationService CreateAddJewelryNavigationService(IServiceProvider serviceProvider)
     {
@@ -113,6 +124,13 @@ public class ServiceRegistration
             serviceProvider.GetRequiredService<NavigationStore>(),
             () => serviceProvider.GetRequiredService<NavigationBarViewModel>(),
             () => serviceProvider.GetRequiredService<HomeViewModel>());
+    }
+    private INavigationService CreatePastAuctionsNavigationService(IServiceProvider serviceProvider)
+    {
+        return new LayoutNavigationService<PastAuctionsViewModel>(
+            serviceProvider.GetRequiredService<NavigationStore>(),
+            () => serviceProvider.GetRequiredService<NavigationBarViewModel>(),
+            () => serviceProvider.GetRequiredService<PastAuctionsViewModel>());
     }
     private INavigationService CreateLoginNavigationService(IServiceProvider serviceProvider)
     {

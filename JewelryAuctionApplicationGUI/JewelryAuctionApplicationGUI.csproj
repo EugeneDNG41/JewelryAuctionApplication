@@ -35,6 +35,9 @@
     <Compile Update="Components\NavigationBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\PastAuctionsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

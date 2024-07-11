@@ -10,6 +10,9 @@ namespace JewelryAuctionApplicationBLL.Services;
 public interface IAuctionService
 {
     void Add(Auction auction);
+    void Update(Auction auction);
     Auction? GetOngoingByJewelryId(int id);
     Auction? GetById(int id);
+    Auction? GetLatestByJewelryId(int id);
+    IEnumerable<Auction> GetAllLatest();
 }

@@ -33,13 +33,14 @@ public class AddBidViewModel : BaseViewModel
     public ICommand AddBidCommand { get; }
     public ICommand CloseModalCommand { get; }
     public AddBidViewModel(JewelryListingViewModel jewelryListing, 
-        IBidService bidService, 
+        IAuctionService auctionService, IBidService bidService, 
         INavigationService closeModalNavigationService,
         AccountStore accountStore)
     {
-        BidAmounts = GenerateBidAmounts(jewelryListing.ActiveAuction.CurrentPrice);
-        AddBidCommand = new AddBidCommand(this, jewelryListing, bidService, closeModalNavigationService, accountStore);
-        CloseModalCommand = new CloseModalCommand(closeModalNavigationService);       
+        BidAmounts = GenerateBidAmounts(jewelryListing.LatestAuction.CurrentPrice);
+        AddBidCommand = new AddBidCommand(this, jewelryListing, auctionService, bidService, closeModalNavigationService, accountStore);
+        CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
+        _selectedBidAmount = BidAmounts[0];
     }
     private ObservableCollection<decimal> GenerateBidAmounts(decimal currentPrice)
     {

@@ -28,6 +28,7 @@ public class JewelryRepository : IJewelryRepository
         _context.Jewelries.Update(jewelry);
         _context.SaveChanges();
     }
+    public Jewelry? GetById(int id) => _context.Jewelries.FirstOrDefault(j => j.JewelryId == id);
     public IEnumerable<Jewelry> GetAll() => _context.Jewelries.Include(j => j.Auctions).ThenInclude(a => a.Bids);
     public IEnumerable<Jewelry> GetByStatus(JewelryStatus status) => _context.Jewelries.Include(j => j.Auctions).Where(j => j.Status == status);
     public IEnumerable<Jewelry> GetForAuction()
@@ -39,5 +40,10 @@ public class JewelryRepository : IJewelryRepository
     {
         var jewelries = GetByStatus(JewelryStatus.ACTIVE);
         return jewelries.Where(j => !j.Auctions.IsNullOrEmpty() && j.Auctions.Any(a => a.EndDate > DateTime.Now));
+    }
+    public IEnumerable<Jewelry> GetByEndedAuction()
+    {
+        var jewelries = GetAll();
+        return jewelries.Where(j => !j.Auctions.IsNullOrEmpty() && j.Auctions.All(a => a.EndDate < DateTime.Now));
     }
 }

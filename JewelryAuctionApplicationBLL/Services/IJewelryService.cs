@@ -11,8 +11,10 @@ public interface IJewelryService
 {
     void Add(Jewelry jewelry);
     void Update(Jewelry jewelry);
+    Jewelry? GetById(int id);
     IEnumerable<Jewelry> GetAll();
     IEnumerable<Jewelry> GetByStatus(JewelryStatus status);
     IEnumerable<Jewelry> GetForAuction();
     IEnumerable<Jewelry> GetOnAuction();
+    IEnumerable<Jewelry> GetByEndedAuction();
 }
