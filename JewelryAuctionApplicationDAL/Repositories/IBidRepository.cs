@@ -1,4 +1,4 @@
-﻿using JewelryAuctionApplicationDAL.Models;
+﻿    using JewelryAuctionApplicationDAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,4 +13,5 @@ public interface IBidRepository
     IEnumerable<Bid> GetAll();
     Bid? GetHighestBid(int auctionId);
     IEnumerable<Bid> GetByAuctionId(int id);
+    decimal GetCulmulativeBidAmountByAccountId(int accountId);
 }

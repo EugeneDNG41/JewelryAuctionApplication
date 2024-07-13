@@ -25,14 +25,9 @@ public class Account
     //[Required]
     //[EmailAddress]
     public string Email { get; set; }
-    //[Required]
-    //public DateOnly Birthday { get; set; }
-    //[RegularExpression(@"^[0-9]{8,12}$", ErrorMessage = "Telephone must include 8-12 digits")]
-    //public string PhoneNumber { get; set; }
-    //[Required]
     public bool Status { get; set; }
+    public decimal Credit { get; set; }
     //[Required]
-
     public Role Role { get; set; }
     public ICollection<Bid> Bids { get; set; }
     public ICollection<Request> Requests { get; set; }

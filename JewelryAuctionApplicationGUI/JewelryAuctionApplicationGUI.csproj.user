@@ -1,23 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
-  <ItemGroup>
-    <Compile Update="Components\JewelryCard.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\AddAuctionView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\AddBidView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\AddJewelryView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\JewelryPageView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Update="App.xaml">
       <SubType>Designer</SubType>
@@ -40,10 +24,10 @@
     <Page Update="Views\AddBidView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\AddJewelryView.xaml">
+    <Page Update="Views\AddCreditView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\PastAuctionsView.xaml">
+    <Page Update="Views\AddJewelryView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\HomeView.xaml">
@@ -55,13 +39,16 @@
     <Page Update="Views\LayoutView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\SignupView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PastAuctionsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SignupView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

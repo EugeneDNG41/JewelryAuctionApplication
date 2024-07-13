@@ -13,26 +13,26 @@ namespace JewelryAuctionApplicationGUI;
 public class ServiceRegistration
 {
     public void ConfigureServices(IServiceCollection services, IConfiguration Configuration)
-
     {
+        // Add singleton services
         services.AddSingleton<AccountStore>();
         services.AddSingleton<NavigationStore>();
         services.AddSingleton<ModalNavigationStore>();
-        services.AddSingleton<INavigationService>(s => CreateHomeNavigationService(s)); //when first registered, pass the home view model to the navigation store
+        services.AddSingleton<INavigationService>(s => CreateHomeNavigationService(s));
         services.AddSingleton<CloseModalNavigationService>();
 
+        // Add scoped services (per request)
         services.AddScoped<IPasswordHasher, PasswordHasher>();
         services.AddScoped<IAccountRepository, AccountRepository>();
         services.AddScoped<IJewelryRepository, JewelryRepository>();
         services.AddScoped<IBidRepository, BidRepository>();
         services.AddScoped<IAuctionRepository, AuctionRepository>();
-        services.AddScoped<IAccountService, AccountService>();       
+        services.AddScoped<IAccountService, AccountService>();
         services.AddScoped<IJewelryService, JewelryService>();
         services.AddScoped<IBidService, BidService>();
         services.AddScoped<IAuctionService, AuctionService>();
-        
-        
 
+        // Add transient services
         services.AddTransient(CreateHomeViewModel);
         services.AddTransient(CreateLoginViewModel);
         services.AddTransient(CreateNavigationBarViewModel);
@@ -40,15 +40,16 @@ public class ServiceRegistration
         services.AddTransient(CreateAddJewelryViewModel);
         services.AddTransient(CreateAddAuctionViewModel);
         services.AddTransient(CreatePastAuctionsViewModel);
+        services.AddTransient(CreateAddCreditViewModel);
 
-
+        // Add DbContext with scoped lifetime
         var connectionString = Configuration.GetConnectionString("JewelryAuctionDatabase");
         services.AddDbContext<JewelryAuctionContext>(options =>
         {
             options.UseSqlServer(connectionString);
         }, ServiceLifetime.Scoped);
 
-
+        // Singleton MainViewModel and MainWindow (assuming these are UI-related)
         services.AddSingleton<MainViewModel>();
         services.AddSingleton(s => new MainWindow()
         {
@@ -88,6 +89,7 @@ public class ServiceRegistration
              serviceProvider.GetRequiredService<IAuctionService>(),
              serviceProvider.GetRequiredService<IBidService>(),
              serviceProvider.GetRequiredService<CloseModalNavigationService>(),
+             CreateAddCreditNavigationService(serviceProvider),
              serviceProvider.GetRequiredService<AccountStore>()));
     }
     private AddJewelryViewModel CreateAddJewelryViewModel(IServiceProvider serviceProvider)
@@ -101,6 +103,13 @@ public class ServiceRegistration
             serviceProvider.GetRequiredService<IJewelryService>(),
             serviceProvider.GetRequiredService<CloseModalNavigationService>());
     }
+    private AddCreditViewModel CreateAddCreditViewModel(IServiceProvider serviceProvider)
+    {
+        return new AddCreditViewModel(serviceProvider.GetRequiredService<AccountStore>(),
+               serviceProvider.GetRequiredService<CloseModalNavigationService>(),
+               serviceProvider.GetRequiredService<IAccountService>(),
+               serviceProvider.GetRequiredService<IBidService>());
+    }
     private NavigationBarViewModel CreateNavigationBarViewModel(IServiceProvider serviceProvider)
     {
         return new NavigationBarViewModel(serviceProvider.GetRequiredService<AccountStore>(),
@@ -109,7 +118,8 @@ public class ServiceRegistration
             CreateSignupNavigationService(serviceProvider),
             CreateAddJewelryNavigationService(serviceProvider),
             CreateAddAuctionNavigationService(serviceProvider),
-            CreatePastAuctionsNavigationService(serviceProvider));
+            CreatePastAuctionsNavigationService(serviceProvider),
+            CreateAddCreditNavigationService(serviceProvider));
     }
     private INavigationService CreateAddJewelryNavigationService(IServiceProvider serviceProvider)
     {
@@ -117,7 +127,12 @@ public class ServiceRegistration
             serviceProvider.GetRequiredService<ModalNavigationStore>(),
             () => serviceProvider.GetRequiredService<AddJewelryViewModel>());
     }
-
+    private INavigationService CreateAddCreditNavigationService(IServiceProvider serviceProvider)
+    {
+        return new ModalNavigationService<AddCreditViewModel>(
+               serviceProvider.GetRequiredService<ModalNavigationStore>(),
+               () => serviceProvider.GetRequiredService<AddCreditViewModel>());
+    }
     private INavigationService CreateHomeNavigationService(IServiceProvider serviceProvider)
     {
         return new LayoutNavigationService<HomeViewModel>(

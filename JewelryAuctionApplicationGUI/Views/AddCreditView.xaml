@@ -1,0 +1,205 @@
+﻿<UserControl x:Class="JewelryAuctionApplicationGUI.Views.AddCreditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JewelryAuctionApplicationGUI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="400"
+             Background="LightGray">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ValidationErrorTemplate">
+            <StackPanel>
+                <AdornedElementPlaceholder/>
+                <ItemsControl ItemsSource="{Binding}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ErrorContent}" Foreground="Red" HorizontalAlignment="Right"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ControlTemplate>
+
+        <!-- Style for TextBox to use the Validation ErrorTemplate -->
+        <Style TargetType="TextBox">
+            <Setter Property="Validation.ErrorTemplate" Value="{StaticResource ValidationErrorTemplate}"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="ADD CREDIT"
+                   Foreground="Black"
+                   FontSize="10"
+                   FontFamily="Montserrat"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Margin="10,0,0,0"/>
+
+            <Button BorderThickness="0"
+                Content="X"
+                Foreground="White"
+                FontSize="12"
+                FontFamily="Montserrat"
+                Cursor="Hand"
+                Grid.Column="1"
+                Command="{Binding CloseModalCommand}">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Black"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DimGray"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="18" Height="18"
+                            CornerRadius="9"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <StackPanel Width="320"
+                Grid.Row="1"
+                Orientation="Vertical">
+            <TextBlock Text="Add Credit"                  
+                   FontSize="25"                   
+                   FontWeight="Bold"
+                   FontFamily="Montserrat"
+                   HorizontalAlignment="Center"/>
+
+            <TextBlock Text="Credit Amount To Add"                   
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"                             
+                       Margin="0,10,0,0"/>
+            <TextBox Text="{Binding CreditAmount, StringFormat={}{0:C}, UpdateSourceTrigger=PropertyChanged}"
+                     FontSize="12"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     BorderThickness="0,0,0,2"     
+                     Height="28"
+                     VerticalContentAlignment="Center"
+                     Margin="0,5,0,10"
+                     PreviewTextInput="OnPreviewTextInput"
+                     TextChanged="OnTextChanged"/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="0 0 10 0">
+                    <TextBlock Text="Total Credit"                   
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"                             
+                       Margin="0,10,0,0"/>
+                    <TextBox HorizontalAlignment="Left"
+                      Width="150"
+                      FontSize="12"
+                      FontWeight="Medium"
+                      FontFamily="Montserrat"
+                      BorderThickness="0,0,0,2"     
+                      Height="28"
+                      VerticalContentAlignment="Center"
+                      Margin="0,5,0,0"
+                     IsReadOnly="True"
+                      Text="{Binding TotalCredit, Mode=OneWay, StringFormat={}{0:C}, UpdateSourceTrigger=PropertyChanged}"                   
+                      />
+                </StackPanel >
+                <StackPanel Orientation="Vertical" Margin="10 0 0 0">
+                    <TextBlock Text="Bid Balance"                   
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"                             
+                       Margin="0,10,0,0"/>
+                    <TextBox HorizontalAlignment="Right"
+                      Width="150"
+                      FontSize="12"
+                      FontWeight="Medium"
+                      FontFamily="Montserrat"
+                      BorderThickness="0,0,0,2"     
+                      Height="28"
+                      VerticalContentAlignment="Center"
+                      Margin="0,5,0,0"
+                      IsReadOnly="True"
+                      Text="{Binding BidBalance, Mode=OneWay, StringFormat={}{0:C}, UpdateSourceTrigger=PropertyChanged}"                   
+                      />
+                </StackPanel>
+            </StackPanel>
+            <TextBlock Text="Biddable Credit"                   
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"                             
+                       Margin="0,10,0,0"/>
+            <TextBox Text="{Binding BiddableCredit, Mode=OneWay, StringFormat={}{0:C}, UpdateSourceTrigger=PropertyChanged}"
+                     IsReadOnly="True"
+                     FontSize="12"
+                     Width="150"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     BorderThickness="0,0,0,2"     
+                     Height="28"
+                     HorizontalAlignment="Left"
+                     VerticalContentAlignment="Center"
+                     Margin="0,5,0,10"/>
+            <TextBlock Text="Note: Your bid balance is the sum of all your leading bids in ongoing auctions. You biddable credit at any given time is calculated by subtracting your total credit by you bid balance"
+                       TextWrapping="Wrap"
+                       FontSize="12"
+                       FontWeight="SemiBold"
+                       FontFamily="Montserrat"                             
+                       Margin="0,30,0,0"/>
+            <Button Command="{Binding AddCreditCommand}"
+                IsEnabled="{Binding CanAdd}"
+                BorderThickness="0"
+                Content="ADD"
+                Foreground="White"
+                FontSize="12"
+                FontFamily="Montserrat"
+                Cursor="Hand"                           
+                Margin="0,10,0,0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Black"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DimGray"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="Gray"/>
+                                <Setter Property="Foreground" Value="DarkGray"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" Height="40"
+                            CornerRadius="20"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

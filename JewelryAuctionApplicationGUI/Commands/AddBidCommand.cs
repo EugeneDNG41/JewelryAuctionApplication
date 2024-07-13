@@ -15,7 +15,7 @@ public class AddBidCommand : BaseCommand
     private readonly IBidService _bidService;
     private readonly AddBidViewModel _viewModel;
     private readonly AccountStore _accountStore;
-    private readonly ICommand _closeModalCommand;
+    private readonly INavigationService _navigationService;
     
     public AddBidCommand(AddBidViewModel addBidViewModel, 
         JewelryListingViewModel jewelryListing, 
@@ -26,7 +26,7 @@ public class AddBidCommand : BaseCommand
         _auctionService = auctionService;
         _bidService = bidService;
         _jewelryListing = jewelryListing;
-        _closeModalCommand = new NavigateCommand(closeModelNavigationService);
+        _navigationService = closeModelNavigationService;
         _viewModel = addBidViewModel;
         _accountStore = accountStore;
         
@@ -36,7 +36,7 @@ public class AddBidCommand : BaseCommand
     {
         if (_accountStore.CurrentAccount != null && _accountStore.IsUser)
         {   
-            Bid? highestBid = _bidService.GetHighestBid(_jewelryListing.LatestAuction.AuctionId);         
+            var highestBid = _bidService.GetHighestBid(_jewelryListing.LatestAuction.AuctionId);         
             if (highestBid != null && _viewModel.SelectedBidAmount < highestBid.BidAmount)
             {
                 MessageBox.Show("Bid amount must be higher than the current highest bid");
@@ -55,7 +55,7 @@ public class AddBidCommand : BaseCommand
             _jewelryListing.LatestAuction.CurrentPrice = bid.BidAmount;
             _auctionService.Update(_jewelryListing.LatestAuction);
             MessageBox.Show("Bid added successfully");
-            _closeModalCommand.Execute(null);
+            _navigationService.Navigate();
             return;
         } else
         {

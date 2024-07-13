@@ -18,7 +18,7 @@ public class HomeViewModel : BaseViewModel
 {
     private readonly IJewelryService _jewelryService;
     private readonly ObservableCollection<JewelryListingViewModel> _jewelries;  
-    public ICollectionView JewelryCollectionView { get; }
+    public ICollectionView JewelryCollectionView { get; private set; }
     private string _jewelryNameFilter = string.Empty;
     public string JewelryNameFilter
     {
@@ -82,7 +82,23 @@ public class HomeViewModel : BaseViewModel
         JewelryCollectionView = CollectionViewSource.GetDefaultView(_jewelries);
         JewelryCollectionView.Filter = FilterJewelryName;
         JewelryCollectionView.Filter = FilterJewelryCategory;
+        //InitializeJewelriesAsync(navigateJewelryPageService, auctionService, bidService);
     }
+    /*private async void InitializeJewelriesAsync(
+        ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService,
+        IAuctionService auctionService, IBidService bidService)
+    {
+        var jewelries = await _jewelryService.GetOnAuction();
+
+        foreach (var jewelry in jewelries)
+        {
+            _jewelries.Add(new JewelryListingViewModel(jewelry, navigateJewelryPageService, auctionService, bidService, _jewelryService));
+        }
+
+        JewelryCollectionView = CollectionViewSource.GetDefaultView(_jewelries);
+        JewelryCollectionView.Filter = FilterJewelryName;
+        JewelryCollectionView.Filter = FilterJewelryCategory;
+    }*/
 
     private bool FilterJewelryCategory(object obj)
     {
@@ -104,7 +120,7 @@ public class HomeViewModel : BaseViewModel
     {
         if (obj is JewelryListingViewModel jewelryListingViewModel)
         {
-            return jewelryListingViewModel.Jewelry.JewelryName.Contains(JewelryNameFilter, StringComparison.InvariantCultureIgnoreCase);
+            return jewelryListingViewModel.Jewelry.JewelryName.Contains(JewelryNameFilter);
         }
         else { return false; }
     }

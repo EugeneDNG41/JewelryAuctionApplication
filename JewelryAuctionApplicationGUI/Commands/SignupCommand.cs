@@ -54,6 +54,7 @@ public class SignupCommand : BaseCommand
             Password = _viewModel.Password,
             FullName = _viewModel.FullName,
             Role = Role.USER,
+            Credit = 0,
             Status = true
         };
         string result = _accountService.Register(account);

@@ -36,16 +36,12 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
                .HasMaxLength(100)
                .HasAnnotation("EmailAddress", true);
 
-        /*builder.Property(a => a.Birthday)
-                .HasConversion(dateOnlyConverter)
-                .HasColumnType("Date");*/
-
-        /*builder.Property(a => a.PhoneNumber)
-               .HasMaxLength(12);
-               //.HasAnnotation("RegularExpression", @"^[0-9]{8,12}$");*/
-
         builder.Property(a => a.Status)
                .IsRequired();
+
+        builder.Property(a => a.Credit)
+               .IsRequired()
+               .HasColumnType("decimal(18,2)");
 
         builder.Property(a => a.Role)
                .IsRequired()

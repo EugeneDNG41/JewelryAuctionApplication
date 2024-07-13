@@ -1,21 +1,38 @@
 ﻿using JewelryAuctionApplicationDAL.Context;
 using JewelryAuctionApplicationDAL.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace JewelryAuctionApplicationDAL.Repositories;
 
 public class AccountRepository : IAccountRepository
 {
     private readonly JewelryAuctionContext _context;
+
     public AccountRepository(JewelryAuctionContext context)
     {
         _context = context;
     }
-    public IEnumerable<Account> GetAll() => _context.Accounts;
-    
-    public Account? GetById(int id) => _context.Accounts.FirstOrDefault(a => a.AccountId == id);
-    public Account? GetByEmail(string email) => _context.Accounts.FirstOrDefault(a => a.Email == email);
-    //public Account? GetByPhoneNumber(string phone) => _context.Accounts.FirstOrDefault(a => a.PhoneNumber == phone);
-    public Account? GetByUsername(string username) => _context.Accounts.FirstOrDefault(a => a.Username == username);
+
+    public IEnumerable<Account> GetAll()
+    {
+        return _context.Accounts;
+    }
+
+    public Account? GetById(int id)
+    {
+        return _context.Accounts.FirstOrDefault(a => a.AccountId == id);
+    }
+
+    public Account? GetByEmail(string email)
+    {
+        return _context.Accounts.FirstOrDefault(a => a.Email == email);
+    }
+
+    public  Account? GetByUsername(string username)
+    {
+        return _context.Accounts.FirstOrDefault(a => a.Username == username);
+    }
+
     public void Add(Account account)
     {
         _context.Accounts.Add(account);
@@ -39,12 +56,16 @@ public class AccountRepository : IAccountRepository
         {
             existingAccount.Email = account.Email;
             existingAccount.Username = account.Username;
-            existingAccount.Email = existingAccount.Email;
+            existingAccount.Email = account.Email;
             existingAccount.Role = account.Role;
-            //existingAccount.Birthday = account.Birthday;
             existingAccount.Status = account.Status;
-            _context.Update(existingAccount);
+            _context.Accounts.Update(existingAccount);
             _context.SaveChanges();
         }
+    }
+
+    public IEnumerable<Account> GetByRole(Role role)
+    {
+        return _context.Accounts.Where(a => a.Role == role);
     }
 }

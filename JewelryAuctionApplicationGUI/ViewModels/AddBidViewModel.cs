@@ -1,5 +1,6 @@
 ﻿using JewelryAuctionApplicationBLL.Services;
 using JewelryAuctionApplicationBLL.Stores;
+using JewelryAuctionApplicationDAL.Models;
 using JewelryAuctionApplicationGUI.Commands;
 using JewelryAuctionApplicationGUI.Navigation;
 using System;
@@ -16,6 +17,12 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 
 public class AddBidViewModel : BaseViewModel
 {
+    private readonly AccountStore _accountStore;
+    private readonly IAuctionService _auctionService;
+    private readonly INavigationService _closeModalNavigationService;
+    private readonly INavigationService _addCreditNavigationService;
+    private readonly JewelryListingViewModel _jewelryListing;
+    private readonly IBidService _bidService;
     public ObservableCollection<decimal> BidAmounts { get; set; }
     private decimal _selectedBidAmount;
     public decimal SelectedBidAmount
@@ -27,20 +34,62 @@ public class AddBidViewModel : BaseViewModel
         set
         {
             _selectedBidAmount = value;
-            OnPropertyChanged(nameof(SelectedBidAmount));           
+            OnPropertyChanged(nameof(SelectedBidAmount));
+            OnPropertyChanged(nameof(InvalidCredit));
+            OnPropertyChanged(nameof(ButtonText));
+            OnPropertyChanged(nameof(InvalidCreditMessage));
+            UpdateButton();
         }
     }
-    public ICommand AddBidCommand { get; }
+    public bool InvalidCredit => SelectedBidAmount > BiddableCredit;
+    public string ButtonText => InvalidCredit ? "Add Credit" : "Add Bid";
+    public string InvalidCreditMessage => InvalidCredit? "Insufficient Credit" : "";
+    public decimal BiddableCredit
+    {
+        get
+        {
+            decimal biddableCredit = 0;
+            if (_accountStore.CurrentAccount != null)
+            {
+                biddableCredit = _accountStore.CurrentAccount.Credit - _bidService.GetCulmulativeBidAmountByAccountId(_accountStore.CurrentAccount.AccountId);
+                var currentHighestBid = _bidService.GetHighestBid(_jewelryListing.LatestAuction.AuctionId);
+                if (currentHighestBid != null && currentHighestBid.AccountId == _accountStore.CurrentAccount.AccountId)
+                {
+                    biddableCredit += currentHighestBid.BidAmount;
+                }
+            }
+            return biddableCredit;
+        }
+    }
+    public ICommand AddBidCommand { get; private set; }
     public ICommand CloseModalCommand { get; }
     public AddBidViewModel(JewelryListingViewModel jewelryListing, 
         IAuctionService auctionService, IBidService bidService, 
-        INavigationService closeModalNavigationService,
+        INavigationService closeModalNavigationService, INavigationService addCreditNavigationService,
         AccountStore accountStore)
     {
+        _jewelryListing = jewelryListing;
+        _auctionService = auctionService;
+        _bidService = bidService;
+        _accountStore = accountStore;
+        _closeModalNavigationService = closeModalNavigationService;
+        _addCreditNavigationService = addCreditNavigationService;
         BidAmounts = GenerateBidAmounts(jewelryListing.LatestAuction.CurrentPrice);
-        AddBidCommand = new AddBidCommand(this, jewelryListing, auctionService, bidService, closeModalNavigationService, accountStore);
-        CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
         _selectedBidAmount = BidAmounts[0];
+        CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
+        UpdateButton();
+    }
+    private void UpdateButton()
+    {
+        if (InvalidCredit)
+        {
+            AddBidCommand = new NavigateCommand(_addCreditNavigationService);
+        }
+        else
+        {
+            AddBidCommand = new AddBidCommand(this, _jewelryListing, _auctionService, _bidService, _closeModalNavigationService, _accountStore);
+        }
+        OnPropertyChanged(nameof(AddBidCommand));
     }
     private ObservableCollection<decimal> GenerateBidAmounts(decimal currentPrice)
     {

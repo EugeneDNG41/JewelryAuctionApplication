@@ -5,9 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -20,7 +17,7 @@ namespace JewelryAuctionApplicationGUI.Views
     /// <summary>
     /// Interaction logic for AddAuctionView.xaml
     /// </summary>
-    public partial class AddAuctionView : System.Windows.Controls.UserControl
+    public partial class AddAuctionView : UserControl
     {
         public AddAuctionView()
         {
@@ -32,8 +29,8 @@ namespace JewelryAuctionApplicationGUI.Views
         }
         private void OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-            if (string.IsNullOrEmpty(textBox.Text))
+            TextBox? textBox = sender as TextBox;
+            if (string.IsNullOrEmpty(textBox?.Text))
             {
                 textBox.Text = "0";
                 textBox.CaretIndex = 1; // Move caret to the end

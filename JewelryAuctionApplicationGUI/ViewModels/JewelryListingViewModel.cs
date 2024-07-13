@@ -51,8 +51,8 @@ public class JewelryListingViewModel : BaseViewModel
     }
     public ICommand NavigateJewelryPageCommand { get; }
     public IAuctionService AuctionService { get; }
-    public IBidService BidService { get; }
-    public IJewelryService JewelryService { get; }
+    private readonly IBidService _bidService;
+    private readonly IJewelryService _jewelryService;
 
     public JewelryListingViewModel(Jewelry jewelry,
         ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService,
@@ -60,11 +60,10 @@ public class JewelryListingViewModel : BaseViewModel
     {
         Jewelry = jewelry;
         AuctionService = auctionService;
-        BidService = bidService;
-        JewelryService = jewelryService;
+        _bidService = bidService;
+        _jewelryService = jewelryService;
         NavigateJewelryPageCommand = new NavigateJewelryPageCommand(this, navigateJewelryPageService);
     }
-
     private BitmapImage ByteArrayToBitmapImage(byte[] byteArray)
     {
         using (MemoryStream stream = new MemoryStream(byteArray))
@@ -81,7 +80,7 @@ public class JewelryListingViewModel : BaseViewModel
     {
         if (LatestAuction != null)
         {
-            var highestBid = BidService.GetHighestBid(LatestAuction.AuctionId);
+            var highestBid = _bidService.GetHighestBid(LatestAuction.AuctionId);
             LatestAuction.CurrentPrice = highestBid != null ? highestBid.BidAmount : LatestAuction.CurrentPrice;
             OnPropertyChanged(nameof(LatestAuction));
         }
