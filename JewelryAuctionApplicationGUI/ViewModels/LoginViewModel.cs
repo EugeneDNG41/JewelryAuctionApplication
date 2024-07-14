@@ -74,10 +74,6 @@ public class LoginViewModel : BaseViewModel, INotifyDataErrorInfo
     {
         LoginCommand = new LoginCommand(this, accountStore, loginNavigationService, accountService);       
         CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
-        
-        /*_username = string.Empty;
-        _password = string.Empty;
-        _errorMessage = string.Empty;*/
     }
     private readonly Dictionary<string, List<string>> _propertyErrors = new();
     public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;

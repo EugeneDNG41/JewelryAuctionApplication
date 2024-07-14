@@ -64,11 +64,36 @@
         Grid.Row="1"
         Orientation="Vertical">
             <TextBlock Text="Place your bid"                  
-           FontSize="25"                   
-           FontWeight="Bold"
-           FontFamily="Montserrat"
-           HorizontalAlignment="Center"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 40 0 0">
+                       FontSize="25"                   
+                       FontWeight="Bold"
+                       FontFamily="Montserrat"
+                       HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                <TextBlock Text="Biddable Credit: "                   
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montserrat"                             
+                           Margin="0,10,0,0"/>
+                <TextBox Text="{Binding BiddableCredit, Mode=OneWay, StringFormat={}{0:C}, UpdateSourceTrigger=PropertyChanged}"
+                         IsReadOnly="True"
+                         FontSize="12"
+                         Width="100"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"
+                         BorderThickness="0,0,0,2"     
+                         Height="28"
+                         HorizontalAlignment="Left"
+                         VerticalContentAlignment="Center"
+                         Margin="6,5,0,0"/>
+            </StackPanel>
+            <TextBlock Text="(*) your previous leading bid for this item is included"
+                       IsEnabled="True"
+                       TextWrapping="Wrap"
+                       FontSize="9"
+                       FontWeight="Regular"
+                       FontFamily="Montserrat"                             
+                       Margin="0,0,0,0"/>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 0" >
                 <TextBlock Text="Bid Amount: "                   
                            FontSize="12"
                            FontWeight="Medium"
@@ -82,14 +107,21 @@
                           BorderThickness="0,0,0,2"     
                           Height="28"
                           VerticalContentAlignment="Center"
-                          Margin="30,5,0,0"
+                          Margin="25,5,0,0"
                           ItemStringFormat="{}{0:C}"
                           IsEditable="False"
                           ItemsSource="{Binding Path=BidAmounts}"    
                           SelectedItem="{Binding Path=SelectedBidAmount}"
-                          SelectedIndex="0"
-                          />
+                          SelectedIndex="0"/>
             </StackPanel>
+            <TextBlock Text="{Binding InvalidCreditMessage, UpdateSourceTrigger=PropertyChanged}"
+                       FontFamily="Montserrat"
+                       FontWeight="Medium"
+                       FontSize="13"
+                       Foreground="Red"
+                       TextAlignment="Right"
+                       Margin="0 5 25 0"/>
+
             <TextBlock Text="Bid Increment Rule"
                        HorizontalAlignment="Left"
                        FontSize="18"
@@ -173,10 +205,10 @@
                            Grid.Column="1"
                            Grid.Row="9"/>
             </Grid>
-            
-            <Button Command="{Binding AddBidCommand}"
+
+            <Button Command="{Binding AddBidCommand, UpdateSourceTrigger=PropertyChanged}"
                     BorderThickness="0"
-                    Content="ADD"
+                    Content="{Binding ButtonText, UpdateSourceTrigger=PropertyChanged}"
                     Foreground="White"
                     FontSize="12"
                     FontFamily="Montserrat"

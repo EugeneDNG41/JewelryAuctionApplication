@@ -19,8 +19,8 @@ namespace JewelryAuctionApplicationGUI.Views
         }
         private void OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-            if (string.IsNullOrEmpty(textBox.Text))
+            TextBox? textBox = sender as TextBox;
+            if (string.IsNullOrEmpty(textBox?.Text))
             {
                 textBox.Text = "0";
                 textBox.CaretIndex = 1; // Move caret to the end

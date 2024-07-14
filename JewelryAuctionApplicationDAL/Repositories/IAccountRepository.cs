@@ -2,14 +2,14 @@
 
 namespace JewelryAuctionApplicationDAL.Repositories;
 
+
 public interface IAccountRepository
 {
-    IEnumerable<Account> GetAll();
-    Account? GetById(int id);
-    Account? GetByEmail(string email);
     Account? GetByUsername(string username);
-    //Account? GetByPhoneNumber(string phone);
-    void Add(Account acc);
-    void Update(Account acc);
-    void Delete(int id);
+    Account? GetByEmail(string email);
+    Account? GetById(int id);
+    void Add(Account account);
+    void Update(Account account);
+    IEnumerable<Account> GetAll();
+    IEnumerable<Account> GetByRole(Role role);
 }

@@ -64,5 +64,6 @@ public class AddJewelryCommand : BaseCommand
         };
         _jewelryService.Add(jewelry);
         MessageBox.Show("Jewelry added successfully!");
+        _navigationService.Navigate();
     }
 }

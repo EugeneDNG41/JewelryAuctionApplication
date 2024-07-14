@@ -10,22 +10,25 @@ public class MainViewModel : BaseViewModel
 {
     private readonly NavigationStore _navigationStore;
     private readonly ModalNavigationStore _modalNavigationStore;
+    private readonly IAccountService _accountService;
     private readonly IJewelryService _jewelryService;
     private readonly IAuctionService _auctionService;
-    private DispatcherTimer auctionTimer;
-
+    private readonly IBidService _bidService;
+    private Timer auctionTimer;
     public BaseViewModel? CurrentViewModel => _navigationStore.CurrentViewModel; //determine the the view for the application by going through datatemplate that maps view models to views
     public BaseViewModel? CurrentModalViewModel => _modalNavigationStore.CurrentViewModel;
     public bool IsOpen => _modalNavigationStore.IsOpen;
 
     public MainViewModel(NavigationStore navigationStore, ModalNavigationStore modalNavigationStore, 
-        IJewelryService jewelryService, IAuctionService auctionService)
+        IAccountService accountService, IJewelryService jewelryService, IAuctionService auctionService, IBidService bidService)
     {
         _navigationStore = navigationStore;
         _modalNavigationStore = modalNavigationStore;
+        _accountService = accountService;
         _jewelryService = jewelryService;
         _auctionService = auctionService;
-        InitializeAuctionTimer();
+        _bidService = bidService;
+        //InitializeAuctionTimer();
         _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         _modalNavigationStore.CurrentViewModelChanged += OnCurrentModalViewModelChanged;
     }
@@ -40,38 +43,34 @@ public class MainViewModel : BaseViewModel
         OnPropertyChanged(nameof(CurrentModalViewModel));
         OnPropertyChanged(nameof(IsOpen));
     }
-    private void InitializeAuctionTimer()
+    /*private void InitializeAuctionTimer()
     {
-        auctionTimer = new DispatcherTimer();
-        auctionTimer.Interval = TimeSpan.FromSeconds(1);
-        auctionTimer.Tick += Tick;
-        auctionTimer.Start();
+        auctionTimer = new Timer(async _ => await CheckAuctionsAsync(), null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
     }
-    private void Tick(object sender, EventArgs e)
+    private async Task CheckAuctionsAsync()
     {
-        //CheckAuctions();
-    }
-    private void CheckAuctions()
-    {
-        var auctions = _auctionService.GetAllLatest();
+        var auctions = await _auctionService.GetAllLatest();
         foreach (var auction in auctions)
         {
             if (auction.EndDate < DateTime.Now)
             {
-                var jewelry = _jewelryService.GetById(auction.JewelryId);
+                var jewelry = await _jewelryService.GetById(auction.JewelryId);
                 if (jewelry != null && jewelry.Status == JewelryStatus.ACTIVE)
                 {
                     if (auction.Bids.Count > 0)
                     {
-                        jewelry.Status = JewelryStatus.SOLD;                                             
+                        var highestBid = await _bidService.GetHighestBid(auction.AuctionId);
+                        highestBid.Account.Credit -= highestBid.BidAmount;
+                        await _accountService.Update(highestBid.Account);
+                        jewelry.Status = JewelryStatus.SOLD;
                     }
                     else
                     {
-                        jewelry.Status = JewelryStatus.READY;                       
+                        jewelry.Status = JewelryStatus.READY;
                     }
-                    _jewelryService.Update(jewelry);
+                    await _jewelryService.Update(jewelry);
                 }
             }
         }
-    }
+    }*/
 }

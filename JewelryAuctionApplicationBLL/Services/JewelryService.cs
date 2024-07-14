@@ -50,4 +50,12 @@ public class JewelryService : IJewelryService
     {
         return _jewelryRepository.GetByEndedAuction();
     }
+    public IEnumerable<(Jewelry Jewelry, Auction LatestAuction)> GetJewelriesWithOngoingAuctions()
+    {
+        return _jewelryRepository.GetJewelriesWithOngoingAuctions();
+    }
+    public IEnumerable<(Jewelry Jewelry, Auction LatestAuction)> GetJewelriesWithEndedAuctions()
+    {
+        return _jewelryRepository.GetJewelriesWithEndedAuctions();
+    }
 }

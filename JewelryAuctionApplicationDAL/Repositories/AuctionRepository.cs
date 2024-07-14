@@ -38,7 +38,7 @@ public class AuctionRepository : IAuctionRepository
     public Auction? GetById(int id) => _context.Auctions.Include(a => a.Bids).FirstOrDefault(a => a.AuctionId == id);
     public Auction? GetLatestByJewelryId(int jewelryId)
     {
-        return _context.Auctions.Include(a => a.Bids).Where(a => a.JewelryId == jewelryId).OrderByDescending(a => a.AuctionId).FirstOrDefault();
+        return _context.Auctions.Include(a => a.Bids).ThenInclude(b => b.Account).Where(a => a.JewelryId == jewelryId).OrderByDescending(a => a.AuctionId).FirstOrDefault();
     }
     public IEnumerable<Auction> GetAllLatest()
     {

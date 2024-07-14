@@ -46,6 +46,8 @@
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
         
         <TextBlock
@@ -98,8 +100,14 @@
             Command="{Binding NavigateSignupCommand}"
             Content="Sign up" 
             Foreground="Black"
-            Visibility="{Binding IsLoggedOut, Converter={StaticResource BooleanToVisibilityConverter}}"/>  
-
+            Visibility="{Binding IsLoggedOut, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <Button
+            Grid.Column="8"
+            Margin="10 0 0 0"
+            Command="{Binding NavigateAddCreditCommand}"
+            Content="Add Credit" 
+            Foreground="Black"
+            Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         <!--<Button
             Grid.Column="5"
             Margin="10 0 0 0"
@@ -109,11 +117,18 @@
             Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}" />-->
 
         <Button
-            Grid.Column="8"
+            Grid.Column="9"
             Margin="10 0 0 0"
             Command="{Binding NavigateLogoutCommand}"
             Content="Logout"
             Foreground="Black"
             Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <Button
+            Grid.Column="10"
+            Margin="10 0 0 0"
+            Command="{Binding NavigateStaffCommand}"
+            Content="Staff"
+            Foreground="Black"
+            />
     </Grid>
 </UserControl>

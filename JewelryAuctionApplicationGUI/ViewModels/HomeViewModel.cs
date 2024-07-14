@@ -17,8 +17,8 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 public class HomeViewModel : BaseViewModel
 {
     private readonly IJewelryService _jewelryService;
-    private readonly ObservableCollection<JewelryListingViewModel> _jewelries;  
-    public ICollectionView JewelryCollectionView { get; }
+    public ObservableCollection<JewelryListingViewModel> _jewelryListings { get; private set; } 
+    public ICollectionView JewelryCollectionView { get; private set; }
     private string _jewelryNameFilter = string.Empty;
     public string JewelryNameFilter
     {
@@ -71,17 +71,27 @@ public class HomeViewModel : BaseViewModel
     public ObservableCollection<string> SortOrder =>
         new ObservableCollection<string> { "Default", "Ascending", "Descending"};
     public HomeViewModel(
-        IJewelryService jewelryService, 
-        ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService,
-        IAuctionService auctionService, IBidService bidService
+        IJewelryService jewelryService,        
+        IAuctionService auctionService, IBidService bidService,
+        ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService
         )
     {        
         _jewelryService = jewelryService;
-        _jewelries = new ObservableCollection<JewelryListingViewModel>(
-            _jewelryService.GetOnAuction().Select(j => new JewelryListingViewModel(j, navigateJewelryPageService, auctionService, bidService, jewelryService)));
-        JewelryCollectionView = CollectionViewSource.GetDefaultView(_jewelries);
+        InitializeJewelryList(jewelryService, auctionService, bidService, navigateJewelryPageService);
+        JewelryCollectionView = CollectionViewSource.GetDefaultView(_jewelryListings);
         JewelryCollectionView.Filter = FilterJewelryName;
         JewelryCollectionView.Filter = FilterJewelryCategory;
+    }
+    private void InitializeJewelryList(
+        IJewelryService jewelryService, 
+        IAuctionService auctionService, 
+        IBidService bidService,
+        ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService)
+    {
+        _jewelryListings = new ObservableCollection<JewelryListingViewModel>(
+            _jewelryService.GetJewelriesWithOngoingAuctions()
+            .Select(j => new JewelryListingViewModel(j.Jewelry, j.LatestAuction, navigateJewelryPageService, auctionService, bidService, jewelryService)));
+        
     }
 
     private bool FilterJewelryCategory(object obj)
@@ -104,7 +114,7 @@ public class HomeViewModel : BaseViewModel
     {
         if (obj is JewelryListingViewModel jewelryListingViewModel)
         {
-            return jewelryListingViewModel.Jewelry.JewelryName.Contains(JewelryNameFilter, StringComparison.InvariantCultureIgnoreCase);
+            return jewelryListingViewModel.Jewelry.JewelryName.Contains(JewelryNameFilter);
         }
         else { return false; }
     }

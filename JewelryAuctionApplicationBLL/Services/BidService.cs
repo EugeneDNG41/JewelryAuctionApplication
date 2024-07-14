@@ -11,10 +11,12 @@ namespace JewelryAuctionApplicationBLL.Services;
 public class BidService : IBidService
 {
     private readonly IBidRepository _bidRepository;
+
     public BidService(IBidRepository bidRepository)
     {
         _bidRepository = bidRepository;
     }
+
     public void Add(Bid bid)
     {
         _bidRepository.AddBid(bid);
@@ -30,5 +32,10 @@ public class BidService : IBidService
     public IEnumerable<Bid> GetByAuctionId(int id)
     {
         return _bidRepository.GetByAuctionId(id);
+    }
+
+    public decimal GetCulmulativeBidAmountByAccountId(int accountId)
+    {
+        return _bidRepository.GetCulmulativeBidAmountByAccountId(accountId);
     }
 }

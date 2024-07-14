@@ -30,11 +30,33 @@ public class JewelryRepository : IJewelryRepository
     }
     public Jewelry? GetById(int id) => _context.Jewelries.FirstOrDefault(j => j.JewelryId == id);
     public IEnumerable<Jewelry> GetAll() => _context.Jewelries.Include(j => j.Auctions).ThenInclude(a => a.Bids);
-    public IEnumerable<Jewelry> GetByStatus(JewelryStatus status) => _context.Jewelries.Include(j => j.Auctions).Where(j => j.Status == status);
+    public IEnumerable<Jewelry> GetByStatus(JewelryStatus status) => _context.Jewelries.Include(j => j.Auctions).ThenInclude(a => a.Bids).Where(j => j.Status == status);
     public IEnumerable<Jewelry> GetForAuction()
     {
         var jewelries = GetByStatus(JewelryStatus.READY);
         return jewelries.Where(j => j.Auctions.IsNullOrEmpty() || j.Auctions.All(a => a.EndDate < DateTime.Now));
+    }
+    public IEnumerable<(Jewelry Jewelry, Auction LatestAuction)> GetJewelriesWithOngoingAuctions()
+    {
+        var jewelries = GetOnAuction()
+            .Select(j => new
+            {
+                Jewelry = j,
+                LatestAuction = j.Auctions.OrderByDescending(a => a.AuctionId).First()
+            });
+
+        return jewelries.Select(j => (j.Jewelry, j.LatestAuction));
+    }
+    public IEnumerable<(Jewelry Jewelry, Auction LatestAuction)> GetJewelriesWithEndedAuctions()
+    {
+        var jewelries = GetByEndedAuction()
+            .Select(j => new
+            {
+                Jewelry = j,
+                LatestAuction = j.Auctions.OrderByDescending(a => a.AuctionId).First()
+            });
+
+        return jewelries.Select(j => (j.Jewelry, j.LatestAuction));
     }
     public IEnumerable<Jewelry> GetOnAuction()
     {

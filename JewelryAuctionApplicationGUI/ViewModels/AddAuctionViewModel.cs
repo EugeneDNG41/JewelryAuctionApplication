@@ -14,6 +14,11 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 
 public class AddAuctionViewModel : BaseViewModel
 {
+    private readonly Dictionary<string, List<string>> _propertyErrors = new();
+    public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
+    private readonly IJewelryService _jewelryService;
+    public bool HasErrors => _propertyErrors.Any();
+    public bool CanClick => !HasErrors;
     private DateTime _endDate;
     public DateTime EndDate
     {
@@ -100,15 +105,18 @@ public class AddAuctionViewModel : BaseViewModel
         IJewelryService jewelryService,
         INavigationService closeModalNavigationService)
     {
-        Jewelries = new ObservableCollection<Jewelry>(jewelryService.GetForAuction());
+        _jewelryService = jewelryService;
         AddAuctionCommand = new AddAuctionCommand(this, auctionService, jewelryService);
         CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
         EndDate = DateTime.Now;
+        InitializeJewelries();
     }
-    private readonly Dictionary<string, List<string>> _propertyErrors = new();
-    public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
-    public bool HasErrors => _propertyErrors.Any();
-    public bool CanClick => !HasErrors;
+    private void InitializeJewelries()
+    {
+        var jewelries = _jewelryService.GetForAuction();
+        Jewelries = new ObservableCollection<Jewelry>(jewelries);
+    }
+    
     public IEnumerable GetErrors(string propertyName)
     {
         return _propertyErrors.GetValueOrDefault(propertyName, null);

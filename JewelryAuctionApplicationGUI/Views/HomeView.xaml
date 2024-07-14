@@ -7,7 +7,7 @@
              xmlns:components="clr-namespace:JewelryAuctionApplicationGUI.Components"
              mc:Ignorable="d" 
              Background="WhiteSmoke"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -18,7 +18,7 @@
             <TextBlock
             Grid.Row="0"
             FontSize="28"
-            Text="Jewelries" />
+            Text="Upcoming Auctions" />
             <StackPanel Margin="15 0 0 0">
                 <TextBlock Text="Search:"
                            Margin="0 0 0 5"/>

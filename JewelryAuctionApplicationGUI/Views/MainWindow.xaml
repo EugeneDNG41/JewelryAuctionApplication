@@ -8,7 +8,7 @@
         xmlns:resources="clr-namespace:JewelryAuctionApplicationGUI.Resources"
         xmlns:viewmodels="clr-namespace:JewelryAuctionApplicationGUI.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="900"
+        Title="MainWindow" Height="650" Width="1000"
         ResizeMode="NoResize">
 
     <Grid>
@@ -39,6 +39,12 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:PastAuctionsViewModel}">
                 <views:PastAuctionsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:AddCreditViewModel}">
+                <views:AddCreditView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:StaffJewelryManagementViewModel}">
+                <views:StaffJewelryManagementView/>
             </DataTemplate>
         </Grid.Resources>
         

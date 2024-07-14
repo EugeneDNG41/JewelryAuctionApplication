@@ -7,36 +7,37 @@ public class AccountService : IAccountService
 {
     private readonly IAccountRepository _accountRepository;
     private readonly IPasswordHasher _passwordHasher;
+
     public AccountService(IAccountRepository accountRepository, IPasswordHasher passwordHasher)
     {
         _accountRepository = accountRepository;
         _passwordHasher = passwordHasher;
     }
+
     public Account? Authenticate(string username, string password)
     {
-        var Account = _accountRepository.GetByUsername(username);
-        if (Account != null)
+        var account = _accountRepository.GetByUsername(username);
+        if (account != null && _passwordHasher.Verify(account.Password, password))
         {
-            var passCheck = _passwordHasher.Verify(Account.Password, password);
-            if (passCheck) { return Account; }
-            return Account;
-        } else
-        {
-            return null;
+            return account;
         }
+        return null;
     }
+
     public string Register(Account account)
     {
-        var existingEmail = _accountRepository.GetByEmail(account.Email);
+        var existingEmail =  _accountRepository.GetByEmail(account.Email);
         if (existingEmail != null)
         {
             return "EMAIL_TAKEN";
         }
+
         var existingUsername = _accountRepository.GetByUsername(account.Username);
         if (existingUsername != null)
         {
             return "USERNAME_TAKEN";
         }
+
         var hashPassword = _passwordHasher.Hash(account.Password);
         var newAccount = new Account
         {
@@ -47,44 +48,42 @@ public class AccountService : IAccountService
             Role = Role.USER,
             Status = true
         };
+
         _accountRepository.Add(newAccount);
         return "SUCCESS";
     }
 
-    public bool Deactivate(int id)
+    public void Deactivate(int id)
     {
         var account = _accountRepository.GetById(id);
         if (account != null)
         {
             account.Status = false;
             _accountRepository.Update(account);
-            return true;
-        }
-        else
-        {
-            return false;
         }
     }
 
-    public List<Account> GetAccounts()
+    public IEnumerable<Account> GetAll()
     {
-        throw new NotImplementedException();
+        return _accountRepository.GetAll();
     }
 
-    public List<Account> GetByRole(Role role)
+    public IEnumerable<Account> GetByRole(Role role)
     {
-        throw new NotImplementedException();
+        return _accountRepository.GetByRole(role);
     }
 
-    public List<Account> GetByUsername(string username)
+    public Account? GetByUsername(string username)
     {
-        throw new NotImplementedException();
+        return _accountRepository.GetByUsername(username);
     }
 
-    
-
-    public bool Update(Account account)
+    public void Update(Account account)
     {
-        throw new NotImplementedException();
+        _accountRepository.Update(account);
+    }
+    public Account? GetById(int id)
+    {
+        return _accountRepository.GetById(id);
     }
 }
