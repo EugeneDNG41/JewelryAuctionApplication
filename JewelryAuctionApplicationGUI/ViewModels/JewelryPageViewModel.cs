@@ -6,8 +6,6 @@ using JewelryAuctionApplicationGUI.Navigation;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using System.Windows.Threading;
-using Xceed.Wpf.Toolkit;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace JewelryAuctionApplicationGUI.ViewModels;
 
@@ -15,55 +13,14 @@ public class JewelryPageViewModel : BaseViewModel
 {
     private DispatcherTimer _auctionTimer;
     private readonly AccountStore _accountStore;
+    private readonly IAccountService _accountService;
     private readonly IBidService _bidService;
     private readonly ParameterNavigationService<JewelryListingViewModel, AddBidViewModel> _navigationAddBidCommand;
     private readonly INavigationService _loginNavigationService;
     private readonly Func<NavigationBarViewModel> _createNavigationBarViewModel;
     public JewelryListingViewModel JewelryListing { get; }
     public NavigationBarViewModel NavigationBarViewModel { get; private set; }
-    public ObservableCollection<Tuple<string, decimal, string, int>> BidHistory
-    {
-        get
-        {
-            var bids = JewelryListing.LatestAuction?.Bids.OrderByDescending(b => b.BidAmount);
-            if (bids == null)
-            {
-                return new ObservableCollection<Tuple<string, decimal, string, int>>();
-            } else
-            {
-                var bidHistory = new ObservableCollection<Tuple<string, decimal, string, int>>();
-                int i = 1;
-                foreach (var bid in bids)
-                {
-                    TimeSpan timeDifference = DateTime.Now.Subtract(bid.BidTime);
-                    string timeAgo;
-                    if (timeDifference.Days > 0)
-                    {
-                        timeAgo = $"{timeDifference.Days}d ago";
-                    }
-                    else if (timeDifference.Hours > 0)
-                    {
-                        timeAgo = $"{timeDifference.Hours}h ago";
-                    }
-                    else if (timeDifference.Minutes > 0)
-                    {
-                        timeAgo = $"{timeDifference.Minutes}m ago";
-                    }
-                    else
-                    {
-                        int seconds = Math.Max(0, (int)timeDifference.TotalSeconds);
-                        timeAgo = $"{timeDifference.Seconds}s ago";
-                    }
-                    bidHistory.Add(new Tuple<string, decimal, string, int>(bid.Account.Username, bid.BidAmount, timeAgo, i));
-                    i++;
-
-                }
-                
-                return bidHistory;
-            }
-        }
-    }
-
+    public ObservableCollection<Tuple<string, decimal, string, int>> BidHistory => GetBidHistory();
     public Account? Winner
     {
         get
@@ -89,43 +46,17 @@ public class JewelryPageViewModel : BaseViewModel
             OnPropertyChanged(nameof(TickingTimeLeft));
         }
     }
-    private string _bidBoxTitle;
-    public string BidBoxTitle
-    {
-        get
-        {
-            int bidCount = JewelryListing.LatestAuction?.Bids.Count ?? 0;
-            if (JewelryListing.LatestAuction?.EndDate < DateTime.Now && bidCount == 0)
-            {
-                _bidBoxTitle = "No bids";
-                return _bidBoxTitle;
-            }
-            else if (JewelryListing.LatestAuction?.EndDate < DateTime.Now && bidCount > 0)
-            {
-                _bidBoxTitle = $"Winning bid ({JewelryListing.BidNumber})";
-                return _bidBoxTitle;
-            }
-            else
-            {
-                _bidBoxTitle = bidCount > 0 ? $"Current Price ({JewelryListing.BidNumber})" : "Starting Price";
-                return _bidBoxTitle;
-            }
-        }
-        set
-        {
-            _bidBoxTitle = value;
-            OnPropertyChanged(nameof(BidBoxTitle));
-        }
-    }
+    public string BidBoxTitle => GetBidBoxTitle();
     public bool CanBid => JewelryListing.LatestAuction?.EndDate > DateTime.Now;
     public ICommand NavigateAddBidCommand { get; private set; }
     public JewelryPageViewModel(JewelryListingViewModel jewelryListing, 
-        IBidService bidService, Func<NavigationBarViewModel> navigationBarViewModel,
+        IAccountService accountService, IBidService bidService, Func<NavigationBarViewModel> navigationBarViewModel,
         ParameterNavigationService<JewelryListingViewModel, AddBidViewModel> navigateAddBidCommand,
         INavigationService loginNavigationService,
         AccountStore accountStore)
     {
         JewelryListing = jewelryListing;
+        _accountService = accountService;
         _bidService = bidService;
         _accountStore = accountStore;
         _navigationAddBidCommand = navigateAddBidCommand;
@@ -135,13 +66,64 @@ public class JewelryPageViewModel : BaseViewModel
         UpdateButtonAndNavBar();
         InitializeTimer();
     }
-    private void UpdateCurrentPrice()
+    private string GetBidBoxTitle()
     {
-        if (JewelryListing.LatestAuction != null)
+        int bidCount = JewelryListing.LatestAuction.Bids != null ? JewelryListing.LatestAuction.Bids.Count : 0;
+        if (JewelryListing.LatestAuction.EndDate < DateTime.Now && bidCount == 0)
         {
-            var highestBid = _bidService.GetHighestBid(JewelryListing.LatestAuction.AuctionId);
-            JewelryListing.LatestAuction.CurrentPrice = highestBid != null ? highestBid.BidAmount : JewelryListing.LatestAuction.CurrentPrice;
-            OnPropertyChanged(nameof(JewelryListing));
+            return "No bids";
+        }
+        else if (JewelryListing.LatestAuction.EndDate < DateTime.Now && bidCount > 0)
+        {
+            return $"Winning bid ({JewelryListing.BidNumber})";
+        }
+        else
+        {
+            return bidCount > 0 ? $"Current Price ({JewelryListing.BidNumber})" : "Starting Price";
+        }
+    }
+
+    private ObservableCollection<Tuple<string, decimal, string, int>> GetBidHistory()
+    {
+        var bids = JewelryListing.LatestAuction.Bids.OrderByDescending(b => b.BidAmount);
+        if (bids == null)
+        {
+            return new ObservableCollection<Tuple<string, decimal, string, int>>();
+        }
+        else
+        {
+            var bidHistory = new ObservableCollection<Tuple<string, decimal, string, int>>();
+            int i = 1;
+            foreach (var bid in bids)
+            {
+                TimeSpan timeDifference = DateTime.Now.Subtract(bid.BidTime);
+                string timeAgo;
+                if (timeDifference.Days > 0)
+                {
+                    timeAgo = $"{timeDifference.Days}d ago";
+                }
+                else if (timeDifference.Hours > 0)
+                {
+                    timeAgo = $"{timeDifference.Hours}h ago";
+                }
+                else if (timeDifference.Minutes > 0)
+                {
+                    timeAgo = $"{timeDifference.Minutes}m ago";
+                }
+                else
+                {
+                    int seconds = Math.Max(0, (int)timeDifference.TotalSeconds);
+                    timeAgo = $"{seconds}s ago";
+                }
+                var account = _accountService.GetById(bid.AccountId);
+                if (account != null)
+                {
+                    bidHistory.Add(new Tuple<string, decimal, string, int>(account.Username, bid.BidAmount, timeAgo, i));
+                    i++;
+                }
+                
+            }
+            return bidHistory;
         }
     }
     private void OnCurrentAccountChanged()
@@ -173,7 +155,7 @@ public class JewelryPageViewModel : BaseViewModel
     }
     private void AuctionTimer_Tick(object sender, EventArgs e)
     {
-        if (JewelryListing.LatestAuction?.EndDate > DateTime.Now)
+        if (JewelryListing.LatestAuction.EndDate > DateTime.Now)
         {
             TimeSpan timeDifference = JewelryListing.LatestAuction.EndDate.Subtract(DateTime.Now);
             TickingTimeLeft = $"Ends in {timeDifference.Days}d {timeDifference.Hours}h {timeDifference.Minutes}m {timeDifference.Seconds}s";

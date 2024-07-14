@@ -17,4 +17,6 @@ public interface IJewelryRepository
     IEnumerable<Jewelry> GetForAuction();
     IEnumerable<Jewelry> GetOnAuction();
     IEnumerable<Jewelry> GetByEndedAuction();
+    IEnumerable<(Jewelry Jewelry, Auction LatestAuction)> GetJewelriesWithOngoingAuctions();
+    IEnumerable<(Jewelry Jewelry, Auction LatestAuction)> GetJewelriesWithEndedAuctions();
 }

@@ -58,10 +58,10 @@ public class ServiceRegistration
     }
     private HomeViewModel CreateHomeViewModel(IServiceProvider serviceProvider)
     {
-        return new HomeViewModel(serviceProvider.GetRequiredService<IJewelryService>(),
-            CreateJewelryPageNavigationService(serviceProvider),
+        return new HomeViewModel(serviceProvider.GetRequiredService<IJewelryService>(),            
             serviceProvider.GetRequiredService<IAuctionService>(),
-            serviceProvider.GetRequiredService<IBidService>());
+            serviceProvider.GetRequiredService<IBidService>(),
+            CreateJewelryPageNavigationService(serviceProvider));
     }
     private PastAuctionsViewModel CreatePastAuctionsViewModel(IServiceProvider serviceProvider)
     {
@@ -74,7 +74,7 @@ public class ServiceRegistration
     {
         return new ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel>(
             serviceProvider.GetRequiredService<NavigationStore>(), null,
-            (parameter) => new JewelryPageViewModel(parameter, 
+            (parameter) => new JewelryPageViewModel(parameter, serviceProvider.GetRequiredService<IAccountService>(),
             serviceProvider.GetRequiredService<IBidService>(), 
             () => serviceProvider.GetRequiredService<NavigationBarViewModel>(),
             CreateAddBidNavigationService(serviceProvider),

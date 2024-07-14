@@ -52,8 +52,6 @@ public class AddBidCommand : BaseCommand
                 
             };
             _bidService.Add(bid);
-            _jewelryListing.LatestAuction.CurrentPrice = bid.BidAmount;
-            _auctionService.Update(_jewelryListing.LatestAuction);
             MessageBox.Show("Bid added successfully");
             _navigationService.Navigate();
             return;

@@ -15,55 +15,29 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 public class JewelryListingViewModel : BaseViewModel
 {
     public Jewelry Jewelry { get; }
-    public Auction? LatestAuction => AuctionService.GetLatestByJewelryId(Jewelry.JewelryId);
+    public Auction LatestAuction { get; private set; }
     public BitmapImage DisplayedImage => ByteArrayToBitmapImage(Jewelry.Image);
     
-    public string TimeLeft
-    {
-        get
-        {
-            if (LatestAuction.EndDate < DateTime.Now)
-            {
-                return "Ended";
-            } else
-            {
-                TimeSpan timeDifference = LatestAuction.EndDate.Subtract(DateTime.Now);
-                return $"Ends in {timeDifference.Days}d {timeDifference.Hours}h {timeDifference.Minutes}m";
-            }
-            
-        }
-
-    }
-    private string _bidNumber;
-    public string BidNumber
-    {
-        get
-        {
-            int bidCount = LatestAuction?.Bids.Count ?? 0;
-            _bidNumber = bidCount > 1 ? $"{bidCount} bids" : $"{bidCount} bid";
-            return _bidNumber;
-        }
-        set
-        {
-            _bidNumber = value;
-            OnPropertyChanged(nameof(BidNumber));
-        }
-    }
+    public string TimeLeft => ComputeTimeLeft();
+    public string BidNumber => ComputeBidNumber();
     public ICommand NavigateJewelryPageCommand { get; }
     public IAuctionService AuctionService { get; }
     private readonly IBidService _bidService;
     private readonly IJewelryService _jewelryService;
 
-    public JewelryListingViewModel(Jewelry jewelry,
+    public JewelryListingViewModel(Jewelry jewelry, Auction auction,
         ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService,
         IAuctionService auctionService, IBidService bidService, IJewelryService jewelryService)
     {
         Jewelry = jewelry;
+        LatestAuction = auction;
         AuctionService = auctionService;
         _bidService = bidService;
         _jewelryService = jewelryService;
         NavigateJewelryPageCommand = new NavigateJewelryPageCommand(this, navigateJewelryPageService);
+        UpdateCurrentPrice();
     }
+
     private BitmapImage ByteArrayToBitmapImage(byte[] byteArray)
     {
         using (MemoryStream stream = new MemoryStream(byteArray))
@@ -77,12 +51,36 @@ public class JewelryListingViewModel : BaseViewModel
         }
     }
     public void UpdateCurrentPrice()
-    {
-        if (LatestAuction != null)
+    { 
+        if (LatestAuction.Bids.Any())
         {
-            var highestBid = _bidService.GetHighestBid(LatestAuction.AuctionId);
-            LatestAuction.CurrentPrice = highestBid != null ? highestBid.BidAmount : LatestAuction.CurrentPrice;
+            LatestAuction.CurrentPrice = LatestAuction.Bids.Max(b => b.BidAmount);
             OnPropertyChanged(nameof(LatestAuction));
+        }
+    }
+    private string ComputeTimeLeft()
+    {
+        if (LatestAuction == null || LatestAuction.EndDate < DateTime.Now)
+        {
+            return "Ended";
+        }
+        else
+        {
+            TimeSpan timeDifference = LatestAuction.EndDate.Subtract(DateTime.Now);
+            return $"Ends in {timeDifference.Days}d {timeDifference.Hours}h {timeDifference.Minutes}m";
+        }
+    }
+
+    private string ComputeBidNumber()
+    {
+        if (LatestAuction == null || LatestAuction.Bids == null)
+        {
+            return "0 bids";
+        }
+        else
+        {
+            int bidCount = LatestAuction.Bids.Count;
+            return bidCount > 1 ? $"{bidCount} bids" : $"{bidCount} bid";
         }
     }
 }

@@ -82,4 +82,8 @@ public class AccountService : IAccountService
     {
         _accountRepository.Update(account);
     }
+    public Account? GetById(int id)
+    {
+        return _accountRepository.GetById(id);
+    }
 }

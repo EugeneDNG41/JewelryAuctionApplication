@@ -21,8 +21,8 @@ public class BidRepository : IBidRepository
 
     public void AddBid(Bid bid)
     {
-        _context.Bids.AddAsync(bid);
-        _context.SaveChangesAsync();
+        _context.Bids.Add(bid);
+        _context.SaveChanges();
         
     }
 
@@ -46,7 +46,7 @@ public class BidRepository : IBidRepository
     {
         var allBids = _context.Bids
                           .Include(b => b.Auction)
-                          .Where(b => b.AccountId == id && b.Auction.EndDate > DateTime.Now) // Assuming 'IsOngoing' is a property indicating the auction status
+                          .Where(b => b.AccountId == id && b.Auction.EndDate > DateTime.Now)
                           ;
 
         // Group bids by auction and select the highest bid in each group

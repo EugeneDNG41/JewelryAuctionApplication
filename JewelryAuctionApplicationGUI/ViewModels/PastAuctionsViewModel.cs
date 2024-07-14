@@ -16,7 +16,7 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 public class PastAuctionsViewModel : BaseViewModel
 {
     private readonly IJewelryService _jewelryService;
-    private readonly ObservableCollection<JewelryListingViewModel> _jewelries;
+    public ObservableCollection<JewelryListingViewModel> _jewelryListings { get; private set; } 
     public ICollectionView JewelryCollectionView { get; private set; }
     private string _jewelryNameFilter = string.Empty;
     public string JewelryNameFilter
@@ -76,28 +76,22 @@ public class PastAuctionsViewModel : BaseViewModel
         )
     {
         _jewelryService = jewelryService;
-        _jewelries = new ObservableCollection<JewelryListingViewModel>(
-            _jewelryService.GetByEndedAuction().Select(j => new JewelryListingViewModel(j, navigateJewelryPageService, auctionService, bidService, jewelryService)));
-        JewelryCollectionView = CollectionViewSource.GetDefaultView(_jewelries);
+        InitializeJewelryList(jewelryService, auctionService, bidService, navigateJewelryPageService);
+        JewelryCollectionView = CollectionViewSource.GetDefaultView(_jewelryListings);
         JewelryCollectionView.Filter = FilterJewelryName;
-        JewelryCollectionView.Filter = FilterJewelryCategory;
-        //InitializeJewelriesAsync(navigateJewelryPageService, auctionService, bidService);
+        JewelryCollectionView.Filter = FilterJewelryCategory;      
     }
-    /*private async void InitializeJewelriesAsync(
-        ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService,
-        IAuctionService auctionService, IBidService bidService)
+    private void InitializeJewelryList(
+        IJewelryService jewelryService,
+        IAuctionService auctionService,
+        IBidService bidService,
+        ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService
+        )
     {
-        var jewelries = await _jewelryService.GetOnAuction();
-
-        foreach (var jewelry in jewelries)
-        {
-            _jewelries.Add(new JewelryListingViewModel(jewelry, navigateJewelryPageService, auctionService, bidService, _jewelryService));
-        }
-
-        JewelryCollectionView = CollectionViewSource.GetDefaultView(_jewelries);
-        JewelryCollectionView.Filter = FilterJewelryName;
-        JewelryCollectionView.Filter = FilterJewelryCategory;
-    }*/
+        _jewelryListings = new ObservableCollection<JewelryListingViewModel>(
+            _jewelryService.GetJewelriesWithEndedAuctions()
+            .Select(j => new JewelryListingViewModel(j.Jewelry, j.LatestAuction, navigateJewelryPageService, auctionService, bidService, jewelryService)));
+    }
 
     private bool FilterJewelryCategory(object obj)
     {

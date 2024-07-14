@@ -16,5 +16,5 @@ public interface IAccountService
     IEnumerable<Account> GetAll();
     Account? GetByUsername(string username);
     IEnumerable<Account> GetByRole(Role role);
-
+    Account? GetById(int id);
 }
