@@ -3,35 +3,35 @@
   "WorkspaceRootPath": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\viewmodels\\staffjewelrymanagementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\viewmodels\\staffjewelrymanagementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\views\\staffjewelrymanagementview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\staffjewelrymanagementview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\staffjewelrymanagementview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\staffjewelrymanagementview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\viewmodels\\navigationbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\viewmodels\\navigationbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\components\\navigationbar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\components\\navigationbar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\viewmodels\\staffjewelrymanagementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\viewmodels\\staffjewelrymanagementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\viewmodels\\navigationbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\viewmodels\\navigationbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\jewelrypageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\views\\jewelrypageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\jewelrypageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -39,15 +39,15 @@
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\viewmodels\\jewelrypageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{190D05CF-E5A4-4AD7-BB42-04D5A773BD01}|JewelryAuctionApplicationDAL\\JewelryAuctionApplicationDAL.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationdal\\models\\jewelry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{190D05CF-E5A4-4AD7-BB42-04D5A773BD01}|JewelryAuctionApplicationDAL\\JewelryAuctionApplicationDAL.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationdal\\models\\jewelry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{190D05CF-E5A4-4AD7-BB42-04D5A773BD01}|JewelryAuctionApplicationDAL\\JewelryAuctionApplicationDAL.csproj|solutionrelative:jewelryauctionapplicationdal\\models\\jewelry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\signupview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\views\\signupview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\signupview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\commands\\deletejewelrycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\commands\\deletejewelrycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\commands\\deletejewelrycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -55,7 +55,7 @@
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\commands\\addjewelrycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\commands\\addbidcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\commands\\addbidcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\commands\\addbidcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -63,7 +63,7 @@
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\commands\\addcreditcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\viewmodels\\signupviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\viewmodels\\signupviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\viewmodels\\signupviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -71,11 +71,11 @@
       "RelativeMoniker": "D:0:0:{190D05CF-E5A4-4AD7-BB42-04D5A773BD01}|JewelryAuctionApplicationDAL\\JewelryAuctionApplicationDAL.csproj|solutionrelative:jewelryauctionapplicationdal\\repositories\\jewelryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\viewmodels\\jewelrylistingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\viewmodels\\jewelrylistingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\viewmodels\\jewelrylistingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\components\\jewelrycard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\components\\jewelrycard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\components\\jewelrycard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -83,35 +83,31 @@
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\viewmodels\\addjewelryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\staffjewelrymanagementview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\views\\staffjewelrymanagementview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\staffjewelrymanagementview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\addcreditview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\views\\addcreditview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\addcreditview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\addbidview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\views\\addbidview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\addbidview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\layoutview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\views\\layoutview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\layoutview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\Migrations\\20240714054739_initTrung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:JewelryAuctionApplicationDAL\\Migrations\\20240714054739_initTrung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationgui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationgui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{190D05CF-E5A4-4AD7-BB42-04D5A773BD01}|JewelryAuctionApplicationDAL\\JewelryAuctionApplicationDAL.csproj|e:\\fpt\\ki5\\prn212\\code\\jewelryauctionapplication\\jewelryauctionapplicationdal\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{190D05CF-E5A4-4AD7-BB42-04D5A773BD01}|JewelryAuctionApplicationDAL\\JewelryAuctionApplicationDAL.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\jewelryauctionapplicationdal\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{190D05CF-E5A4-4AD7-BB42-04D5A773BD01}|JewelryAuctionApplicationDAL\\JewelryAuctionApplicationDAL.csproj|solutionrelative:jewelryauctionapplicationdal\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -253,6 +249,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\obj\\Debug\\net6.0-windows\\Views\\MainWindow.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:JewelryAuctionApplicationGUI\\obj\\Debug\\net6.0-windows\\Views\\MainWindow.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{190D05CF-E5A4-4AD7-BB42-04D5A773BD01}|JewelryAuctionApplicationDAL\\JewelryAuctionApplicationDAL.csproj|E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\Migrations\\20240714054739_initTrung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{190D05CF-E5A4-4AD7-BB42-04D5A773BD01}|JewelryAuctionApplicationDAL\\JewelryAuctionApplicationDAL.csproj|solutionrelative:JewelryAuctionApplicationDAL\\Migrations\\20240714054739_initTrung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -315,19 +315,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StaffJewelryManagementViewModel.cs",
-              "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\StaffJewelryManagementViewModel.cs",
-              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\StaffJewelryManagementViewModel.cs",
-              "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\StaffJewelryManagementViewModel.cs",
-              "RelativeToolTip": "JewelryAuctionApplicationGUI\\ViewModels\\StaffJewelryManagementViewModel.cs",
-              "ViewState": "AQIAAFoAAAAAAAAAAAAuwGgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T06:46:55.543Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "StaffJewelryManagementView.xaml",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\StaffJewelryManagementView.xaml",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Views\\StaffJewelryManagementView.xaml",
@@ -339,54 +326,63 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "NavigationBar.xaml",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Components\\NavigationBar.xaml",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Components\\NavigationBar.xaml",
               "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Components\\NavigationBar.xaml",
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Components\\NavigationBar.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-14T05:44:28.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NavigationBarViewModel.cs",
+              "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\NavigationBarViewModel.cs",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\NavigationBarViewModel.cs",
+              "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\NavigationBarViewModel.cs",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\ViewModels\\NavigationBarViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T05:44:28.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeViewModel.cs",
+              "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\HomeViewModel.cs",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\HomeViewModel.cs",
+              "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\HomeViewModel.cs",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\ViewModels\\HomeViewModel.cs",
+              "ViewState": "AQIAAIIAAAAAAAAAAAAqwFUAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T05:44:28.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ServiceRegistration.cs",
+              "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ServiceRegistration.cs",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ServiceRegistration.cs",
+              "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ServiceRegistration.cs",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\ServiceRegistration.cs",
+              "ViewState": "AQIAAJYAAAAAAAAAAAA0wCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-14T05:44:28.892Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "NavigationBarViewModel.cs",
-              "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\NavigationBarViewModel.cs",
-              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\NavigationBarViewModel.cs",
-              "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\NavigationBarViewModel.cs",
-              "RelativeToolTip": "JewelryAuctionApplicationGUI\\ViewModels\\NavigationBarViewModel.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAgwDUAAAAUAAAA",
+              "Title": "StaffJewelryManagementViewModel.cs",
+              "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\StaffJewelryManagementViewModel.cs",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\StaffJewelryManagementViewModel.cs",
+              "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\StaffJewelryManagementViewModel.cs",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\ViewModels\\StaffJewelryManagementViewModel.cs",
+              "ViewState": "AQIAAKoAAAAAAAAAAAA3wGYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T05:44:28.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeViewModel.cs",
-              "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\HomeViewModel.cs",
-              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\HomeViewModel.cs",
-              "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\HomeViewModel.cs",
-              "RelativeToolTip": "JewelryAuctionApplicationGUI\\ViewModels\\HomeViewModel.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAwwFUAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T05:44:28.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ServiceRegistration.cs",
-              "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ServiceRegistration.cs",
-              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ServiceRegistration.cs",
-              "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ServiceRegistration.cs",
-              "RelativeToolTip": "JewelryAuctionApplicationGUI\\ServiceRegistration.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAewCEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T05:44:28.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T06:46:55.543Z"
             },
             {
               "$type": "Document",
@@ -397,8 +393,7 @@
               "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\JewelryPageView.xaml",
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Views\\JewelryPageView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T05:44:28.811Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T05:44:28.811Z"
             },
             {
               "$type": "Document",
@@ -409,8 +404,7 @@
               "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\MainWindow.xaml",
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Views\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T07:43:42.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T07:43:42.612Z"
             },
             {
               "$type": "Document",
@@ -422,8 +416,7 @@
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\ViewModels\\JewelryPageViewModel.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T05:44:28.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T05:44:28.874Z"
             },
             {
               "$type": "Document",
@@ -435,8 +428,7 @@
               "RelativeToolTip": "JewelryAuctionApplicationDAL\\Models\\Jewelry.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAAwCAAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T07:27:45.888Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T07:27:45.888Z"
             },
             {
               "$type": "Document",
@@ -447,8 +439,7 @@
               "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\SignupView.xaml",
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Views\\SignupView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T07:25:08.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T07:25:08.466Z"
             },
             {
               "$type": "Document",
@@ -460,8 +451,7 @@
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Commands\\DeleteJewelryCommand.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T07:13:21.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T07:13:21.325Z"
             },
             {
               "$type": "Document",
@@ -473,8 +463,7 @@
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Commands\\AddJewelryCommand.cs",
               "ViewState": "AQIAAB4AAAAAAAAAAAAYwEAAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T05:44:28.907Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T05:44:28.907Z"
             },
             {
               "$type": "Document",
@@ -486,8 +475,7 @@
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Commands\\AddBidCommand.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T07:17:28.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T07:17:28.584Z"
             },
             {
               "$type": "Document",
@@ -499,8 +487,7 @@
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Commands\\AddCreditCommand.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAIwB4AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T05:44:28.907Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T05:44:28.907Z"
             },
             {
               "$type": "Document",
@@ -512,8 +499,7 @@
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\ViewModels\\SignupViewModel.cs",
               "ViewState": "AQIAAGoAAAAAAAAAAAAkwIUAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T07:12:20.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T07:12:20.967Z"
             },
             {
               "$type": "Document",
@@ -525,8 +511,7 @@
               "RelativeToolTip": "JewelryAuctionApplicationDAL\\Repositories\\JewelryRepository.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAYwCwAAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T05:44:28.89Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T05:44:28.89Z"
             },
             {
               "$type": "Document",
@@ -538,8 +523,7 @@
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\ViewModels\\JewelryListingViewModel.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAzwCAAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T06:30:58.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T06:30:58.298Z"
             },
             {
               "$type": "Document",
@@ -550,8 +534,7 @@
               "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Components\\JewelryCard.xaml",
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Components\\JewelryCard.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T06:53:36.172Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T06:53:36.172Z"
             },
             {
               "$type": "Document",
@@ -563,8 +546,7 @@
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\ViewModels\\AddJewelryViewModel.cs",
               "ViewState": "AQIAAIgAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T05:44:28.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T05:44:28.903Z"
             },
             {
               "$type": "Document",
@@ -576,8 +558,7 @@
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Views\\StaffJewelryManagementView.xaml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T06:47:30.654Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T06:47:30.654Z"
             },
             {
               "$type": "Document",
@@ -588,8 +569,7 @@
               "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\AddCreditView.xaml",
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Views\\AddCreditView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T06:41:38.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T06:41:38.744Z"
             },
             {
               "$type": "Document",
@@ -600,8 +580,7 @@
               "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\AddBidView.xaml",
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Views\\AddBidView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T06:39:41.55Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T06:39:41.55Z"
             },
             {
               "$type": "Document",
@@ -612,8 +591,7 @@
               "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\HomeView.xaml",
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Views\\HomeView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T05:51:39.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T05:51:39.124Z"
             },
             {
               "$type": "Document",
@@ -624,12 +602,11 @@
               "ToolTip": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\LayoutView.xaml",
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\Views\\LayoutView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T05:52:13.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T05:52:13.899Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 25,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\appsettings.json",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\appsettings.json",
@@ -637,12 +614,11 @@
               "RelativeToolTip": "JewelryAuctionApplicationGUI\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-14T05:45:40.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T05:45:40.696Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 27,
               "Title": "BidRepository.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\Repositories\\BidRepository.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationDAL\\Repositories\\BidRepository.cs",
@@ -654,7 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 62,
               "Title": "20240714054739_initTrung.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\Migrations\\20240714054739_initTrung.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationDAL\\Migrations\\20240714054739_initTrung.cs",
@@ -662,12 +638,11 @@
               "RelativeToolTip": "JewelryAuctionApplicationDAL\\Migrations\\20240714054739_initTrung.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T05:47:39.586Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T05:47:39.586Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 39,
               "Title": "LoginCommand.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Commands\\LoginCommand.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Commands\\LoginCommand.cs",
@@ -679,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 38,
               "Title": "AddBidViewModel.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\AddBidViewModel.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\AddBidViewModel.cs",
@@ -691,7 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 41,
               "Title": "AddCreditViewModel.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\AddCreditViewModel.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\AddCreditViewModel.cs",
@@ -703,7 +678,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 40,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\LoginViewModel.cs",
@@ -715,7 +690,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 30,
               "Title": "BidService.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationBLL\\Services\\BidService.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationBLL\\Services\\BidService.cs",
@@ -727,7 +702,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 28,
               "Title": "AuctionService.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationBLL\\Services\\AuctionService.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationBLL\\Services\\AuctionService.cs",
@@ -739,7 +714,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 26,
               "Title": "Account.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\Models\\Account.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationDAL\\Models\\Account.cs",
@@ -747,12 +722,11 @@
               "RelativeToolTip": "JewelryAuctionApplicationDAL\\Models\\Account.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T05:44:42.012Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T05:44:42.012Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 31,
               "Title": "AuctionRepository.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\Repositories\\AuctionRepository.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationDAL\\Repositories\\AuctionRepository.cs",
@@ -764,7 +738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 34,
               "Title": "IAccountService.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationBLL\\Services\\IAccountService.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationBLL\\Services\\IAccountService.cs",
@@ -776,7 +750,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 33,
               "Title": "AccountService.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationBLL\\Services\\AccountService.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationBLL\\Services\\AccountService.cs",
@@ -788,7 +762,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 29,
               "Title": "MainViewModel.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\MainViewModel.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\MainViewModel.cs",
@@ -800,7 +774,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 32,
               "Title": "IJewelryRepository.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\Repositories\\IJewelryRepository.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationDAL\\Repositories\\IJewelryRepository.cs",
@@ -812,7 +786,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 35,
               "Title": "PastAuctionsViewModel.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\PastAuctionsViewModel.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\PastAuctionsViewModel.cs",
@@ -824,7 +798,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 36,
               "Title": "IJewelryService.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationBLL\\Services\\IJewelryService.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationBLL\\Services\\IJewelryService.cs",
@@ -836,7 +810,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 37,
               "Title": "IAuctionRepository.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\Repositories\\IAuctionRepository.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationDAL\\Repositories\\IAuctionRepository.cs",
@@ -848,7 +822,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 42,
               "Title": "LogoutCommand.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Commands\\LogoutCommand.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Commands\\LogoutCommand.cs",
@@ -860,7 +834,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 44,
               "Title": "NavigateCommand.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Commands\\NavigateCommand.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Commands\\NavigateCommand.cs",
@@ -872,7 +846,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 45,
               "Title": "NavigateJewelryPageCommand.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Commands\\NavigateJewelryPageCommand.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Commands\\NavigateJewelryPageCommand.cs",
@@ -884,7 +858,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 46,
               "Title": "SignupCommand.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Commands\\SignupCommand.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Commands\\SignupCommand.cs",
@@ -896,7 +870,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 43,
               "Title": "AddAuctionViewModel.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\AddAuctionViewModel.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\AddAuctionViewModel.cs",
@@ -908,7 +882,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 47,
               "Title": "UploadImageCommand.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Commands\\UploadImageCommand.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Commands\\UploadImageCommand.cs",
@@ -920,7 +894,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 48,
               "Title": "NavigateAddBidCommand.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Commands\\NavigateAddBidCommand.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Commands\\NavigateAddBidCommand.cs",
@@ -932,7 +906,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 50,
               "Title": "IBidService.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationBLL\\Services\\IBidService.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationBLL\\Services\\IBidService.cs",
@@ -944,7 +918,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 51,
               "Title": "IAuctionService.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationBLL\\Services\\IAuctionService.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationBLL\\Services\\IAuctionService.cs",
@@ -956,7 +930,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 49,
               "Title": "AddAuctionCommand.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Commands\\AddAuctionCommand.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Commands\\AddAuctionCommand.cs",
@@ -968,7 +942,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 53,
               "Title": "IBidRepository.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\Repositories\\IBidRepository.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationDAL\\Repositories\\IBidRepository.cs",
@@ -980,7 +954,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 52,
               "Title": "JewelryAuctionApplicationGUI.csproj",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj",
@@ -992,7 +966,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 54,
               "Title": "IAccountRepository.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\Repositories\\IAccountRepository.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationDAL\\Repositories\\IAccountRepository.cs",
@@ -1004,7 +978,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 56,
               "Title": "JewelryAuctionApplicationDAL.csproj",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\JewelryAuctionApplicationDAL.csproj",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationDAL\\JewelryAuctionApplicationDAL.csproj",
@@ -1016,7 +990,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 55,
               "Title": "AccountRepository.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\Repositories\\AccountRepository.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationDAL\\Repositories\\AccountRepository.cs",
@@ -1028,7 +1002,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 57,
               "Title": "JewelryAuctionContext.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationDAL\\Context\\JewelryAuctionContext.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationDAL\\Context\\JewelryAuctionContext.cs",
@@ -1040,7 +1014,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 58,
               "Title": "JewelryAuctionApplicationBLL.csproj",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationBLL\\JewelryAuctionApplicationBLL.csproj",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationBLL\\JewelryAuctionApplicationBLL.csproj",
@@ -1052,7 +1026,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 59,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\App.xaml.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\App.xaml.cs",
@@ -1064,7 +1038,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 60,
               "Title": "App.xaml",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\App.xaml",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\App.xaml",
@@ -1076,7 +1050,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 61,
               "Title": "MainWindow.g.cs",
               "DocumentMoniker": "E:\\FPT\\ki5\\PRN212\\code\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\obj\\Debug\\net6.0-windows\\Views\\MainWindow.g.cs",
               "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\obj\\Debug\\net6.0-windows\\Views\\MainWindow.g.cs",

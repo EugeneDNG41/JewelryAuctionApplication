@@ -78,12 +78,12 @@
                                     DisplayMemberBinding="{Binding Jewelry.Status}"/>
                     <GridViewColumn Header="Category" Width="auto"
                                     DisplayMemberBinding="{Binding Jewelry.JewelryCategory}"/>
-                    <!--<GridViewColumn Header="Latest Auction ID" Width="100"
+                    <GridViewColumn Header="Latest Auction ID" Width="100"
                                     DisplayMemberBinding="{Binding LatestAuction.AuctionId}"/>
                     <GridViewColumn Header="Deadline" Width="auto"
                                     DisplayMemberBinding="{Binding LatestAuction.EndDate}"/>
                     <GridViewColumn Header="Current Price" Width="auto"
-                                    DisplayMemberBinding="{Binding LatestAuction.CurrentPrice}"/>-->
+                                    DisplayMemberBinding="{Binding LatestAuction.CurrentPrice}"/>
                 </GridView>
             </ListView.View>
         </ListView>

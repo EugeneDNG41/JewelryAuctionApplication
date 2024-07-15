@@ -104,12 +104,12 @@ public class StaffJewelryManagementViewModel : BaseViewModel
     private void InitializeJewelryList(IJewelryService jewelryService)
     {
         var jewelries = jewelryService.GetAll();
-        jewelryList = new ObservableCollection<JewelryManagerViewModel>(jewelryService.GetAll().Select(j => new JewelryManagerViewModel(j , null)));
-        /*foreach (var jewelry in jewelries)
+        jewelryList = new ObservableCollection<JewelryManagerViewModel>();
+        foreach (var jewelry in jewelries)
         {
             if (jewelry.Auctions.Any())
             {
-                var latestAuction = jewelry.Auctions.OrderByDescending(a => a.AuctionId).First();
+                var latestAuction = jewelry.Auctions.OrderByDescending(a => a.EndDate).FirstOrDefault();
                 var jewelryManagerViewModel = new JewelryManagerViewModel(jewelry, latestAuction);
                 jewelryList.Add(jewelryManagerViewModel);
             }
@@ -118,11 +118,11 @@ public class StaffJewelryManagementViewModel : BaseViewModel
                 var jewelryManagerViewModel = new JewelryManagerViewModel(jewelry, null);
                 jewelryList.Add(jewelryManagerViewModel);
             }
-        }*/
+        }
     }
     private bool FilterJewelryCategory(object obj)
     {
-        if (obj is JewelryListingViewModel jewelryListingViewModel)
+        if (obj is JewelryManagerViewModel jewelryManager)
         {
             if (JewelryCategoryFilter == 0)
             {
@@ -130,7 +130,7 @@ public class StaffJewelryManagementViewModel : BaseViewModel
             }
             else
             {
-                return jewelryListingViewModel.Jewelry.JewelryCategory == (JewelryCategory)(JewelryCategoryFilter - 1);
+                return jewelryManager.Jewelry.JewelryCategory == (JewelryCategory)(JewelryCategoryFilter - 1);
             }
         }
         else { return false; }
@@ -138,9 +138,9 @@ public class StaffJewelryManagementViewModel : BaseViewModel
 
     private bool FilterJewelryName(object obj)
     {
-        if (obj is JewelryListingViewModel jewelryListingViewModel)
+        if (obj is JewelryManagerViewModel jewelryManager)
         {
-            return jewelryListingViewModel.Jewelry.JewelryName.Contains(JewelryNameFilter);
+            return jewelryManager.Jewelry.JewelryName.Contains(JewelryNameFilter);
         }
         else { return false; }
     }
