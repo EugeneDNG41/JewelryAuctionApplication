@@ -66,6 +66,6 @@ public class JewelryRepository : IJewelryRepository
     public IEnumerable<Jewelry> GetByEndedAuction()
     {
         var jewelries = GetAll();
-        return jewelries.Where(j => !j.Auctions.IsNullOrEmpty() && j.Auctions.All(a => a.EndDate < DateTime.Now));
+        return jewelries.Where(j => j.Status != JewelryStatus.DELETED && !j.Auctions.IsNullOrEmpty() && j.Auctions.All(a => a.EndDate < DateTime.Now));
     }
 }

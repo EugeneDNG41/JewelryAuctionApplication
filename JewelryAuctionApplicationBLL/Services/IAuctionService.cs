@@ -15,4 +15,5 @@ public interface IAuctionService
     Auction? GetById(int id);
     Auction? GetLatestByJewelryId(int id);
     IEnumerable<Auction> GetAllLatest();
+    IEnumerable<Auction> GetWonAuction(int accountId);
 }

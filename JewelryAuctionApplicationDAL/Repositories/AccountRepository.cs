@@ -15,7 +15,7 @@ public class AccountRepository : IAccountRepository
 
     public IEnumerable<Account> GetAll()
     {
-        return _context.Accounts;
+        return _context.Accounts.ToList();
     }
 
     public Account? GetById(int id)

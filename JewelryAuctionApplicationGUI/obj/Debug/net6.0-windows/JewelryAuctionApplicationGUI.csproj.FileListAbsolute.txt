@@ -268,3 +268,5 @@ C:\Users\LENOVO\Desktop\SUMMER2024\PRN212\JewelryAuctionApplication-Duy\JewelryA
 C:\Users\LENOVO\Desktop\SUMMER2024\PRN212\JewelryAuctionApplication-Duy\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\AddCreditView.baml
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\AddCreditView.g.cs
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\AddCreditView.baml
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\AccountManagementView.g.cs
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\AccountManagementView.baml

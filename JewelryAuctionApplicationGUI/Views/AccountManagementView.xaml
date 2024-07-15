@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="JewelryAuctionApplicationGUI.Views.AccountManagementView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JewelryAuctionApplicationGUI.Views"
+             mc:Ignorable="d" 
+             Background="WhiteSmoke"
+             d:DesignHeight="450" d:DesignWidth="1000">
+    <UserControl.Resources>
+        <Style x:Key="MyButtonContentStyle" TargetType="TextBlock">
+            <Style.Triggers>
+
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Foreground" Value="DimGray" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal"
+                    Margin="10">
+            <TextBlock
+                Grid.Row="0"
+                FontSize="28"
+                Text="Account Management" />
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Search by username"
+                   Margin="0 0 0 5"/>
+                <TextBox Width="auto"
+                 Text="{Binding UsernameFilter, UpdateSourceTrigger=PropertyChanged}"
+                 Height="20"/>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Search by name"
+                            Margin="0 0 0 5"/>
+                <TextBox Width="auto"
+                         Text="{Binding NameFilter, UpdateSourceTrigger=PropertyChanged}"
+                         Height="20"/>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Search by email"
+                           Margin="0 0 0 5"/>
+                <TextBox Width="auto"
+                         Text="{Binding EmailFilter, UpdateSourceTrigger=PropertyChanged}"
+                         Height="20"/>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Filter by role"
+                   Margin="0 0 0 5"/>
+                <ComboBox Width="80"
+                  ItemsSource="{Binding Roles}"                         
+                  IsSynchronizedWithCurrentItem="True"
+                  SelectedIndex="{Binding RoleFilter}"
+                  Height="20"/>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Sort by"
+                           Margin="0 0 0 5"/>
+                <ComboBox Width="80"
+                          ItemsSource="{Binding SortOptions}"                         
+                          IsSynchronizedWithCurrentItem="True"
+                          SelectedIndex="{Binding SelectedSortOption}"
+                          Height="20"/>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Order"
+                           Margin="0 0 0 5"/>
+                <ComboBox Width="100"
+                          ItemsSource="{Binding SortOrder}"                         
+                          IsSynchronizedWithCurrentItem="True"
+                          SelectedIndex="{Binding SelectedSortOrder}"
+                          Height="20"/>
+            </StackPanel>
+        </StackPanel>
+        <ListView ItemsSource="{Binding AccountCollectionView}" SelectedItem="{Binding SelectedAccount}"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  Grid.Row="1"
+                  Margin="20 10 20 20">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Acount ID" Width="auto" 
+                                    DisplayMemberBinding="{Binding AccountId}"/>
+                    <GridViewColumn Header="Username" Width="auto"
+                                    DisplayMemberBinding="{Binding Username}"/>
+                    <GridViewColumn Header="Full Name" Width="auto"
+                                    DisplayMemberBinding="{Binding FullName}"/>
+                    <GridViewColumn Header="Email" Width="auto"
+                                    DisplayMemberBinding="{Binding Email}"/>
+                    <GridViewColumn Header="Role" Width="auto"
+                                    DisplayMemberBinding="{Binding Role}"/>
+                    <GridViewColumn Header="Credit" Width="auto"
+                                    DisplayMemberBinding="{Binding Credit}"/>
+                    <GridViewColumn Header="Status" Width="auto"
+                                    DisplayMemberBinding="{Binding Status}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation="Horizontal"
+            Grid.Row="2"
+            HorizontalAlignment="Center">
+            <Button Command="{Binding NavigateAddAccountCommand}"
+            Height="24"
+            Width="90"
+            VerticalAlignment="Center"
+            Margin="0 5 10 0"
+            Foreground="White"
+            Background="Green"
+            Cursor="Hand"
+            >
+                <TextBlock Text="ADD NEW"
+                   FontWeight="Bold"
+                   Style="{StaticResource MyButtonContentStyle}"
+                   Margin="2"/>
+
+            </Button>
+
+            <Button Command="{Binding NavigateUpdateAccountCommand}"
+                    IsEnabled="{Binding CanClick, UpdateSourceTrigger=PropertyChanged}"
+                    Height="24"
+                    Width="90"
+                    VerticalAlignment="Center"
+                    Margin="60 5 10 0"
+                    Foreground="Black"
+                    Background="Yellow"
+                    Cursor="Hand">
+                <TextBlock Text="UPDATE"
+                           FontWeight="Bold"
+                           Style="{StaticResource MyButtonContentStyle}"
+                           Margin="2"/>
+
+            </Button>
+            <Button Command="{Binding DeleteAccountCommand}"
+            Height="24"
+            Width="90"
+            VerticalAlignment="Center"
+            Margin="60 5 10 0"
+            Foreground="White"
+            Background="Red"
+            Cursor="Hand"
+            IsEnabled="{Binding CanClick, UpdateSourceTrigger=PropertyChanged}">
+                <TextBlock Text="DELETE"
+                   FontWeight="Bold"
+                   Style="{StaticResource MyButtonContentStyle}"
+                   Margin="2"/>
+
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

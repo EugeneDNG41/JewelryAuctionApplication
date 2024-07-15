@@ -45,7 +45,7 @@ public class AccountService : IAccountService
             Email = account.Email,
             Password = hashPassword,
             FullName = account.FullName,
-            Role = Role.USER,
+            Role = account.Role,
             Status = true
         };
 

@@ -47,4 +47,9 @@ public class AuctionRepository : IAuctionRepository
                 .Select(g => g.OrderByDescending(a => a.AuctionId).First());
         return latestAuctions;
     }
+    public IEnumerable<Auction> GetWonAuction(int accountId)
+    {
+        return _context.Auctions.Include(a => a.Bids).
+            Where(a => a.EndDate < DateTime.Now && a.Bids.Any() && a.Bids.OrderByDescending(b => b.BidAmount).First().AccountId == accountId);
+    }
 }

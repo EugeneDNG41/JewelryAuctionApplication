@@ -25,7 +25,7 @@ public class AuctionConfiguration : IEntityTypeConfiguration<Auction>
 
         builder.Property(a => a.CurrentPrice)
                .IsRequired()
-               .HasColumnType("decimal(18,2)") // Specifies the decimal precision and scale
+               .HasColumnType("decimal(18)") // Specifies the decimal precision and scale
                .HasDefaultValue(0);
 
         builder.HasOne(a => a.Jewelry)

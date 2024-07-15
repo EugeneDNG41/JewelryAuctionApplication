@@ -41,5 +41,4 @@ public class Jewelry
     public JewelryStatus Status { get; set; }
     public byte[] Image { get; set; }
     public ICollection<Auction> Auctions { get; set; }
-    public ICollection<Request> Requests { get; set; }
 }

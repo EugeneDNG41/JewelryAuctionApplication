@@ -17,6 +17,8 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 public class HomeViewModel : BaseViewModel
 {
     private readonly IJewelryService _jewelryService;
+    private readonly IAccountService _accountService;
+    public ObservableCollection<Account> accounts => new ObservableCollection<Account>(_accountService.GetAll());
     public ObservableCollection<JewelryListingViewModel> _jewelryListings { get; private set; } 
     public ICollectionView JewelryCollectionView { get; private set; }
     private string _jewelryNameFilter = string.Empty;
@@ -91,15 +93,6 @@ public class HomeViewModel : BaseViewModel
         _jewelryListings = new ObservableCollection<JewelryListingViewModel>(
             _jewelryService.GetJewelriesWithOngoingAuctions()
             .Select(j => new JewelryListingViewModel(j.Jewelry, j.LatestAuction, navigateJewelryPageService, auctionService, bidService, jewelryService)));
-        /*_jewelryListings = new ObservableCollection<JewelryListingViewModel>();
-        foreach (var jewelry in _jewelryService.GetOnAuction())
-        {
-            var latestAuction = auctionService.GetLatestByJewelryId(jewelry.JewelryId);
-            if (latestAuction != null)
-            {
-                _jewelryListings.Add(new JewelryListingViewModel(jewelry, latestAuction, navigateJewelryPageService, auctionService, bidService, jewelryService));
-            }
-        }*/
     }
 
     private bool FilterJewelryCategory(object obj)

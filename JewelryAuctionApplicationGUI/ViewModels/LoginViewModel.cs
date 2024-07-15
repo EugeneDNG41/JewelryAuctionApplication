@@ -68,11 +68,11 @@ public class LoginViewModel : BaseViewModel, INotifyDataErrorInfo
     public ICommand LoginCommand { get; }
     public ICommand CloseModalCommand { get; }
     public LoginViewModel(AccountStore accountStore, 
-        INavigationService loginNavigationService, 
+        INavigationService accountManagementNavigationService, 
         IAccountService accountService,
         INavigationService closeModalNavigationService)
     {
-        LoginCommand = new LoginCommand(this, accountStore, loginNavigationService, accountService);       
+        LoginCommand = new LoginCommand(this, accountStore, accountManagementNavigationService, closeModalNavigationService, accountService);       
         CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
     }
     private readonly Dictionary<string, List<string>> _propertyErrors = new();
