@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using JewelryAuctionApplicationDAL.Context;
+using System;
 
 namespace JewelryAuctionApplicationGUI;
 
@@ -73,7 +74,15 @@ public class ServiceRegistration
     }
     private StaffJewelryManagementViewModel CreateStaffJewelryManagementViewModel(IServiceProvider serviceProvider)
     {
-        return new StaffJewelryManagementViewModel(serviceProvider.GetRequiredService<IJewelryService>()
+        return new StaffJewelryManagementViewModel(serviceProvider.GetRequiredService<IJewelryService>(), 
+            CreateAddJewelryNavigationService(serviceProvider), CreateViewDetailsNavigationService(serviceProvider)
+            );
+    }
+    private ParameterNavigationService<JewelryManagerViewModel, ViewDetailsViewModel> CreateViewDetailsNavigationService(IServiceProvider serviceProvider)
+    {
+        return new ParameterNavigationService<JewelryManagerViewModel, ViewDetailsViewModel>(
+            serviceProvider.GetRequiredService<NavigationStore>(), null,
+            (parameter) => new ViewDetailsViewModel(parameter, serviceProvider.GetRequiredService<IJewelryService>())
             );
     }
     private ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> CreateJewelryPageNavigationService(IServiceProvider serviceProvider)

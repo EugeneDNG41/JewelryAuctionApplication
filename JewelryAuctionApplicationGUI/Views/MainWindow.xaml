@@ -46,6 +46,9 @@
             <DataTemplate DataType="{x:Type viewmodels:StaffJewelryManagementViewModel}">
                 <views:StaffJewelryManagementView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ViewDetailsViewModel}">
+                <views:ViewDetailsView/>
+            </DataTemplate>
         </Grid.Resources>
         
         <resources:Modal  Panel.ZIndex="1" IsOpen="{Binding IsOpen}">

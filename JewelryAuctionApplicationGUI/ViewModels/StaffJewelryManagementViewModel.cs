@@ -73,6 +73,7 @@ public class StaffJewelryManagementViewModel : BaseViewModel
             _selectedJewelryAuctionPair = value ?? null;
             OnPropertyChanged(nameof(SelectedJewelryAuctionPair));
             OnPropertyChanged(nameof(CanClick));
+            OnPropertyChanged(nameof(NavigateViewDetailsCommand));
         }
     }
     public ObservableCollection<string> Categories =>
@@ -84,17 +85,20 @@ public class StaffJewelryManagementViewModel : BaseViewModel
     public ICommand NavigateViewDetailCommand { get; }
     public ICommand NavigateAddJewelryCommand { get; }
     public ICommand DeleteJewelryCommand { get; }
+    public ICommand NavigateViewDetailsCommand => new NavigateViewDetailsCommand(parameterNavigationService, SelectedJewelryAuctionPair);
+    public ParameterNavigationService<JewelryManagerViewModel, ViewDetailsViewModel> parameterNavigationService { get; }
     public bool CanClick => SelectedJewelryAuctionPair != null;
     private readonly IJewelryService _jewelryService;
 
-    public StaffJewelryManagementViewModel(IJewelryService jewelryService 
-        //INavigationService navigateViewDetailCommand,
-        //INavigationService navigateAddJewelryCommand
+    public StaffJewelryManagementViewModel(IJewelryService jewelryService,
+        INavigationService navigateAddJewelryCommand,
+        ParameterNavigationService<JewelryManagerViewModel, ViewDetailsViewModel> navigateViewDetailsService
         )
     {
         _jewelryService = jewelryService;
-        //NavigateViewDetailCommand = new NavigateCommand(navigateViewDetailCommand);
-        //NavigateAddJewelryCommand = new NavigateCommand(navigateAddJewelryCommand);
+        parameterNavigationService = navigateViewDetailsService;
+        //NavigateViewDetailsCommand = new NavigateViewDetailsCommand(navigateViewDetailsService, SelectedJewelryAuctionPair);
+        NavigateAddJewelryCommand = new NavigateCommand(navigateAddJewelryCommand);
         DeleteJewelryCommand = new DeleteJewelryCommand(this, jewelryService);
         InitializeJewelryList(jewelryService);
         JewelryCollectionView = CollectionViewSource.GetDefaultView(jewelryList);

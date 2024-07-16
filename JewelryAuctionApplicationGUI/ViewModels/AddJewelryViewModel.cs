@@ -52,6 +52,7 @@ public class AddJewelryViewModel : BaseViewModel
         {
             description = value;
             OnPropertyChanged(nameof(Description));
+
             ClearErrors(nameof(Description)); //clear previous error
 
             if (string.IsNullOrEmpty(Description)) //check for error

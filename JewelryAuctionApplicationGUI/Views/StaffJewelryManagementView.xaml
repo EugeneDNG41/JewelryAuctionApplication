@@ -67,6 +67,7 @@
             </StackPanel>
         </StackPanel>
         <ListView ItemsSource="{Binding JewelryCollectionView, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1"
+                  SelectedItem="{Binding SelectedJewelryAuctionPair, UpdateSourceTrigger=PropertyChanged}"
                   Margin="20 10 20 20">
             <ListView.View>
                 <GridView>
@@ -90,7 +91,7 @@
         <StackPanel Orientation="Horizontal"
                     Grid.Row="2"
                     HorizontalAlignment="Center">
-            <Button Command="{Binding NavigateViewDetailCommand}"
+            <Button Command="{Binding NavigateViewDetailsCommand}"
                     Height="24"
                     Width="90"
                     VerticalAlignment="Center"

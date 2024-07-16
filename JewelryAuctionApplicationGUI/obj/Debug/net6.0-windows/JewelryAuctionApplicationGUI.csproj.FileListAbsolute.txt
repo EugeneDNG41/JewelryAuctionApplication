@@ -405,3 +405,5 @@ E:\FPT\ki5\PRN212\code\JewelryAuctionApplication\JewelryAuctionApplicationGUI\ob
 E:\FPT\ki5\PRN212\code\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\ref\JewelryAuctionApplicationGUI.dll
 E:\FPT\ki5\PRN212\code\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\StaffJewelryManagementView.g.cs
 E:\FPT\ki5\PRN212\code\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\StaffJewelryManagementView.baml
+E:\FPT\ki5\PRN212\code\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\ViewDetailsView.g.cs
+E:\FPT\ki5\PRN212\code\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\ViewDetailsView.baml

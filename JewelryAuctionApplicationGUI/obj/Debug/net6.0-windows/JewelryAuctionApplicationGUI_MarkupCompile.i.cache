@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 E:\FPT\ki5\PRN212\code\JewelryAuctionApplication\JewelryAuctionApplicationGUI\App.xaml
-161361179490
+171176338636
 
-61558328768
+66892053910
 247-1515134719
-Components\BindablePasswordBox.xaml;Components\JewelryCard.xaml;Components\NavigationBar.xaml;Themes\Generic.xaml;Views\AddAuctionView.xaml;Views\AddBidView.xaml;Views\AddCreditView.xaml;Views\AddJewelryView.xaml;Views\HomeView.xaml;Views\JewelryPageView.xaml;Views\LayoutView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\PastAuctionsView.xaml;Views\SignupView.xaml;Views\StaffJewelryManagementView.xaml;
+Components\BindablePasswordBox.xaml;Components\JewelryCard.xaml;Components\NavigationBar.xaml;Themes\Generic.xaml;Views\AddAuctionView.xaml;Views\AddBidView.xaml;Views\AddCreditView.xaml;Views\AddJewelryView.xaml;Views\HomeView.xaml;Views\JewelryPageView.xaml;Views\LayoutView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\PastAuctionsView.xaml;Views\SignupView.xaml;Views\StaffJewelryManagementView.xaml;Views\ViewDetailsView.xaml;
 
 True
 
