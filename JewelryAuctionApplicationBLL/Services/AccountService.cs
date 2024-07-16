@@ -24,7 +24,7 @@ public class AccountService : IAccountService
         return null;
     }
 
-    public string Register(Account account)
+    public string Create(Account account)
     {
         var existingEmail =  _accountRepository.GetByEmail(account.Email);
         if (existingEmail != null)
@@ -39,17 +39,8 @@ public class AccountService : IAccountService
         }
 
         var hashPassword = _passwordHasher.Hash(account.Password);
-        var newAccount = new Account
-        {
-            Username = account.Username,
-            Email = account.Email,
-            Password = hashPassword,
-            FullName = account.FullName,
-            Role = account.Role,
-            Status = true
-        };
-
-        _accountRepository.Add(newAccount);
+        account.Password = hashPassword;
+        _accountRepository.Add(account);
         return "SUCCESS";
     }
 
@@ -80,6 +71,12 @@ public class AccountService : IAccountService
 
     public void Update(Account account)
     {
+        var thisAccount = _accountRepository.GetById(account.AccountId);
+        if (thisAccount != null && !_passwordHasher.Verify(thisAccount.Password, account.Password))
+        {
+            var hashPassword = _passwordHasher.Hash(account.Password);
+            account.Password = hashPassword;
+        }
         _accountRepository.Update(account);
     }
     public Account? GetById(int id)

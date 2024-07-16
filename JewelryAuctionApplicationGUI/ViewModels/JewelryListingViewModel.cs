@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
@@ -54,7 +55,16 @@ public class JewelryListingViewModel : BaseViewModel
     { 
         if (LatestAuction.Bids.Any())
         {
-            LatestAuction.CurrentPrice = LatestAuction.Bids.Max(b => b.BidAmount);
+            var bids = LatestAuction.Bids.OrderByDescending(b => b.BidAmount);
+            foreach (var bid in bids)
+            {
+                if (bid.Account.Status)
+                {
+                    LatestAuction.CurrentPrice = bid.BidAmount;
+                    break;
+                }
+                LatestAuction.CurrentPrice = LatestAuction.Jewelry.StartingPrice;
+            }
             OnPropertyChanged(nameof(LatestAuction));
         }
     }
@@ -79,7 +89,7 @@ public class JewelryListingViewModel : BaseViewModel
         }
         else
         {
-            int bidCount = LatestAuction.Bids.Count;
+            int bidCount = LatestAuction.Bids.Count(b => b.Account.Status);
             return bidCount > 1 ? $"{bidCount} bids" : $"{bidCount} bid";
         }
     }

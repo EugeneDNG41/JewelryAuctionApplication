@@ -42,17 +42,21 @@ public class LoginCommand : BaseCommand
             return;
         }
         Account? account = _accountService.Authenticate(_viewModel.Username, _viewModel.Password);
-        if (account != null)
+        if (account != null && account.Status)
         {  
             _accountStore.CurrentAccount = account;
             MessageBox.Show("Login successful!");
-            if (account.Role == Role.ADMIN)
+            if (_accountStore.IsAdmin || _accountStore.IsManager)
             {
                 _accountManagement.Navigate();
-            } else if (account.Role == Role.USER)
+            } else if (_accountStore.IsUser)
             {
                 _closeModal.Navigate();
             }
+        } else if (account != null && !account.Status)
+        {
+            _viewModel.ErrorMessage = "Account is deactivated!";
+            return;
         } else
         {
             _viewModel.ErrorMessage = "Invalid username or password!";

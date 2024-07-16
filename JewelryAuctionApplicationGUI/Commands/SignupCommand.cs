@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace JewelryAuctionApplicationGUI.Commands;
 
@@ -57,7 +58,7 @@ public class SignupCommand : BaseCommand
             Credit = 0,
             Status = true
         };
-        string result = _accountService.Register(account);
+        string result = _accountService.Create(account);
         switch (result)
         {
             case "USERNAME_TAKEN":
@@ -65,6 +66,7 @@ public class SignupCommand : BaseCommand
             case "EMAIL_TAKEN":
                 _viewModel.AddError("Email address already taken", nameof(_viewModel.Email)); return;           
             case "SUCCESS":
+                MessageBox.Show("Account created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _navigationService.Navigate();
                 break;                
         }

@@ -30,6 +30,10 @@ public class NavigationBarViewModel : BaseViewModel
 
     public bool IsLoggedIn => _accountStore.IsLoggedIn;
     public bool IsLoggedOut => !IsLoggedIn;
+    public bool IsAdmin => _accountStore.IsAdmin;
+    public bool IsUser => _accountStore.IsUser;
+    public bool IsStaff => _accountStore.IsStaff;
+    public bool IsManager => _accountStore.IsManager;
 
     public NavigationBarViewModel(AccountStore accountStore, 
         INavigationService homeNavigationService, 
@@ -41,13 +45,13 @@ public class NavigationBarViewModel : BaseViewModel
         INavigationService addCreditNavigationService)
     {
         _accountStore = accountStore;
-        NavigateHomeCommand = new NavigateCommand(homeNavigationService);
-        NavigateLoginCommand = new NavigateCommand(loginNavigationService);
-        NavigateSignupCommand = new NavigateCommand(signupNavigationService);
-        NavigateLogoutCommand = new LogoutCommand(_accountStore, homeNavigationService);
+        NavigateHomeCommand = new NavigateCommand(homeNavigationService); //switch functionality + text
+        NavigateLoginCommand = new NavigateCommand(loginNavigationService); //check
+        NavigateSignupCommand = new NavigateCommand(signupNavigationService); //check
+        NavigateLogoutCommand = new LogoutCommand(_accountStore, homeNavigationService); //check
         NavigateAddJewelryCommand = new NavigateCommand(addJewelryNavigationService);
         NavigateAddAuctionCommand = new NavigateCommand(addAuctionNavigationService);
-        NavigatePastAuctionCommand = new NavigateCommand(pastAuctionNavigationService);
+        NavigatePastAuctionCommand = new NavigateCommand(pastAuctionNavigationService); //switch functionality + text
         NavigateAddCreditCommand = new NavigateCommand(addCreditNavigationService);
 
         _accountStore.CurrentAccountChanged += OnCurrentAccountChanged;
@@ -57,6 +61,10 @@ public class NavigationBarViewModel : BaseViewModel
     {
         OnPropertyChanged(nameof(IsLoggedIn));
         OnPropertyChanged(nameof(IsLoggedOut));
+        OnPropertyChanged(nameof(IsAdmin));
+        OnPropertyChanged(nameof(IsUser));
+        OnPropertyChanged(nameof(IsStaff));
+        OnPropertyChanged(nameof(IsManager));
     }
 
     public override void Dispose()

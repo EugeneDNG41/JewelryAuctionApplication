@@ -33,28 +33,28 @@
             <StackPanel Margin="15 0 0 0">
                 <TextBlock Text="Search by username"
                    Margin="0 0 0 5"/>
-                <TextBox Width="auto"
-                 Text="{Binding UsernameFilter, UpdateSourceTrigger=PropertyChanged}"
-                 Height="20"/>
+                <TextBox Width="110"
+                         Text="{Binding UsernameFilter, UpdateSourceTrigger=PropertyChanged}"
+                         Height="20"/>
             </StackPanel>
             <StackPanel Margin="15 0 0 0">
                 <TextBlock Text="Search by name"
                             Margin="0 0 0 5"/>
-                <TextBox Width="auto"
+                <TextBox Width="110"
                          Text="{Binding NameFilter, UpdateSourceTrigger=PropertyChanged}"
                          Height="20"/>
             </StackPanel>
             <StackPanel Margin="15 0 0 0">
                 <TextBlock Text="Search by email"
                            Margin="0 0 0 5"/>
-                <TextBox Width="auto"
+                <TextBox Width="110"
                          Text="{Binding EmailFilter, UpdateSourceTrigger=PropertyChanged}"
                          Height="20"/>
             </StackPanel>
             <StackPanel Margin="15 0 0 0">
                 <TextBlock Text="Filter by role"
                    Margin="0 0 0 5"/>
-                <ComboBox Width="80"
+                <ComboBox Width="75"
                   ItemsSource="{Binding Roles}"                         
                   IsSynchronizedWithCurrentItem="True"
                   SelectedIndex="{Binding RoleFilter}"
@@ -63,7 +63,7 @@
             <StackPanel Margin="15 0 0 0">
                 <TextBlock Text="Sort by"
                            Margin="0 0 0 5"/>
-                <ComboBox Width="80"
+                <ComboBox Width="65"
                           ItemsSource="{Binding SortOptions}"                         
                           IsSynchronizedWithCurrentItem="True"
                           SelectedIndex="{Binding SelectedSortOption}"
@@ -72,7 +72,7 @@
             <StackPanel Margin="15 0 0 0">
                 <TextBlock Text="Order"
                            Margin="0 0 0 5"/>
-                <ComboBox Width="100"
+                <ComboBox Width="80"
                           ItemsSource="{Binding SortOrder}"                         
                           IsSynchronizedWithCurrentItem="True"
                           SelectedIndex="{Binding SelectedSortOrder}"
@@ -105,7 +105,7 @@
         <StackPanel Orientation="Horizontal"
             Grid.Row="2"
             HorizontalAlignment="Center">
-            <Button Command="{Binding NavigateAddAccountCommand}"
+            <Button Command="{Binding NavigateCreateAccountCommand}"
             Height="24"
             Width="90"
             VerticalAlignment="Center"
@@ -149,6 +149,21 @@
                    FontWeight="Bold"
                    Style="{StaticResource MyButtonContentStyle}"
                    Margin="2"/>
+
+            </Button>
+            <Button Command="{Binding ResetPasswordCommand}"
+                                    Height="24"
+                                    Width="auto"
+                                    VerticalAlignment="Center"
+                                    Margin="60 5 10 0"
+                                    Foreground="White"
+                                    Background="Blue"
+                                    Cursor="Hand"
+                                    IsEnabled="{Binding CanClick, UpdateSourceTrigger=PropertyChanged}">
+                <TextBlock Text="RESET PASSWORD"
+                           FontWeight="Bold"
+                           Style="{StaticResource MyButtonContentStyle}"
+                           Margin="2"/>
 
             </Button>
         </StackPanel>

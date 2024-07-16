@@ -1,5 +1,7 @@
 ﻿using JewelryAuctionApplicationBLL.Services;
 using JewelryAuctionApplicationDAL.Models;
+using JewelryAuctionApplicationGUI.Commands;
+using JewelryAuctionApplicationGUI.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using System.Windows.Input;
 
 namespace JewelryAuctionApplicationGUI.ViewModels;
 
@@ -92,6 +95,7 @@ public class AccountManagementViewModel : BaseViewModel
         {
             _selectedAccount = value ?? null;
             OnPropertyChanged(nameof(SelectedAccount));
+            OnPropertyChanged(nameof(CanClick));
         }
     }
     public ObservableCollection<string> Roles { get; private set; }
@@ -99,16 +103,20 @@ public class AccountManagementViewModel : BaseViewModel
         new ObservableCollection<string> { "All", "Username", "Name", "Email", "Credit" };
     public ObservableCollection<string> SortOrder =>
         new ObservableCollection<string> { "Default", "Ascending", "Descending" };
-    public AccountManagementViewModel(IAccountService accountService)
+    public ICommand DeleteAccountCommand { get; }
+    public ICommand NavigateCreateAccountCommand { get; }
+    public ICommand ResetPasswordCommand { get; }
+    public bool CanClick => SelectedAccount != null;
+    public AccountManagementViewModel(IAccountService accountService, INavigationService createAccountNavigationService)
     {
         _accountService = accountService;
         InitializeAccountList();
         GenerateRoleList();
         AccountCollectionView = CollectionViewSource.GetDefaultView(Accounts);
-        AccountCollectionView.Filter = AccountUsernameFilter;
-        AccountCollectionView.Filter = AccountNameFilter;
-        AccountCollectionView.Filter = AccountRoleFilter;
-        AccountCollectionView.Filter = AccountEmailFilter;
+        AccountCollectionView.Filter = AccountFilter;
+        DeleteAccountCommand = new DeleteAccountCommand(this, accountService);
+        NavigateCreateAccountCommand = new NavigateCommand(createAccountNavigationService);
+        ResetPasswordCommand = new ResetPasswordCommand(this, accountService);
     }
     private void InitializeAccountList()
     {
@@ -126,47 +134,18 @@ public class AccountManagementViewModel : BaseViewModel
             Roles.Add(roleString);
         }
     }
+    private bool AccountFilter(object obj)
+    {
+        if (obj is Account account)
+        {
+            bool roleMatch = RoleFilter == 0 || account.Role == (Role)(RoleFilter - 1);
+            bool nameMatch = string.IsNullOrEmpty(NameFilter) || account.FullName.Contains(NameFilter, StringComparison.InvariantCultureIgnoreCase);
+            bool usernameMatch = string.IsNullOrEmpty(UsernameFilter) || account.Username.Contains(UsernameFilter, StringComparison.InvariantCultureIgnoreCase);
+            bool emailMatch = string.IsNullOrEmpty(EmailFilter) || account.Email.Contains(EmailFilter, StringComparison.InvariantCultureIgnoreCase);
 
-    private bool AccountRoleFilter(object obj)
-    {
-        if (obj is Account account)
-        {
-            if (RoleFilter == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return account.Role == (Role)(RoleFilter - 1);
-            }
+            return roleMatch && nameMatch && usernameMatch && emailMatch;
         }
-        else { return false; }
-    }
-
-    private bool AccountNameFilter(object obj)
-    {
-        if (obj is Account account)
-        {
-            return account.FullName.Contains(NameFilter, StringComparison.InvariantCultureIgnoreCase);
-        }
-        else { return false; }
-    }
-
-    private bool AccountUsernameFilter(object obj)
-    {
-        if (obj is Account account)
-        {
-            return account.Username.Contains(UsernameFilter, StringComparison.InvariantCultureIgnoreCase);
-        }
-        else { return false; }
-    }
-    private bool AccountEmailFilter(object obj)
-    {
-        if (obj is Account account)
-        {
-            return account.Email.Contains(EmailFilter, StringComparison.InvariantCultureIgnoreCase);
-        }
-        else { return false; }
+        return false;
     }
 
     private void UpdateSorting()

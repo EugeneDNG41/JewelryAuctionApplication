@@ -46,6 +46,9 @@
             <DataTemplate DataType="{x:Type viewmodels:AccountManagementViewModel}">
                 <views:AccountManagementView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:CreateAccountViewModel}">
+                <views:CreateAccountView/>
+            </DataTemplate>
         </Grid.Resources>
         
         <resources:Modal  Panel.ZIndex="1" IsOpen="{Binding IsOpen}">

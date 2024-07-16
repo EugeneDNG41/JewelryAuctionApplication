@@ -5,6 +5,9 @@
     <Compile Update="Views\AccountManagementView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\CreateAccountView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="App.xaml">
@@ -35,6 +38,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\AddJewelryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CreateAccountView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\HomeView.xaml">

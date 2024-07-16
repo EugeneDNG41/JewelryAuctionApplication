@@ -42,6 +42,7 @@ public class ServiceRegistration
         services.AddTransient(CreatePastAuctionsViewModel);
         services.AddTransient(CreateAddCreditViewModel);
         services.AddTransient(CreateAccountManagementViewModel);
+        services.AddTransient(CreateCreateAccountViewModel);
 
         // Add DbContext with scoped lifetime
         var connectionString = Configuration.GetConnectionString("JewelryAuctionDatabase");
@@ -154,6 +155,12 @@ public class ServiceRegistration
             serviceProvider.GetRequiredService<ModalNavigationStore>(),
             () => serviceProvider.GetRequiredService<LoginViewModel>());
     }
+    private INavigationService CreateCreateAccountNavigationService(IServiceProvider serviceProvider)
+    {
+        return new ModalNavigationService<CreateAccountViewModel>(
+             serviceProvider.GetRequiredService<ModalNavigationStore>(),
+             () => serviceProvider.GetRequiredService<CreateAccountViewModel>());
+    }
     private INavigationService CreateAddAuctionNavigationService(IServiceProvider serviceProvider)
     {
         return new ModalNavigationService<AddAuctionViewModel>(
@@ -178,10 +185,16 @@ public class ServiceRegistration
             accountManagementNavigationService, serviceProvider.GetRequiredService<IAccountService>(),
             serviceProvider.GetRequiredService<CloseModalNavigationService>());
     }
+    private CreateAccountViewModel CreateCreateAccountViewModel(IServiceProvider serviceProvider)
+    {
+        return new CreateAccountViewModel(serviceProvider.GetRequiredService<IAccountService>(),
+            serviceProvider.GetRequiredService<CloseModalNavigationService>());
+    }
 
     private AccountManagementViewModel CreateAccountManagementViewModel(IServiceProvider serviceProvider)
     {
-        return new AccountManagementViewModel(serviceProvider.GetRequiredService<IAccountService>());
+        return new AccountManagementViewModel(serviceProvider.GetRequiredService<IAccountService>(),
+            CreateCreateAccountNavigationService(serviceProvider));
     }
     private SignupViewModel CreateSignupViewModel(IServiceProvider serviceProvider)
     {

@@ -270,3 +270,5 @@ D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\AddCreditView.baml
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\AccountManagementView.g.cs
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\AccountManagementView.baml
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\CreateAccountView.g.cs
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\CreateAccountView.baml
