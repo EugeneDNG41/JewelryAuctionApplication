@@ -71,12 +71,12 @@ public class AccountService : IAccountService
 
     public void Update(Account account)
     {
-        var thisAccount = _accountRepository.GetById(account.AccountId);
-        if (thisAccount != null && !_passwordHasher.Verify(thisAccount.Password, account.Password))
-        {
-            var hashPassword = _passwordHasher.Hash(account.Password);
-            account.Password = hashPassword;
-        }
+        _accountRepository.Update(account);
+    }
+    public void ResetPassword(Account account)
+    {
+        var hashPassword = _passwordHasher.Hash("123");
+        account.Password = hashPassword;
         _accountRepository.Update(account);
     }
     public Account? GetById(int id)
