@@ -21,21 +21,6 @@ public class JewelryPageViewModel : BaseViewModel
     public JewelryListingViewModel JewelryListing { get; }
     public NavigationBarViewModel NavigationBarViewModel { get; private set; }
     public ObservableCollection<Tuple<string, decimal, string, int>> BidHistory => GetBidHistory();
-    public Account? Winner
-    {
-        get
-        {
-            var highestBid = _bidService.GetHighestBid(JewelryListing.LatestAuction.AuctionId);
-            if (JewelryListing.LatestAuction?.EndDate < DateTime.Now && highestBid != null)
-            {
-                return highestBid.Account;
-            }
-            else
-            {
-                return null;
-            }
-        }
-    }
     private string _tickingTimeLeft;
     public string TickingTimeLeft
     {
@@ -168,7 +153,6 @@ public class JewelryPageViewModel : BaseViewModel
         {
             TickingTimeLeft = "Ended";
             _auctionTimer.Stop();
-            OnPropertyChanged(nameof(Winner));
             OnPropertyChanged(nameof(BidBoxTitle));
             OnPropertyChanged(nameof(CanBid));
         }
@@ -178,6 +162,15 @@ public class JewelryPageViewModel : BaseViewModel
             _auctionTimer.Stop();
         }
     }
+    //private void UpdateWinner()
+    //{
+    //    JewelryListing.UpdateCurrentPrice();
+    //    if (JewelryListing.LatestAuction.EndDate < DateTime.Now 
+    //        && JewelryListing.Jewelry.StartingPrice != JewelryListing.LatestAuction.CurrentPrice)
+    //    {
+    //        OnPropertyChanged(nameof(Winner));
+    //    }
+    //}
     public override void Dispose()
     {
         _accountStore.CurrentAccountChanged -= OnCurrentAccountChanged;

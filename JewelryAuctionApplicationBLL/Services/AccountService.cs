@@ -14,16 +14,38 @@ public class AccountService : IAccountService
         _passwordHasher = passwordHasher;
     }
 
-    public Account? Authenticate(string username, string password)
+    public async Task<Account?> Authenticate(string username, string password)
     {
-        var account = _accountRepository.GetByUsername(username);
+        var account = await _accountRepository.GetByUsername(username);
         if (account != null && _passwordHasher.Verify(account.Password, password))
         {
             return account;
         }
         return null;
     }
-
+    public void CreateAdmin()
+    {
+        if (!_accountRepository.GetByRole(Role.ADMIN).Any())
+        {
+            var admin = new Account
+            {
+                Username = "admin",
+                Password = _passwordHasher.Hash("admin"),
+                Email = "admin@admin.com",
+                FullName = "Admin",
+                Credit = 0,
+                Role = Role.ADMIN,
+                Status = true
+            };
+            _accountRepository.Add(admin);
+        }
+    }
+    public void ChangePassword(Account account, string newPassword)
+    {
+        var hashPassword = _passwordHasher.Hash(newPassword);
+        account.Password = hashPassword;
+        _accountRepository.Update(account);
+    }
     public string Create(Account account)
     {
         var existingEmail =  _accountRepository.GetByEmail(account.Email);
@@ -64,9 +86,9 @@ public class AccountService : IAccountService
         return _accountRepository.GetByRole(role);
     }
 
-    public Account? GetByUsername(string username)
+    public async Task<Account?>? GetByUsername(string username)
     {
-        return _accountRepository.GetByUsername(username);
+        return await _accountRepository.GetByUsername(username);
     }
 
     public void Update(Account account)
@@ -82,5 +104,9 @@ public class AccountService : IAccountService
     public Account? GetById(int id)
     {
         return _accountRepository.GetById(id);
+    }
+    public async Task UpdateAsync(Account account)
+    {
+        await _accountRepository.UpdateAsync(account);
     }
 }

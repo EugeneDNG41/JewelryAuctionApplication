@@ -27,6 +27,11 @@ public class AuctionRepository : IAuctionRepository
         _context.Auctions.Update(auction);
         _context.SaveChanges();
     }
+    public async Task UpdateAsync(Auction auction)
+    {
+        _context.Auctions.Update(auction);
+        await _context.SaveChangesAsync();
+    }
     public IEnumerable<Auction> GetByJewelryId(int jewelryId)
     {
         return _context.Auctions.Where(a => a.JewelryId == jewelryId);
@@ -40,11 +45,11 @@ public class AuctionRepository : IAuctionRepository
     {
         return _context.Auctions.Include(a => a.Bids).ThenInclude(b => b.Account).Where(a => a.JewelryId == jewelryId).OrderByDescending(a => a.AuctionId).FirstOrDefault();
     }
-    public IEnumerable<Auction> GetAllLatest()
+    public async Task<IEnumerable<Auction>> GetAllLatest()
     {
-        var latestAuctions = _context.Auctions.Include(a => a.Bids)
+        var latestAuctions = await _context.Auctions.Include(a => a.Jewelry).Include(a => a.Bids).ThenInclude(b => b.Account)
                 .GroupBy(a => a.JewelryId)
-                .Select(g => g.OrderByDescending(a => a.AuctionId).First());
+                .Select(g => g.OrderByDescending(a => a.AuctionId).First()).ToListAsync();
         return latestAuctions;
     }
     public IEnumerable<Auction> GetWonAuction(int accountId)

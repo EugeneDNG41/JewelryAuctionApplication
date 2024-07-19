@@ -68,4 +68,9 @@ public class JewelryRepository : IJewelryRepository
         var jewelries = GetAll();
         return jewelries.Where(j => j.Status != JewelryStatus.DELETED && !j.Auctions.IsNullOrEmpty() && j.Auctions.All(a => a.EndDate < DateTime.Now));
     }
+    public async Task UpdateAsync(Jewelry jewelry)
+    {
+        _context.Update(jewelry);
+        await _context.SaveChangesAsync();
+    }
 }

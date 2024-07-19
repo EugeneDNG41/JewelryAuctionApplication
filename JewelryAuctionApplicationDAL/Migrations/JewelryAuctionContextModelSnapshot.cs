@@ -72,6 +72,9 @@ namespace JewelryAuctionApplicationDAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AuctionId"));
 
+                    b.Property<int?>("AccountId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("CurrentPrice")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("decimal(18)")
@@ -84,6 +87,8 @@ namespace JewelryAuctionApplicationDAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("AuctionId");
+
+                    b.HasIndex("AccountId");
 
                     b.HasIndex("JewelryId");
 
@@ -159,11 +164,17 @@ namespace JewelryAuctionApplicationDAL.Migrations
 
             modelBuilder.Entity("JewelryAuctionApplicationDAL.Models.Auction", b =>
                 {
+                    b.HasOne("JewelryAuctionApplicationDAL.Models.Account", "Account")
+                        .WithMany("Auctions")
+                        .HasForeignKey("AccountId");
+
                     b.HasOne("JewelryAuctionApplicationDAL.Models.Jewelry", "Jewelry")
                         .WithMany("Auctions")
                         .HasForeignKey("JewelryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Account");
 
                     b.Navigation("Jewelry");
                 });
@@ -189,6 +200,8 @@ namespace JewelryAuctionApplicationDAL.Migrations
 
             modelBuilder.Entity("JewelryAuctionApplicationDAL.Models.Account", b =>
                 {
+                    b.Navigation("Auctions");
+
                     b.Navigation("Bids");
                 });
 

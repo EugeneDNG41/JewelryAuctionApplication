@@ -58,4 +58,8 @@ public class JewelryService : IJewelryService
     {
         return _jewelryRepository.GetJewelriesWithEndedAuctions();
     }
+    public async Task UpdateAsync(Jewelry jewelry)
+    {
+        await _jewelryRepository.UpdateAsync(jewelry);
+    }
 }

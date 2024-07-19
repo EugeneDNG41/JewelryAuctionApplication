@@ -31,6 +31,6 @@ public class JewelryAuctionContext : DbContext
         modelBuilder.ApplyConfiguration(new AuctionConfiguration());
         modelBuilder.ApplyConfiguration(new BidConfiguration());
         modelBuilder.ApplyConfiguration(new JewelryConfiguration());       
-        // Apply other configurations if necessary      
+        // Apply other configurations if necessary
     }
 }

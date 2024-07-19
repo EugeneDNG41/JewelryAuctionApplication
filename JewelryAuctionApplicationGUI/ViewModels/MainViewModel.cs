@@ -28,7 +28,8 @@ public class MainViewModel : BaseViewModel
         _jewelryService = jewelryService;
         _auctionService = auctionService;
         _bidService = bidService;
-        //InitializeAuctionTimer();
+        _accountService.CreateAdmin();
+        InitializeAuctionTimer();
         _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         _modalNavigationStore.CurrentViewModelChanged += OnCurrentModalViewModelChanged;
     }
@@ -37,13 +38,12 @@ public class MainViewModel : BaseViewModel
     {
         OnPropertyChanged(nameof(CurrentViewModel)); //raise property change
     }
-
     private void OnCurrentModalViewModelChanged()
     {
         OnPropertyChanged(nameof(CurrentModalViewModel));
         OnPropertyChanged(nameof(IsOpen));
     }
-    /*private void InitializeAuctionTimer()
+    private void InitializeAuctionTimer()
     {
         auctionTimer = new Timer(async _ => await CheckAuctionsAsync(), null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
     }
@@ -52,25 +52,45 @@ public class MainViewModel : BaseViewModel
         var auctions = await _auctionService.GetAllLatest();
         foreach (var auction in auctions)
         {
-            if (auction.EndDate < DateTime.Now)
+            if (auction.EndDate < DateTime.Now) //check when auction has ended
             {
-                var jewelry = await _jewelryService.GetById(auction.JewelryId);
-                if (jewelry != null && jewelry.Status == JewelryStatus.ACTIVE)
+                var jewelry = auction.Jewelry;
+                if (jewelry != null && jewelry.Status == JewelryStatus.ACTIVE) //but only when jewelry still active = not yet finalized post-auction
                 {
-                    if (auction.Bids.Count > 0)
+                    if (auction.Bids.Any())
                     {
-                        var highestBid = await _bidService.GetHighestBid(auction.AuctionId);
-                        highestBid.Account.Credit -= highestBid.BidAmount;
-                        await _accountService.Update(highestBid.Account);
-                        jewelry.Status = JewelryStatus.SOLD;
+                        var bids = auction.Bids.OrderByDescending(b => b.BidAmount);
+                        var winner = new Account();
+                        foreach (var bid in bids)
+                        {
+                            if (bid.Account.Status)
+                            {
+                                auction.CurrentPrice = bid.BidAmount;
+                                winner = bid.Account;
+                                break;
+                            }
+                            auction.CurrentPrice = auction.Jewelry.StartingPrice;
+                        }
+                        if (auction.CurrentPrice == jewelry.StartingPrice)
+                        {
+                            jewelry.Status = JewelryStatus.READY;
+                        }
+                        else
+                        {
+                            jewelry.Status = JewelryStatus.SOLD;
+                            auction.Account = winner;
+                            winner.Credit -= auction.CurrentPrice;
+                            await _accountService.UpdateAsync(winner);
+                            await _auctionService.UpdateAsync(auction);
+                        }
                     }
                     else
                     {
                         jewelry.Status = JewelryStatus.READY;
                     }
-                    await _jewelryService.Update(jewelry);
+                    await _jewelryService.UpdateAsync(jewelry);
                 }
             }
         }
-    }*/
+    }
 }

@@ -35,12 +35,16 @@ public class AuctionService : IAuctionService
     {
         return _repository.GetLatestByJewelryId(id);
     }
-    public IEnumerable<Auction> GetAllLatest()
+    public async Task<IEnumerable<Auction>> GetAllLatest()
     {
-        return _repository.GetAllLatest();
+        return await _repository.GetAllLatest();
     }
     public IEnumerable<Auction> GetWonAuction(int accountId)
     {
         return _repository.GetWonAuction(accountId);
+    }
+    public async Task UpdateAsync(Auction auction)
+    {
+        await _repository.UpdateAsync(auction);
     }
 }

@@ -29,7 +29,7 @@ public class LoginCommand : BaseCommand
         _accountService = accountService;
     }
 
-    public override void Execute(object parameter)
+    public override async void Execute(object parameter)
     {
         if (string.IsNullOrEmpty(_viewModel.Username))
         {
@@ -41,7 +41,7 @@ public class LoginCommand : BaseCommand
             _viewModel.AddError("Required", nameof(_viewModel.Password));
             return;
         }
-        Account? account = _accountService.Authenticate(_viewModel.Username, _viewModel.Password);
+        Account? account = await _accountService.Authenticate(_viewModel.Username, _viewModel.Password);
         if (account != null && account.Status)
         {  
             _accountStore.CurrentAccount = account;

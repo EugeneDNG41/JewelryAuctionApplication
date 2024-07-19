@@ -28,9 +28,9 @@ public class AccountRepository : IAccountRepository
         return _context.Accounts.FirstOrDefault(a => a.Email == email);
     }
 
-    public  Account? GetByUsername(string username)
+    public async Task<Account?> GetByUsername(string username)
     {
-        return _context.Accounts.FirstOrDefault(a => a.Username == username);
+        return await _context.Accounts.FirstOrDefaultAsync(a => a.Username == username);
     }
 
     public void Add(Account account)
@@ -58,5 +58,10 @@ public class AccountRepository : IAccountRepository
     public IEnumerable<Account> GetByRole(Role role)
     {
         return _context.Accounts.Where(a => a.Role == role);
+    }
+    public async Task UpdateAsync(Account account)
+    {
+        _context.Update(account);
+        await _context.SaveChangesAsync();
     }
 }

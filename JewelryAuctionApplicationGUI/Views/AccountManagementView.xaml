@@ -164,7 +164,19 @@
                            FontWeight="Bold"
                            Style="{StaticResource MyButtonContentStyle}"
                            Margin="2"/>
-
+            </Button>
+            <Button Command="{Binding ChangePasswordCommand}"
+                        Height="24"
+                        Width="auto"
+                        VerticalAlignment="Center"
+                        Margin="60 5 10 0"
+                        Foreground="White"
+                        Background="Olive"
+                        Cursor="Hand">
+                <TextBlock Text="CHANGE PASSWORD"
+               FontWeight="Bold"
+               Style="{StaticResource MyButtonContentStyle}"
+               Margin="2"/>
             </Button>
         </StackPanel>
     </Grid>

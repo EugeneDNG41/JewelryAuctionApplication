@@ -32,6 +32,9 @@ public class AuctionConfiguration : IEntityTypeConfiguration<Auction>
                .WithMany(j => j.Auctions)
                .HasForeignKey(a => a.JewelryId)
                .IsRequired();
+        builder.HasOne(a => a.Account)
+               .WithMany(ac => ac.Auctions)
+               .HasForeignKey(a => a.AccountId);
 
         builder.HasMany(a => a.Bids)
                .WithOne(b => b.Auction)
