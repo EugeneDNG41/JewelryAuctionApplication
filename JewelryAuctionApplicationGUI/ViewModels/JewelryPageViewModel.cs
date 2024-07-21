@@ -116,7 +116,7 @@ public class JewelryPageViewModel : BaseViewModel
                     timeAgo = $"{seconds}s ago";
                 }
                 var account = _accountService.GetById(bid.AccountId);
-                if (account != null)
+                if (account != null && account.Status)
                 {
                     bidHistory.Add(new Tuple<string, decimal, string, int>(account.Username, bid.BidAmount, timeAgo, i));
                     i++;

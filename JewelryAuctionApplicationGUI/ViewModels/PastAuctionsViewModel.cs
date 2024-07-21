@@ -78,8 +78,7 @@ public class PastAuctionsViewModel : BaseViewModel
         _jewelryService = jewelryService;
         InitializeJewelryList(jewelryService, auctionService, bidService, navigateJewelryPageService);
         JewelryCollectionView = CollectionViewSource.GetDefaultView(_jewelryListings);
-        JewelryCollectionView.Filter = FilterJewelryName;
-        JewelryCollectionView.Filter = FilterJewelryCategory;      
+        JewelryCollectionView.Filter = FilterJewelry;
     }
     private void InitializeJewelryList(
         IJewelryService jewelryService,
@@ -92,31 +91,17 @@ public class PastAuctionsViewModel : BaseViewModel
             _jewelryService.GetJewelriesWithEndedAuctions()
             .Select(j => new JewelryListingViewModel(j.Jewelry, j.LatestAuction, navigateJewelryPageService, auctionService, bidService, jewelryService)));
     }
-
-    private bool FilterJewelryCategory(object obj)
+    private bool FilterJewelry(object obj)
     {
         if (obj is JewelryListingViewModel jewelryListingViewModel)
         {
-            if (JewelryCategoryFilter == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return jewelryListingViewModel.Jewelry.JewelryCategory == (JewelryCategory)(JewelryCategoryFilter - 1);
-            }
+            bool matchesCategory = JewelryCategoryFilter == 0 || jewelryListingViewModel.Jewelry.JewelryCategory == (JewelryCategory)(JewelryCategoryFilter - 1);
+            bool matchesName = jewelryListingViewModel.Jewelry.JewelryName.Contains(JewelryNameFilter, StringComparison.InvariantCultureIgnoreCase);
+            return matchesCategory && matchesName;
         }
         else { return false; }
     }
 
-    private bool FilterJewelryName(object obj)
-    {
-        if (obj is JewelryListingViewModel jewelryListingViewModel)
-        {
-            return jewelryListingViewModel.Jewelry.JewelryName.Contains(JewelryNameFilter, StringComparison.InvariantCultureIgnoreCase);
-        }
-        else { return false; }
-    }
     private void UpdateSorting()
     {
         JewelryCollectionView.SortDescriptions.Clear();

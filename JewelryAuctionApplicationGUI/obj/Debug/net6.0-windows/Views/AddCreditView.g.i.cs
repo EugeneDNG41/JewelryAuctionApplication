@@ -53,7 +53,7 @@ namespace JewelryAuctionApplicationGUI.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/JewelryAuctionApplicationGUI;component/views/addcreditview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/JewelryAuctionApplicationGUI;V1.0.0.0;component/views/addcreditview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AddCreditView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

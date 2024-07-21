@@ -10,8 +10,9 @@ namespace JewelryAuctionApplicationBLL.Services;
 public interface IAccountService
 {
     Account? Authenticate(string username, string password);
-    string Register(Account account);
+    string Create(Account account);
     void Update(Account account);
+    void ResetPassword(Account account);
     void Deactivate(int id);
     IEnumerable<Account> GetAll();
     Account? GetByUsername(string username);

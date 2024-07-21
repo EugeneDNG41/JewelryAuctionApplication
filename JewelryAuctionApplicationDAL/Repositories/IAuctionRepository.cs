@@ -16,5 +16,5 @@ public interface IAuctionRepository
     Auction? GetOngoingByJewelryId(int id);
     Auction? GetById(int id);
     Auction? GetLatestByJewelryId(int jewelryId);
-
+    IEnumerable<Auction> GetWonAuction(int accountId);
 }

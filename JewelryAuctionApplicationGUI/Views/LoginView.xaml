@@ -182,7 +182,7 @@
                 </Button.Template>
             </Button>
 
-            <StackPanel Orientation="Horizontal"
+            <!--<StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     Margin="0,15,0,0">
 
@@ -207,7 +207,7 @@
                     </Button.Style>
                     <TextBlock Text="Forgot Password?" />
                 </Button>
-            </StackPanel>
+            </StackPanel>-->
         </StackPanel>
 
     </Grid>

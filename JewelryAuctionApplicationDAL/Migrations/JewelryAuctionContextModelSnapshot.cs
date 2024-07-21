@@ -31,7 +31,7 @@ namespace JewelryAuctionApplicationDAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AccountId"));
 
                     b.Property<decimal>("Credit")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -74,7 +74,7 @@ namespace JewelryAuctionApplicationDAL.Migrations
 
                     b.Property<decimal>("CurrentPrice")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,2)")
+                        .HasColumnType("decimal(18)")
                         .HasDefaultValue(0m);
 
                     b.Property<DateTime>("EndDate")
@@ -105,7 +105,7 @@ namespace JewelryAuctionApplicationDAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("BidAmount")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18)");
 
                     b.Property<DateTime>("BidTime")
                         .HasColumnType("datetime2");
@@ -147,7 +147,7 @@ namespace JewelryAuctionApplicationDAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("StartingPrice")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -155,44 +155,6 @@ namespace JewelryAuctionApplicationDAL.Migrations
                     b.HasKey("JewelryId");
 
                     b.ToTable("Jewelry", (string)null);
-                });
-
-            modelBuilder.Entity("JewelryAuctionApplicationDAL.Models.Request", b =>
-                {
-                    b.Property<int>("RequestId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RequestId"));
-
-                    b.Property<int>("AccountId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("FinalValuation")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("JewelryId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("PreliminaryValuation")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("RequestDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ValuationDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("RequestId");
-
-                    b.HasIndex("AccountId");
-
-                    b.HasIndex("JewelryId");
-
-                    b.ToTable("Request", (string)null);
                 });
 
             modelBuilder.Entity("JewelryAuctionApplicationDAL.Models.Auction", b =>
@@ -225,30 +187,9 @@ namespace JewelryAuctionApplicationDAL.Migrations
                     b.Navigation("Auction");
                 });
 
-            modelBuilder.Entity("JewelryAuctionApplicationDAL.Models.Request", b =>
-                {
-                    b.HasOne("JewelryAuctionApplicationDAL.Models.Account", "Account")
-                        .WithMany("Requests")
-                        .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("JewelryAuctionApplicationDAL.Models.Jewelry", "Jewelry")
-                        .WithMany("Requests")
-                        .HasForeignKey("JewelryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Account");
-
-                    b.Navigation("Jewelry");
-                });
-
             modelBuilder.Entity("JewelryAuctionApplicationDAL.Models.Account", b =>
                 {
                     b.Navigation("Bids");
-
-                    b.Navigation("Requests");
                 });
 
             modelBuilder.Entity("JewelryAuctionApplicationDAL.Models.Auction", b =>
@@ -259,8 +200,6 @@ namespace JewelryAuctionApplicationDAL.Migrations
             modelBuilder.Entity("JewelryAuctionApplicationDAL.Models.Jewelry", b =>
                 {
                     b.Navigation("Auctions");
-
-                    b.Navigation("Requests");
                 });
 #pragma warning restore 612, 618
         }

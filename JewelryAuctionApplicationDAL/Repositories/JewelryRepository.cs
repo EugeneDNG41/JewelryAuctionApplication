@@ -29,8 +29,8 @@ public class JewelryRepository : IJewelryRepository
         _context.SaveChanges();
     }
     public Jewelry? GetById(int id) => _context.Jewelries.FirstOrDefault(j => j.JewelryId == id);
-    public IEnumerable<Jewelry> GetAll() => _context.Jewelries.Include(j => j.Auctions).ThenInclude(a => a.Bids);
-    public IEnumerable<Jewelry> GetByStatus(JewelryStatus status) => _context.Jewelries.Include(j => j.Auctions).ThenInclude(a => a.Bids).Where(j => j.Status == status);
+    public IEnumerable<Jewelry> GetAll() => _context.Jewelries.Include(j => j.Auctions).ThenInclude(a => a.Bids).ThenInclude(b => b.Account);
+    public IEnumerable<Jewelry> GetByStatus(JewelryStatus status) => _context.Jewelries.Include(j => j.Auctions).ThenInclude(a => a.Bids).ThenInclude(b => b.Account).Where(j => j.Status == status);
     public IEnumerable<Jewelry> GetForAuction()
     {
         var jewelries = GetByStatus(JewelryStatus.READY);
@@ -66,6 +66,6 @@ public class JewelryRepository : IJewelryRepository
     public IEnumerable<Jewelry> GetByEndedAuction()
     {
         var jewelries = GetAll();
-        return jewelries.Where(j => !j.Auctions.IsNullOrEmpty() && j.Auctions.All(a => a.EndDate < DateTime.Now));
+        return jewelries.Where(j => j.Status != JewelryStatus.DELETED && !j.Auctions.IsNullOrEmpty() && j.Auctions.All(a => a.EndDate < DateTime.Now));
     }
 }

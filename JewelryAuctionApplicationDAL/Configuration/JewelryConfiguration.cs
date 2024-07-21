@@ -32,7 +32,7 @@ public class JewelryConfiguration : IEntityTypeConfiguration<Jewelry>
 
         builder.Property(j => j.StartingPrice)
                .IsRequired()
-               .HasColumnType("decimal(18,2)"); // Specifies the decimal precision and scale
+               .HasColumnType("decimal(18)"); // Specifies the decimal precision and scale
 
         builder.Property(j => j.Status)
                .IsRequired()
@@ -43,9 +43,5 @@ public class JewelryConfiguration : IEntityTypeConfiguration<Jewelry>
         builder.HasMany(j => j.Auctions)
                .WithOne(a => a.Jewelry)
                .HasForeignKey(a => a.JewelryId);
-
-        builder.HasMany(j => j.Requests)
-               .WithOne(r => r.Jewelry)
-               .HasForeignKey(r => r.JewelryId);
     }
 }

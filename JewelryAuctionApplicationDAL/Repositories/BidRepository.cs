@@ -33,7 +33,7 @@ public class BidRepository : IBidRepository
 
     public Bid? GetHighestBid(int auctionId)
     {
-        var bids = _context.Bids.Include(b => b.Account).Where(b => b.AuctionId == auctionId);
+        var bids = _context.Bids.Include(b => b.Account).Where(b => b.AuctionId == auctionId && b.Account.Status);
         return bids.OrderByDescending(b => b.BidAmount).FirstOrDefault();
     }
 

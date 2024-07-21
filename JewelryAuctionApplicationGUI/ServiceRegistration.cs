@@ -41,6 +41,8 @@ public class ServiceRegistration
         services.AddTransient(CreateAddAuctionViewModel);
         services.AddTransient(CreatePastAuctionsViewModel);
         services.AddTransient(CreateAddCreditViewModel);
+        services.AddTransient(CreateAccountManagementViewModel);
+        services.AddTransient(CreateCreateAccountViewModel);
         services.AddTransient(CreateProfileViewModel);
         services.AddTransient(CreateChangePasswordViewModel);
 
@@ -181,22 +183,46 @@ public class ServiceRegistration
             serviceProvider.GetRequiredService<ModalNavigationStore>(),
             () => serviceProvider.GetRequiredService<LoginViewModel>());
     }
+    private INavigationService CreateCreateAccountNavigationService(IServiceProvider serviceProvider)
+    {
+        return new ModalNavigationService<CreateAccountViewModel>(
+             serviceProvider.GetRequiredService<ModalNavigationStore>(),
+             () => serviceProvider.GetRequiredService<CreateAccountViewModel>());
+    }
     private INavigationService CreateAddAuctionNavigationService(IServiceProvider serviceProvider)
     {
         return new ModalNavigationService<AddAuctionViewModel>(
             serviceProvider.GetRequiredService<ModalNavigationStore>(),
             () => serviceProvider.GetRequiredService<AddAuctionViewModel>());
     }
+    private INavigationService CreateAccountManagementNavigationService(IServiceProvider serviceProvider)
+    {
+        return new LayoutNavigationService<AccountManagementViewModel>(
+               serviceProvider.GetRequiredService<NavigationStore>(),
+               () => serviceProvider.GetRequiredService<NavigationBarViewModel>(),
+               () => serviceProvider.GetRequiredService<AccountManagementViewModel>());
+    }
     private LoginViewModel CreateLoginViewModel(IServiceProvider serviceProvider)
     {
-        CompositeNavigationService navigationService = new(
-            serviceProvider.GetRequiredService<CloseModalNavigationService>()/*,
-            CreateHomeNavigationService(serviceProvider)*/);
+        CompositeNavigationService accountManagementNavigationService = new(
+            serviceProvider.GetRequiredService<CloseModalNavigationService>(),
+            CreateAccountManagementNavigationService(serviceProvider));
 
         return new LoginViewModel(
             serviceProvider.GetRequiredService<AccountStore>(),
-            navigationService, serviceProvider.GetRequiredService<IAccountService>(),
+            accountManagementNavigationService, serviceProvider.GetRequiredService<IAccountService>(),
             serviceProvider.GetRequiredService<CloseModalNavigationService>());
+    }
+    private CreateAccountViewModel CreateCreateAccountViewModel(IServiceProvider serviceProvider)
+    {
+        return new CreateAccountViewModel(serviceProvider.GetRequiredService<IAccountService>(),
+            serviceProvider.GetRequiredService<CloseModalNavigationService>());
+    }
+
+    private AccountManagementViewModel CreateAccountManagementViewModel(IServiceProvider serviceProvider)
+    {
+        return new AccountManagementViewModel(serviceProvider.GetRequiredService<IAccountService>(),
+            CreateCreateAccountNavigationService(serviceProvider));
     }
     private SignupViewModel CreateSignupViewModel(IServiceProvider serviceProvider)
     {

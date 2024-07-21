@@ -4,6 +4,7 @@ using JewelryAuctionApplicationBLL.Services;
 using JewelryAuctionApplicationBLL.Stores;
 using JewelryAuctionApplicationGUI.ViewModels;
 using JewelryAuctionApplicationGUI.Navigation;
+using System.Windows;
 
 
 namespace JewelryAuctionApplicationGUI.Commands;
@@ -12,17 +13,19 @@ public class LoginCommand : BaseCommand
 {
     private readonly LoginViewModel _viewModel;
     private readonly AccountStore _accountStore;
-    private readonly INavigationService _navigationService;
+    private readonly INavigationService _closeModal;
+    private readonly INavigationService _accountManagement;
     private readonly IAccountService _accountService;
 
     public LoginCommand(LoginViewModel viewModel, 
-        AccountStore accountStore, 
-        INavigationService navigationService, 
+        AccountStore accountStore, INavigationService accountManagement, 
+        INavigationService closeModal, 
         IAccountService accountService)
     {
         _viewModel = viewModel;
         _accountStore = accountStore;
-        _navigationService = navigationService;
+        _accountManagement = accountManagement;
+        _closeModal = closeModal;
         _accountService = accountService;
     }
 
@@ -39,10 +42,21 @@ public class LoginCommand : BaseCommand
             return;
         }
         Account? account = _accountService.Authenticate(_viewModel.Username, _viewModel.Password);
-        if (account != null)
+        if (account != null && account.Status)
         {  
             _accountStore.CurrentAccount = account;
-            _navigationService.Navigate();
+            MessageBox.Show("Login successful!");
+            if (_accountStore.IsAdmin || _accountStore.IsManager)
+            {
+                _accountManagement.Navigate();
+            } else if (_accountStore.IsUser)
+            {
+                _closeModal.Navigate();
+            }
+        } else if (account != null && !account.Status)
+        {
+            _viewModel.ErrorMessage = "Account is deactivated!";
+            return;
         } else
         {
             _viewModel.ErrorMessage = "Invalid username or password!";

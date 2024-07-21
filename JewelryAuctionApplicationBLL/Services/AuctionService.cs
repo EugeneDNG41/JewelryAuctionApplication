@@ -39,4 +39,8 @@ public class AuctionService : IAuctionService
     {
         return _repository.GetAllLatest();
     }
+    public IEnumerable<Auction> GetWonAuction(int accountId)
+    {
+        return _repository.GetWonAuction(accountId);
+    }
 }

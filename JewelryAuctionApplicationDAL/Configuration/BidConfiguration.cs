@@ -22,7 +22,7 @@ public class BidConfiguration : IEntityTypeConfiguration<Bid>
 
         builder.Property(b => b.BidAmount)
                .IsRequired()
-               .HasColumnType("decimal(18,2)"); // Specifies the decimal precision and scale
+               .HasColumnType("decimal(18)"); // Specifies the decimal precision and scale
 
         builder.Property(b => b.BidTime)
                .IsRequired();

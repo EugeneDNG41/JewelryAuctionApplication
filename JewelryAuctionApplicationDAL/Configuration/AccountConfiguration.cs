@@ -41,7 +41,7 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
 
         builder.Property(a => a.Credit)
                .IsRequired()
-               .HasColumnType("decimal(18,2)");
+               .HasColumnType("decimal(18)");
 
         builder.Property(a => a.Role)
                .IsRequired()
@@ -50,9 +50,5 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
         builder.HasMany(a => a.Bids)
                .WithOne()
                .HasForeignKey(b => b.AccountId);
-
-        builder.HasMany(a => a.Requests)
-               .WithOne()
-               .HasForeignKey(r => r.AccountId);
     }
 }
