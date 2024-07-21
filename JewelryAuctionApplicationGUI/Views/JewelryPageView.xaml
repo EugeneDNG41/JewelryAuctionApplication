@@ -11,7 +11,7 @@
     <UserControl.Resources>
         <Style x:Key="MyButtonContentStyle" TargetType="TextBlock">
             <Style.Triggers>
-                
+
                 <Trigger Property="IsEnabled" Value="False">
                     <Setter Property="Background" Value="White" />
                     <Setter Property="Foreground" Value="DimGray" />
@@ -25,17 +25,19 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <components:NavigationBar Grid.Row="0" DataContext="{Binding NavigationBarViewModel}"/>
+        <!--<components:NavigationBar Grid.Row="0" DataContext="{Binding NavigationBarViewModel}"/>-->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="500"/>
-                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="19.316"/>
+                <ColumnDefinition Width="50.631"/>
+                <ColumnDefinition Width="430.053"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
                 <Image Source="{Binding JewelryListing.DisplayedImage}" Height="500" Width="450"
                        Margin="5 20 0 0"/>
             </StackPanel>
-            <StackPanel Grid.Column="1">
+            <StackPanel Grid.Column="1" Grid.ColumnSpan="3">
                 <TextBlock Text="{Binding JewelryListing.Jewelry.JewelryName}"
                            FontWeight="Bold"
                            FontSize="24"
@@ -121,7 +123,7 @@
                                                Style="{StaticResource MyButtonContentStyle}"
                                                Margin="2"
                                                />
-                                    
+
                                 </Button>
                                 <TextBlock Text="{Binding TickingTimeLeft, UpdateSourceTrigger=PropertyChanged}"
                                            Margin="10 0 10 5"
@@ -154,7 +156,7 @@
                                         <GridViewColumn Header="Bid Time"
                                                         DisplayMemberBinding="{Binding Item3}"
                                                         Width="60"/>
-                                        
+
                                     </GridView>
                                 </ListView.View>
                             </ListView>

@@ -56,7 +56,7 @@ public class AccountRepository : IAccountRepository
         {
             existingAccount.Email = account.Email;
             existingAccount.Username = account.Username;
-            existingAccount.Email = account.Email;
+            existingAccount.FullName = account.FullName;
             existingAccount.Role = account.Role;
             existingAccount.Status = account.Status;
             _context.Accounts.Update(existingAccount);

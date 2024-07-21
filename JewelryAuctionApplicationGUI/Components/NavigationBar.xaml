@@ -47,6 +47,7 @@
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
         
         <TextBlock
@@ -107,13 +108,13 @@
             Content="Add Credit" 
             Foreground="Black"
             Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-        <!--<Button
-            Grid.Column="5"
+        <Button
+            Grid.Column="10"
             Margin="10 0 0 0"
-            Command="{Binding NavigateAccountCommand}"
+            Command="{Binding NavigateProfileCommand}"
             Content="Account"
             Foreground="Black"
-            Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}" />-->
+            Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}" />
 
         <Button
             Grid.Column="9"

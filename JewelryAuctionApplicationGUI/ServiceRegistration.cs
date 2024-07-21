@@ -41,6 +41,8 @@ public class ServiceRegistration
         services.AddTransient(CreateAddAuctionViewModel);
         services.AddTransient(CreatePastAuctionsViewModel);
         services.AddTransient(CreateAddCreditViewModel);
+        services.AddTransient(CreateProfileViewModel);
+        services.AddTransient(CreateChangePasswordViewModel);
 
         // Add DbContext with scoped lifetime
         var connectionString = Configuration.GetConnectionString("JewelryAuctionDatabase");
@@ -110,6 +112,18 @@ public class ServiceRegistration
                serviceProvider.GetRequiredService<IAccountService>(),
                serviceProvider.GetRequiredService<IBidService>());
     }
+    private ProfileViewModel CreateProfileViewModel(IServiceProvider serviceProvider)
+    {
+        return new ProfileViewModel(serviceProvider.GetRequiredService<AccountStore>(),
+            serviceProvider.GetRequiredService<IAccountService>(),
+            CreateChangePasswordNavigationService(serviceProvider));
+    }
+    private ChangePasswordViewModel CreateChangePasswordViewModel(IServiceProvider serviceProvider)
+    {
+        return new ChangePasswordViewModel(serviceProvider.GetRequiredService<IAccountService>(),
+            serviceProvider.GetRequiredService<CloseModalNavigationService>()
+            /*serviceProvider.GetRequiredService<AccountStore>()*/);
+    }
     private NavigationBarViewModel CreateNavigationBarViewModel(IServiceProvider serviceProvider)
     {
         return new NavigationBarViewModel(serviceProvider.GetRequiredService<AccountStore>(),
@@ -119,13 +133,27 @@ public class ServiceRegistration
             CreateAddJewelryNavigationService(serviceProvider),
             CreateAddAuctionNavigationService(serviceProvider),
             CreatePastAuctionsNavigationService(serviceProvider),
-            CreateAddCreditNavigationService(serviceProvider));
+            CreateAddCreditNavigationService(serviceProvider),
+            CreateProfileNavigationService(serviceProvider));
+    }
+    public INavigationService CreateProfileNavigationService(IServiceProvider serviceProvider)
+    {
+        return new LayoutNavigationService<ProfileViewModel>(
+            serviceProvider.GetRequiredService<NavigationStore>(),
+            () => serviceProvider.GetRequiredService<NavigationBarViewModel>(),
+            () => serviceProvider.GetRequiredService<ProfileViewModel>());
     }
     private INavigationService CreateAddJewelryNavigationService(IServiceProvider serviceProvider)
     {
         return new ModalNavigationService<AddJewelryViewModel>(
             serviceProvider.GetRequiredService<ModalNavigationStore>(),
             () => serviceProvider.GetRequiredService<AddJewelryViewModel>());
+    }
+    private INavigationService CreateChangePasswordNavigationService(IServiceProvider serviceProvider)
+    {
+        return new ModalNavigationService<ChangePasswordViewModel>(
+            serviceProvider.GetRequiredService<ModalNavigationStore>(),
+            () => serviceProvider.GetRequiredService<ChangePasswordViewModel>());
     }
     private INavigationService CreateAddCreditNavigationService(IServiceProvider serviceProvider)
     {

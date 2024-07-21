@@ -43,6 +43,12 @@
             <DataTemplate DataType="{x:Type viewmodels:AddCreditViewModel}">
                 <views:AddCreditView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ProfileViewModel}">
+                <views:ProfileView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ChangePasswordViewModel}">
+                <views:ChangePasswordView/>
+            </DataTemplate>
         </Grid.Resources>
         
         <resources:Modal  Panel.ZIndex="1" IsOpen="{Binding IsOpen}">

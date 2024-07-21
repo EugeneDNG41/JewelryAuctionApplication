@@ -86,4 +86,11 @@ public class AccountService : IAccountService
     {
         return _accountRepository.GetById(id);
     }
+
+    public void ChangePassword(Account account, string newPassword)
+    {
+        var hashPassword = _passwordHasher.Hash(newPassword);
+        account.Password = hashPassword;
+        _accountRepository.Update(account);
+    }
 }

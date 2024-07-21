@@ -17,4 +17,5 @@ public interface IAccountService
     Account? GetByUsername(string username);
     IEnumerable<Account> GetByRole(Role role);
     Account? GetById(int id);
+    void ChangePassword(Account account, string newPassword);
 }

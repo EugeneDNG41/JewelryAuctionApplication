@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\
+D:\MAIN\2024_FPTU\sem5\PRN212\FinalProj\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\
 JewelryAuctionApplicationGUI
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\App.xaml
-15810015429
+D:\MAIN\2024_FPTU\sem5\PRN212\FinalProj\JewelryAuctionApplication\JewelryAuctionApplicationGUI\App.xaml
+17-2042941757
 
-58-2050774211
-247-2139162855
-Components\BindablePasswordBox.xaml;Components\JewelryCard.xaml;Components\NavigationBar.xaml;Themes\Generic.xaml;Views\AddAuctionView.xaml;Views\AddBidView.xaml;Views\AddCreditView.xaml;Views\AddJewelryView.xaml;Views\HomeView.xaml;Views\JewelryPageView.xaml;Views\LayoutView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\PastAuctionsView.xaml;Views\SignupView.xaml;
+652017014694
+247619605271
+Components\BindablePasswordBox.xaml;Components\JewelryCard.xaml;Components\NavigationBar.xaml;Themes\Generic.xaml;Views\AddAuctionView.xaml;Views\AddBidView.xaml;Views\AddCreditView.xaml;Views\AddJewelryView.xaml;Views\ChangePasswordView.xaml;Views\HomeView.xaml;Views\JewelryPageView.xaml;Views\LayoutView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\PastAuctionsView.xaml;Views\ProfileView.xaml;Views\SignupView.xaml;
 
 True
 
