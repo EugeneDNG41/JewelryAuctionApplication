@@ -49,6 +49,15 @@
             <DataTemplate DataType="{x:Type viewmodels:CreateAccountViewModel}">
                 <views:CreateAccountView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:UpdateAccountViewModel}">
+                <views:UpdateAccountView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:JewelryManagementViewModel}">
+                <views:JewelryManagementView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:UpdateJewelryViewModel}">
+                <views:UpdateJewelryView/>
+            </DataTemplate>
         </Grid.Resources>
         
         <resources:Modal  Panel.ZIndex="1" IsOpen="{Binding IsOpen}">

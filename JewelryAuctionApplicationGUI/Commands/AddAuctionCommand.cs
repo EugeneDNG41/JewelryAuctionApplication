@@ -1,5 +1,6 @@
 ﻿using JewelryAuctionApplicationBLL.Services;
 using JewelryAuctionApplicationDAL.Models;
+using JewelryAuctionApplicationGUI.Navigation;
 using JewelryAuctionApplicationGUI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -15,41 +16,34 @@ public class AddAuctionCommand : BaseCommand
     private readonly AddAuctionViewModel _viewModel;
     private readonly IAuctionService _auctionService;
     private readonly IJewelryService _jewelryService;
+    private readonly INavigationService _navigationService;
     public AddAuctionCommand(AddAuctionViewModel viewModel, 
         IAuctionService auctionService, 
-        IJewelryService jewelryService)
+        IJewelryService jewelryService,
+        INavigationService returnJewelryManagementNavigationService)
     {
         _viewModel = viewModel;
         _auctionService = auctionService;
         _jewelryService = jewelryService;
+        _navigationService = returnJewelryManagementNavigationService;
     }
     public override void Execute(object parameter)
     {
         if (_viewModel.EndDate < DateTime.Now)
         {
-            _viewModel.AddError("End date must be in the future!", nameof(_viewModel.EndDate));
+            MessageBox.Show("End date must be in the future!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             return;
-        }
-        if (_viewModel.CurrentPrice <= 0)
-        {
-            _viewModel.AddError("Current price must be greater than 0!", nameof(_viewModel.CurrentPrice));
-            return;
-        }
-        if (_viewModel.Jewelry == null)
-        {
-            _viewModel.AddError("Jewelry must be selected!", nameof(_viewModel.Jewelry));
-            return;
-        }
-        
+        }      
         var auction = new Auction
         {
-            CurrentPrice = _viewModel.CurrentPrice,
+            CurrentPrice = _viewModel.Jewelry.StartingPrice,
             EndDate = _viewModel.EndDate,
             JewelryId = _viewModel.Jewelry.JewelryId
         };
         _viewModel.Jewelry.Status = JewelryStatus.ACTIVE;
         _jewelryService.Update(_viewModel.Jewelry);
         _auctionService.Add(auction);
-        MessageBox.Show("Auction added successfully!");
+        _navigationService.Navigate();
+        MessageBox.Show("Auction added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
     }
 }

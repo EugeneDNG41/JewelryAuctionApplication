@@ -1,4 +1,4 @@
-﻿D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+﻿
 
 FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Components\BindablePasswordBox.xaml;;
 FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Components\JewelryCard.xaml;;
@@ -11,10 +11,13 @@ FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\Ad
 FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\AddJewelryView.xaml;;
 FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\CreateAccountView.xaml;;
 FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\HomeView.xaml;;
+FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\JewelryManagementView.xaml;;
 FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\JewelryPageView.xaml;;
 FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\LayoutView.xaml;;
 FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\LoginView.xaml;;
 FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\MainWindow.xaml;;
 FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\PastAuctionsView.xaml;;
 FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\SignupView.xaml;;
+FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\UpdateAccountView.xaml;;
+FD:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\Views\UpdateJewelryView.xaml;;
 

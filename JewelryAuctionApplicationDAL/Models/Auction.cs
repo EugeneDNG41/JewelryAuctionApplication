@@ -9,5 +9,5 @@ public class Auction
     public Jewelry Jewelry { get; set; }
     public int? AccountId { get; set; }
     public Account? Account { get; set; }
-    public ICollection<Bid> Bids { get; set; }
+    public ICollection<Bid> Bids { get; set; } = new List<Bid>();
 }

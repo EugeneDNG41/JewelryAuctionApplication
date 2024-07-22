@@ -8,6 +8,15 @@
     <Compile Update="Views\CreateAccountView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\JewelryManagementView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UpdateAccountView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UpdateJewelryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="App.xaml">
@@ -46,6 +55,9 @@
     <Page Update="Views\HomeView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\JewelryManagementView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\JewelryPageView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -62,6 +74,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SignupView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UpdateAccountView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UpdateJewelryView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

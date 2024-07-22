@@ -34,8 +34,12 @@ public class BidService : IBidService
         return _bidRepository.GetByAuctionId(id);
     }
 
-    public decimal GetCulmulativeBidAmountByAccountId(int accountId)
+    public decimal GetBidBalanceByAccountId(int accountId)
     {
-        return _bidRepository.GetCulmulativeBidAmountByAccountId(accountId);
+        return _bidRepository.GetBidBalanceByAccountId(accountId);
+    }
+    public async Task<decimal> GetCulmulativeBidAmountByAccountIdAsync(int accountId)
+    {
+        return await _bidRepository.GetCulmulativeBidAmountByAccountIdAsync(accountId);
     }
 }

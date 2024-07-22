@@ -23,24 +23,24 @@ public class NavigationBarViewModel : BaseViewModel
     public ICommand NavigateLoginCommand { get; }
     public ICommand NavigateLogoutCommand { get; }
     public ICommand NavigateSignupCommand { get; }
-    public ICommand NavigateAddJewelryCommand { get; }
-    public ICommand NavigateAddAuctionCommand { get; }
+    public ICommand NavigateAccountManagementCommand { get; }
+    public ICommand NavigateJewelryManagementCommand { get; }
     public ICommand NavigatePastAuctionCommand { get; }
     public ICommand NavigateAddCreditCommand { get; }
 
     public bool IsLoggedIn => _accountStore.IsLoggedIn;
     public bool IsLoggedOut => !IsLoggedIn;
-    public bool IsAdmin => _accountStore.IsAdmin;
+    public bool IsAdminOrManager => _accountStore.IsAdmin || _accountStore.IsManager;
     public bool IsUser => _accountStore.IsUser;
-    public bool IsStaff => _accountStore.IsStaff;
-    public bool IsManager => _accountStore.IsManager;
+    public bool IsUserOrGuest => IsUser || IsLoggedOut;
+    public bool IsStaff => _accountStore.IsStaff || IsAdminOrManager;
 
     public NavigationBarViewModel(AccountStore accountStore, 
         INavigationService homeNavigationService, 
         INavigationService loginNavigationService,
         INavigationService signupNavigationService,
-        INavigationService addJewelryNavigationService,
-        INavigationService addAuctionNavigationService,
+        INavigationService accountManagementNavigationService,
+        INavigationService jewelryManagementNavigationService,
         INavigationService pastAuctionNavigationService,
         INavigationService addCreditNavigationService)
     {
@@ -49,8 +49,8 @@ public class NavigationBarViewModel : BaseViewModel
         NavigateLoginCommand = new NavigateCommand(loginNavigationService); //check
         NavigateSignupCommand = new NavigateCommand(signupNavigationService); //check
         NavigateLogoutCommand = new LogoutCommand(_accountStore, homeNavigationService); //check
-        NavigateAddJewelryCommand = new NavigateCommand(addJewelryNavigationService);
-        NavigateAddAuctionCommand = new NavigateCommand(addAuctionNavigationService);
+        NavigateAccountManagementCommand = new NavigateCommand(accountManagementNavigationService); //switch functionality + text
+        NavigateJewelryManagementCommand = new NavigateCommand(jewelryManagementNavigationService);
         NavigatePastAuctionCommand = new NavigateCommand(pastAuctionNavigationService); //switch functionality + text
         NavigateAddCreditCommand = new NavigateCommand(addCreditNavigationService);
 
@@ -61,10 +61,10 @@ public class NavigationBarViewModel : BaseViewModel
     {
         OnPropertyChanged(nameof(IsLoggedIn));
         OnPropertyChanged(nameof(IsLoggedOut));
-        OnPropertyChanged(nameof(IsAdmin));
+        OnPropertyChanged(nameof(IsAdminOrManager));
         OnPropertyChanged(nameof(IsUser));
+        OnPropertyChanged(nameof(IsUserOrGuest));
         OnPropertyChanged(nameof(IsStaff));
-        OnPropertyChanged(nameof(IsManager));
     }
 
     public override void Dispose()

@@ -103,7 +103,9 @@
                  BorderThickness="0,0,0,2"     
                  Height="20"
                  VerticalContentAlignment="Center"
-                 Margin="0,5,0,0"/>
+                 Margin="0,5,0,0"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto"/>
 
             <TextBlock Text="Description"                   
                    FontSize="12"
@@ -117,7 +119,9 @@
                  BorderThickness="0,0,0,2"     
                  Height="20"
                  VerticalContentAlignment="Center"
-                 Margin="0,5,0,0"/>
+                 Margin="0,5,0,0"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto"/>
 
             <TextBlock Text="Condition"                   
                    FontSize="12"

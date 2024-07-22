@@ -14,7 +14,6 @@ public enum JewelryCategory
     WATCHES
 }
 public enum JewelryStatus {
-    VALUATING,
     READY,
     ACTIVE,
     SOLD,
@@ -30,5 +29,5 @@ public class Jewelry
     public decimal StartingPrice { get; set; }
     public JewelryStatus Status { get; set; }
     public byte[] Image { get; set; }
-    public ICollection<Auction> Auctions { get; set; }
+    public ICollection<Auction> Auctions { get; set; } = new List<Auction>();
 }

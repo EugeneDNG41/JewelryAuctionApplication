@@ -5,7 +5,7 @@ namespace JewelryAuctionApplicationDAL.Repositories;
 
 public interface IAccountRepository
 {
-    Task<Account?> GetByUsername(string username);
+    Account? GetByUsername(string username);
     Account? GetByEmail(string email);
     Account? GetById(int id);
     void Add(Account account);

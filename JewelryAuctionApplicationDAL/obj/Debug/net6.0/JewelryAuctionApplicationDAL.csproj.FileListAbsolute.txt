@@ -1,18 +1,3 @@
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.deps.json
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.runtimeconfig.json
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.dll
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.pdb
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.csproj.AssemblyReference.cache
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.GeneratedMSBuildEditorConfig.editorconfig
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.AssemblyInfoInputs.cache
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.AssemblyInfo.cs
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.csproj.CoreCompileInputs.cache
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.sourcelink.json
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.dll
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\refint\JewelryAuctionApplicationDAL.dll
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.pdb
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.genruntimeconfig.cache
-D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\ref\JewelryAuctionApplicationDAL.dll
 C:\Users\LENOVO\Desktop\SUMMER2024\PRN212\JewelryAuctionApplication-Duy\JewelryAuctionApplicationDAL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.deps.json
 C:\Users\LENOVO\Desktop\SUMMER2024\PRN212\JewelryAuctionApplication-Duy\JewelryAuctionApplicationDAL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.runtimeconfig.json
 C:\Users\LENOVO\Desktop\SUMMER2024\PRN212\JewelryAuctionApplication-Duy\JewelryAuctionApplicationDAL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.dll
@@ -28,3 +13,18 @@ C:\Users\LENOVO\Desktop\SUMMER2024\PRN212\JewelryAuctionApplication-Duy\JewelryA
 C:\Users\LENOVO\Desktop\SUMMER2024\PRN212\JewelryAuctionApplication-Duy\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.pdb
 C:\Users\LENOVO\Desktop\SUMMER2024\PRN212\JewelryAuctionApplication-Duy\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.genruntimeconfig.cache
 C:\Users\LENOVO\Desktop\SUMMER2024\PRN212\JewelryAuctionApplication-Duy\JewelryAuctionApplicationDAL\obj\Debug\net6.0\ref\JewelryAuctionApplicationDAL.dll
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.deps.json
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.runtimeconfig.json
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.dll
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\bin\Debug\net6.0\JewelryAuctionApplicationDAL.pdb
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.csproj.AssemblyReference.cache
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.AssemblyInfoInputs.cache
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.AssemblyInfo.cs
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.csproj.CoreCompileInputs.cache
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.sourcelink.json
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.dll
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\refint\JewelryAuctionApplicationDAL.dll
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.pdb
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\JewelryAuctionApplicationDAL.genruntimeconfig.cache
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationDAL\obj\Debug\net6.0\ref\JewelryAuctionApplicationDAL.dll

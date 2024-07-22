@@ -31,23 +31,23 @@
                 FontSize="28"
                 Text="Account Management" />
             <StackPanel Margin="15 0 0 0">
-                <TextBlock Text="Search by username"
+                <TextBlock Text="Search username"
                    Margin="0 0 0 5"/>
-                <TextBox Width="110"
+                <TextBox Width="90"
                          Text="{Binding UsernameFilter, UpdateSourceTrigger=PropertyChanged}"
                          Height="20"/>
             </StackPanel>
             <StackPanel Margin="15 0 0 0">
-                <TextBlock Text="Search by name"
+                <TextBlock Text="Search name"
                             Margin="0 0 0 5"/>
-                <TextBox Width="110"
+                <TextBox Width="75"
                          Text="{Binding NameFilter, UpdateSourceTrigger=PropertyChanged}"
                          Height="20"/>
             </StackPanel>
             <StackPanel Margin="15 0 0 0">
-                <TextBlock Text="Search by email"
+                <TextBlock Text="Search email"
                            Margin="0 0 0 5"/>
-                <TextBox Width="110"
+                <TextBox Width="75"
                          Text="{Binding EmailFilter, UpdateSourceTrigger=PropertyChanged}"
                          Height="20"/>
             </StackPanel>
@@ -59,6 +59,15 @@
                   IsSynchronizedWithCurrentItem="True"
                   SelectedIndex="{Binding RoleFilter}"
                   Height="20"/>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Filter by status"
+                           Margin="0 0 0 5"/>
+                <ComboBox Width="85"
+                          ItemsSource="{Binding Statuses}"                         
+                          IsSynchronizedWithCurrentItem="True"
+                          SelectedIndex="{Binding StatusFilter}"
+                          Height="20"/>
             </StackPanel>
             <StackPanel Margin="15 0 0 0">
                 <TextBlock Text="Sort by"
@@ -86,19 +95,25 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Acount ID" Width="auto" 
-                                    DisplayMemberBinding="{Binding AccountId}"/>
+                                    DisplayMemberBinding="{Binding Account.AccountId}"/>
                     <GridViewColumn Header="Username" Width="auto"
-                                    DisplayMemberBinding="{Binding Username}"/>
+                                    DisplayMemberBinding="{Binding Account.Username}"/>
                     <GridViewColumn Header="Full Name" Width="auto"
-                                    DisplayMemberBinding="{Binding FullName}"/>
+                                    DisplayMemberBinding="{Binding Account.FullName}"/>
                     <GridViewColumn Header="Email" Width="auto"
-                                    DisplayMemberBinding="{Binding Email}"/>
+                                    DisplayMemberBinding="{Binding Account.Email}"/>
                     <GridViewColumn Header="Role" Width="auto"
-                                    DisplayMemberBinding="{Binding Role}"/>
+                                    DisplayMemberBinding="{Binding Account.Role}"/>
                     <GridViewColumn Header="Credit" Width="auto"
-                                    DisplayMemberBinding="{Binding Credit}"/>
+                                    DisplayMemberBinding="{Binding Account.Credit}"/>
                     <GridViewColumn Header="Status" Width="auto"
                                     DisplayMemberBinding="{Binding Status}"/>
+                    <GridViewColumn Header="Spent Credit" Width="auto"
+                                    DisplayMemberBinding="{Binding SpentCredit}"/>
+                    <GridViewColumn Header="Auction Won" Width="auto"
+                                    DisplayMemberBinding="{Binding WonAuctions}"/>
+                    <GridViewColumn Header="Bid Balance" Width="auto"
+                                    DisplayMemberBinding="{Binding BidBalance}"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -106,54 +121,34 @@
             Grid.Row="2"
             HorizontalAlignment="Center">
             <Button Command="{Binding NavigateCreateAccountCommand}"
-            Height="24"
-            Width="90"
             VerticalAlignment="Center"
             Margin="0 5 10 0"
             Foreground="White"
             Background="Green"
             Cursor="Hand"
             >
-                <TextBlock Text="ADD NEW"
+                <TextBlock Text="ADD ACCOUNT"
                    FontWeight="Bold"
                    Style="{StaticResource MyButtonContentStyle}"
-                   Margin="2"/>
+                   Margin="5"/>
 
             </Button>
 
-            <Button Command="{Binding NavigateUpdateAccountCommand}"
+            <Button Command="{Binding NavigateUpdateAccountCommand, UpdateSourceTrigger=PropertyChanged}"
                     IsEnabled="{Binding CanClick, UpdateSourceTrigger=PropertyChanged}"
-                    Height="24"
-                    Width="90"
                     VerticalAlignment="Center"
                     Margin="60 5 10 0"
                     Foreground="Black"
                     Background="Yellow"
                     Cursor="Hand">
-                <TextBlock Text="UPDATE"
+                <TextBlock Text="UPDATE ACCOUNT"
                            FontWeight="Bold"
                            Style="{StaticResource MyButtonContentStyle}"
-                           Margin="2"/>
-
-            </Button>
-            <Button Command="{Binding DeleteAccountCommand}"
-            Height="24"
-            Width="90"
-            VerticalAlignment="Center"
-            Margin="60 5 10 0"
-            Foreground="White"
-            Background="Red"
-            Cursor="Hand"
-            IsEnabled="{Binding CanClick, UpdateSourceTrigger=PropertyChanged}">
-                <TextBlock Text="DELETE"
-                   FontWeight="Bold"
-                   Style="{StaticResource MyButtonContentStyle}"
-                   Margin="2"/>
+                           Margin="5"/>
 
             </Button>
             <Button Command="{Binding ResetPasswordCommand}"
-                                    Height="24"
-                                    Width="auto"
+                                    
                                     VerticalAlignment="Center"
                                     Margin="60 5 10 0"
                                     Foreground="White"
@@ -163,20 +158,19 @@
                 <TextBlock Text="RESET PASSWORD"
                            FontWeight="Bold"
                            Style="{StaticResource MyButtonContentStyle}"
-                           Margin="2"/>
+                           Margin="5"/>
             </Button>
-            <Button Command="{Binding ChangePasswordCommand}"
-                        Height="24"
-                        Width="auto"
-                        VerticalAlignment="Center"
-                        Margin="60 5 10 0"
-                        Foreground="White"
-                        Background="Olive"
-                        Cursor="Hand">
-                <TextBlock Text="CHANGE PASSWORD"
-               FontWeight="Bold"
-               Style="{StaticResource MyButtonContentStyle}"
-               Margin="2"/>
+            <Button Command="{Binding DeleteAccountCommand}"
+                    VerticalAlignment="Center"
+                    Margin="60 5 10 0"
+                    Foreground="White"
+                    Background="Red"
+                    Cursor="Hand"
+                    IsEnabled="{Binding CanClick, UpdateSourceTrigger=PropertyChanged}">
+                <TextBlock Text="DELETE ACCOUNT"
+                           FontWeight="Bold"
+                           Style="{StaticResource MyButtonContentStyle}"
+                           Margin="5"/>
             </Button>
         </StackPanel>
     </Grid>

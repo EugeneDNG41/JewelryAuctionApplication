@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows;
 
 namespace JewelryAuctionApplicationGUI.Commands;
 
@@ -32,7 +32,7 @@ public class AddCreditCommand : BaseCommand
     {
         if (_viewModel.CreditAmount <= 0)
         {
-            MessageBox.Show("Credit amount must be greater than 0");
+            MessageBox.Show("Credit amount must be greater than 0", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             //_viewModel.AddError("Credit amount must be greater than 0", nameof(_viewModel.CreditAmount));
             return;
         }
@@ -41,12 +41,11 @@ public class AddCreditCommand : BaseCommand
             _viewModel.account.Credit += _viewModel.CreditAmount;
             _accountService.Update(_viewModel.account);
             _viewModel.Refresh();
-            MessageBox.Show("Credit added successfully");
-
+            MessageBox.Show("Credit added successfully", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             //_navigationService.Navigate();
         } else
         {
-            MessageBox.Show("You must be logged in to add credit");
+            MessageBox.Show("You must be logged in as a user to add credit", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         
     }

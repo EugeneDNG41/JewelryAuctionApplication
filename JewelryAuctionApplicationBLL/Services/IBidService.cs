@@ -13,5 +13,6 @@ public interface IBidService
     IEnumerable<Bid> GetAll();
     Bid? GetHighestBid(int auctionId);
     IEnumerable<Bid> GetByAuctionId(int id);
-    decimal GetCulmulativeBidAmountByAccountId(int accountId);
+    decimal GetBidBalanceByAccountId(int accountId);
+    Task<decimal> GetCulmulativeBidAmountByAccountIdAsync(int accountId);
 }

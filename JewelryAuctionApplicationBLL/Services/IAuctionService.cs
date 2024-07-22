@@ -14,7 +14,7 @@ public interface IAuctionService
     Auction? GetOngoingByJewelryId(int id);
     Auction? GetById(int id);
     Auction? GetLatestByJewelryId(int id);
-    Task<IEnumerable<Auction>> GetAllLatest();
+    Task<IEnumerable<Auction>> GetAllLatestAsync();
     IEnumerable<Auction> GetWonAuction(int accountId);
     Task UpdateAsync(Auction auction);
 }

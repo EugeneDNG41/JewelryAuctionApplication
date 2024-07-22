@@ -9,15 +9,16 @@ namespace JewelryAuctionApplicationBLL.Services;
 
 public interface IAccountService
 {
-    Task<Account?> Authenticate(string username, string password);
+    Account? Authenticate(string username, string password);
     string Create(Account account);
     void Update(Account account);
     void ResetPassword(Account account);
     void Deactivate(int id);
     IEnumerable<Account> GetAll();
-    Task<Account?> GetByUsername(string username);
+    Account? GetByUsername(string username);
     IEnumerable<Account> GetByRole(Role role);
     Account? GetById(int id);
+    Account? GetByEmail(string email);
     void CreateAdmin();
     void ChangePassword(Account account, string newPassword);
     Task UpdateAsync(Account account);

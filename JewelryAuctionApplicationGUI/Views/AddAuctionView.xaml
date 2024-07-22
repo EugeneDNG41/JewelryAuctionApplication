@@ -90,13 +90,47 @@
                FontWeight="Bold"
                FontFamily="Montserrat"
                HorizontalAlignment="Center"/>
+            <Grid Margin="0 15 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
+                <Image Source="{Binding DisplayedImage, UpdateSourceTrigger=PropertyChanged}" 
+                       Grid.Row="0"
+                       Height="150"
+                       Width="150"
+                       HorizontalAlignment="Stretch"
+                       Margin="0 0 0 5"/>
+                <StackPanel Orientation="Vertical" Grid.Row="1" >
+                    <StackPanel Orientation="Horizontal" Height="auto">
+                        <TextBlock Text="ID: "/>
+                        <TextBlock Text="{Binding Jewelry.JewelryId, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Text="Category: " Margin="10 0 0 0"/>
+                        <TextBlock Text="{Binding Jewelry.JewelryCategory, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="auto">
+                        <TextBlock Text="Starting Price: "/>
+                        <TextBlock Text="{Binding Jewelry.StartingPrice, StringFormat={}{0:C}, UpdateSourceTrigger=PropertyChanged}"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="auto">
+                        <TextBlock Text="Condition: "/>
+                        <TextBlock Text="{Binding Jewelry.Condition, UpdateSourceTrigger=PropertyChanged}"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="auto">
+                        <TextBlock Text="Description: "/>
+                        <TextBlock Text="{Binding Jewelry.Description, UpdateSourceTrigger=PropertyChanged}"
+                       TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
             <TextBlock Text="End Date:"                   
                FontSize="12"
                FontWeight="Medium"
                FontFamily="Montserrat"                             
-               Margin="0,35,0,0"/>
-
+               Margin="0,5,0,0"/>
             <xctk:DateTimePicker Text="{Binding EndDate, UpdateSourceTrigger=PropertyChanged}"
                                  
                                  Height="28"
@@ -108,79 +142,7 @@
                                  Margin="0,5,0,0"
                                 >
             </xctk:DateTimePicker>
-
-            <TextBlock Text="Current Price"                   
-                   FontSize="12"
-                   FontWeight="Medium"
-                   FontFamily="Montserrat"                             
-                   Margin="0,10,0,0"/>
-            <TextBox Text="{Binding CurrentPrice, UpdateSourceTrigger=PropertyChanged}"
-                     FontSize="13"
-                     FontWeight="Medium"
-                     FontFamily="Montserrat"
-                     BorderThickness="0,0,0,2"     
-                     Height="28"
-                     VerticalContentAlignment="Center"
-                     Margin="0,5,0,0"
-                     PreviewTextInput="OnPreviewTextInput"
-                     TextChanged="OnTextChanged"/>
-            <TextBlock Text="Selected Jewelry"                   
-                       FontSize="12"
-                       FontWeight="Medium"
-                       FontFamily="Montserrat"                             
-                       Margin="0,10,0,0"/>
-            <ComboBox HorizontalAlignment="Left"
-                      Width="320"
-                      FontSize="13"
-                      FontWeight="Medium"
-                      FontFamily="Montserrat"
-                      BorderThickness="0,0,0,2"     
-                      Height="28"
-                      VerticalContentAlignment="Center"
-                      Margin="0,5,0,0"
-                      ItemsSource="{Binding Path=Jewelries}"    
-                      SelectedItem="{Binding Path=Jewelry}"
-                      IsSynchronizedWithCurrentItem="True"
-                      SelectedIndex="0"
-                      DisplayMemberPath="JewelryName"/>
-            <Grid Margin="0 20 0 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Image Source="{Binding DisplayedImage, UpdateSourceTrigger=PropertyChanged}" 
-                       Grid.Column="0"
-                       Height="80" 
-                       Width="80"                      
-                       HorizontalAlignment="Left"/>
-                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="10 0 0 0">
-                    <StackPanel Orientation="Horizontal" Height="auto">
-                        <TextBlock Text="ID: "/>
-                        <TextBlock Text="{Binding Jewelry.JewelryId, UpdateSourceTrigger=PropertyChanged}"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Height="auto">
-                        <TextBlock Text="Category: "/>
-                        <TextBlock Text="{Binding Jewelry.JewelryCategory, UpdateSourceTrigger=PropertyChanged}"
-                                   TextWrapping="Wrap"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Height="auto">
-                        <TextBlock Text="Condition: "/>
-                        <TextBlock Text="{Binding Jewelry.Condition, UpdateSourceTrigger=PropertyChanged}"
-                                   TextWrapping="Wrap"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Height="auto">
-                        <TextBlock Text="Starting Price: "/>
-                        <TextBlock Text="{Binding Jewelry.StartingPrice, StringFormat={}{0:C}, UpdateSourceTrigger=PropertyChanged}"
-                                   TextWrapping="Wrap"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Height="auto">
-                        <TextBlock Text="Status: "/>
-                        <TextBlock Text="{Binding Jewelry.Status, UpdateSourceTrigger=PropertyChanged}"
-                                   TextWrapping="Wrap"/>
-                    </StackPanel>
-                </StackPanel>
-            </Grid>
+            
             <Button Command="{Binding AddAuctionCommand}"
             IsEnabled="{Binding CanClick}"
             BorderThickness="0"

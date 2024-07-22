@@ -60,31 +60,36 @@
         <TextBlock
             Grid.Column="1"
             Margin="10 0 0 0"
-            Text="Placeholder" />
+            Text="Placeholder"
+            VerticalAlignment="Center"/>
         <Button 
             Grid.Column="3"
             Margin="10 0 0 0"
             Command="{Binding NavigatePastAuctionCommand}"
-            Content="View Past Auctions"
-            Foreground="Black"/>
+            Content="Past Auctions"
+            Foreground="Black"
+            Visibility="{Binding IsUserOrGuest, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         <Button
             Grid.Column="2"
             Margin="10 0 0 0"
             Command="{Binding NavigateHomeCommand}"
-            Content="Home"
-            Foreground="Black"/>
+            Content="Upcoming Auctions"
+            Foreground="Black"
+            Visibility="{Binding IsUserOrGuest, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         <Button
             Grid.Column="4"
             Margin="10 0 0 0"
-            Command="{Binding NavigateAddJewelryCommand}"
-            Content="Add Jewelry"
-            Foreground="Black"/>
+            Command="{Binding NavigateAccountManagementCommand}"
+            Content="Account Management"
+            Foreground="Black"
+            Visibility="{Binding IsAdminOrManager, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         <Button
             Grid.Column="5"
             Margin="10 0 0 0"
-            Command="{Binding NavigateAddAuctionCommand}"
-            Content="Add Auction"
-            Foreground="Black"/>
+            Command="{Binding NavigateJewelryManagementCommand}"
+            Content="Jewelry Management"
+            Foreground="Black"
+            Visibility="{Binding IsStaff, Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
         <Button
             Grid.Column="6"
@@ -106,7 +111,7 @@
             Command="{Binding NavigateAddCreditCommand}"
             Content="Add Credit" 
             Foreground="Black"
-            Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            Visibility="{Binding IsUser, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         <!--<Button
             Grid.Column="5"
             Margin="10 0 0 0"

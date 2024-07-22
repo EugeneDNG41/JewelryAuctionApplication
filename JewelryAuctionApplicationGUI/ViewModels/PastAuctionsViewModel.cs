@@ -16,7 +16,7 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 public class PastAuctionsViewModel : BaseViewModel
 {
     private readonly IJewelryService _jewelryService;
-    public ObservableCollection<JewelryListingViewModel> _jewelryListings { get; private set; } 
+    public ObservableCollection<JewelryListingViewModel> JewelryListings { get; private set; } 
     public ICollectionView JewelryCollectionView { get; private set; }
     private string _jewelryNameFilter = string.Empty;
     public string JewelryNameFilter
@@ -69,27 +69,20 @@ public class PastAuctionsViewModel : BaseViewModel
         new ObservableCollection<string> { "All", "Price", "Bid Number", "Auction Time" };
     public ObservableCollection<string> SortOrder =>
         new ObservableCollection<string> { "Default", "Ascending", "Descending" };
-    public PastAuctionsViewModel(
-        IJewelryService jewelryService,
-        ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService,
-        IAuctionService auctionService, IBidService bidService
-        )
-    {
-        _jewelryService = jewelryService;
-        InitializeJewelryList(jewelryService, auctionService, bidService, navigateJewelryPageService);
-        JewelryCollectionView = CollectionViewSource.GetDefaultView(_jewelryListings);
-        JewelryCollectionView.Filter = FilterJewelry;
-    }
-    private void InitializeJewelryList(
-        IJewelryService jewelryService,
-        IAuctionService auctionService,
-        IBidService bidService,
+    public PastAuctionsViewModel(IJewelryService jewelryService,
         ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService
         )
     {
-        _jewelryListings = new ObservableCollection<JewelryListingViewModel>(
+        _jewelryService = jewelryService;
+        InitializeJewelryList(navigateJewelryPageService);
+        JewelryCollectionView = CollectionViewSource.GetDefaultView(JewelryListings);
+        JewelryCollectionView.Filter = FilterJewelry;
+    }
+    private void InitializeJewelryList(ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService)
+    {
+        JewelryListings = new ObservableCollection<JewelryListingViewModel>(
             _jewelryService.GetJewelriesWithEndedAuctions()
-            .Select(j => new JewelryListingViewModel(j.Jewelry, j.LatestAuction, navigateJewelryPageService, auctionService, bidService, jewelryService)));
+            .Select(j => new JewelryListingViewModel(j.Jewelry, j.LatestAuction, navigateJewelryPageService)));
     }
     private bool FilterJewelry(object obj)
     {

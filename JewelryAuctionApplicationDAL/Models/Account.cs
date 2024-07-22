@@ -19,7 +19,6 @@ public class Account
     public bool Status { get; set; }
     public decimal Credit { get; set; }
     public Role Role { get; set; }
-    public ICollection<Bid> Bids { get; set; }
-    public ICollection<Auction> Auctions { get; set; }
-    
+    public ICollection<Bid> Bids { get; set; } = new List<Bid>();
+    public ICollection<Auction> Auctions { get; set; } = new List<Auction>();
 }

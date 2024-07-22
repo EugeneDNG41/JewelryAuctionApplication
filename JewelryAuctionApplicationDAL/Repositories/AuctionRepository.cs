@@ -45,16 +45,16 @@ public class AuctionRepository : IAuctionRepository
     {
         return _context.Auctions.Include(a => a.Bids).ThenInclude(b => b.Account).Where(a => a.JewelryId == jewelryId).OrderByDescending(a => a.AuctionId).FirstOrDefault();
     }
-    public async Task<IEnumerable<Auction>> GetAllLatest()
+    public async Task<IEnumerable<Auction>> GetAllLatestAsync()
     {
         var latestAuctions = await _context.Auctions.Include(a => a.Jewelry).Include(a => a.Bids).ThenInclude(b => b.Account)
+                .Where(a => a.Jewelry.Status == JewelryStatus.ACTIVE)
                 .GroupBy(a => a.JewelryId)
                 .Select(g => g.OrderByDescending(a => a.AuctionId).First()).ToListAsync();
         return latestAuctions;
     }
     public IEnumerable<Auction> GetWonAuction(int accountId)
     {
-        return _context.Auctions.Include(a => a.Bids).
-            Where(a => a.EndDate < DateTime.Now && a.Bids.Any() && a.Bids.OrderByDescending(b => b.BidAmount).First().AccountId == accountId);
+        return _context.Auctions.Include(a => a.AccountId == accountId);
     }
 }

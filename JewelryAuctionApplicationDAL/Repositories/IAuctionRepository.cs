@@ -11,7 +11,7 @@ public interface IAuctionRepository
 {
     void Add(Auction auction);
     void Update(Auction auction);
-    Task<IEnumerable<Auction>> GetAllLatest();
+    Task<IEnumerable<Auction>> GetAllLatestAsync();
     IEnumerable<Auction> GetByJewelryId(int jewelryId);
     Auction? GetOngoingByJewelryId(int id);
     Auction? GetById(int id);

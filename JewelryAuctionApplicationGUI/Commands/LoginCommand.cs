@@ -15,21 +15,23 @@ public class LoginCommand : BaseCommand
     private readonly AccountStore _accountStore;
     private readonly INavigationService _closeModal;
     private readonly INavigationService _accountManagement;
+    private readonly INavigationService _jewelryManagement;
     private readonly IAccountService _accountService;
-
+    
     public LoginCommand(LoginViewModel viewModel, 
-        AccountStore accountStore, INavigationService accountManagement, 
+        AccountStore accountStore, INavigationService accountManagementNavigationService, INavigationService jewelryManagementNavigationService, 
         INavigationService closeModal, 
         IAccountService accountService)
     {
         _viewModel = viewModel;
         _accountStore = accountStore;
-        _accountManagement = accountManagement;
+        _accountManagement = accountManagementNavigationService;
+        _jewelryManagement = jewelryManagementNavigationService;
         _closeModal = closeModal;
         _accountService = accountService;
     }
 
-    public override async void Execute(object parameter)
+    public override void Execute(object parameter)
     {
         if (string.IsNullOrEmpty(_viewModel.Username))
         {
@@ -41,7 +43,7 @@ public class LoginCommand : BaseCommand
             _viewModel.AddError("Required", nameof(_viewModel.Password));
             return;
         }
-        Account? account = await _accountService.Authenticate(_viewModel.Username, _viewModel.Password);
+        Account? account = _accountService.Authenticate(_viewModel.Username, _viewModel.Password);
         if (account != null && account.Status)
         {  
             _accountStore.CurrentAccount = account;
@@ -49,6 +51,9 @@ public class LoginCommand : BaseCommand
             if (_accountStore.IsAdmin || _accountStore.IsManager)
             {
                 _accountManagement.Navigate();
+            } else if (_accountStore.IsStaff)
+            {
+                _jewelryManagement.Navigate();
             } else if (_accountStore.IsUser)
             {
                 _closeModal.Navigate();

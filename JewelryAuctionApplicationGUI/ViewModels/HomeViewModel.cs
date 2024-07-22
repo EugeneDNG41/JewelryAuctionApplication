@@ -8,9 +8,6 @@ using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Windows.Data;
-using System.Windows.Forms.Design;
-using System.Windows.Input;
-using System.Windows.Media.Imaging;
 
 namespace JewelryAuctionApplicationGUI.ViewModels;
 
@@ -19,7 +16,7 @@ public class HomeViewModel : BaseViewModel
     private readonly IJewelryService _jewelryService;
     private readonly IAccountService _accountService;
     public ObservableCollection<Account> accounts => new ObservableCollection<Account>(_accountService.GetAll());
-    public ObservableCollection<JewelryListingViewModel> _jewelryListings { get; private set; } 
+    public ObservableCollection<JewelryListingViewModel> JewelryListings { get; private set; } 
     public ICollectionView JewelryCollectionView { get; private set; }
     private string _jewelryNameFilter = string.Empty;
     public string JewelryNameFilter
@@ -73,14 +70,13 @@ public class HomeViewModel : BaseViewModel
     public ObservableCollection<string> SortOrder =>
         new ObservableCollection<string> { "Default", "Ascending", "Descending"};
     public HomeViewModel(
-        IJewelryService jewelryService,        
-        IAuctionService auctionService, IBidService bidService,
+        IJewelryService jewelryService,
         ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService
         )
     {        
         _jewelryService = jewelryService;
-        InitializeJewelryList(jewelryService, auctionService, bidService, navigateJewelryPageService);
-        JewelryCollectionView = CollectionViewSource.GetDefaultView(_jewelryListings);
+        InitializeJewelryList(navigateJewelryPageService);
+        JewelryCollectionView = CollectionViewSource.GetDefaultView(JewelryListings);
         JewelryCollectionView.Filter = FilterJewelry;
     }
 
@@ -95,15 +91,11 @@ public class HomeViewModel : BaseViewModel
         else { return false; }
     }
 
-    private void InitializeJewelryList(
-        IJewelryService jewelryService, 
-        IAuctionService auctionService, 
-        IBidService bidService,
-        ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService)
+    private void InitializeJewelryList(ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService)
     {
-        _jewelryListings = new ObservableCollection<JewelryListingViewModel>(
+        JewelryListings = new ObservableCollection<JewelryListingViewModel>(
             _jewelryService.GetJewelriesWithOngoingAuctions()
-            .Select(j => new JewelryListingViewModel(j.Jewelry, j.LatestAuction, navigateJewelryPageService, auctionService, bidService, jewelryService)));
+            .Select(j => new JewelryListingViewModel(j.Jewelry, j.LatestAuction, navigateJewelryPageService)));
     }
 
     private void UpdateSorting()

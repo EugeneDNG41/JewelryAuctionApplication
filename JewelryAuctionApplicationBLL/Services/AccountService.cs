@@ -14,9 +14,9 @@ public class AccountService : IAccountService
         _passwordHasher = passwordHasher;
     }
 
-    public async Task<Account?> Authenticate(string username, string password)
+    public Account? Authenticate(string username, string password)
     {
-        var account = await _accountRepository.GetByUsername(username);
+        var account = _accountRepository.GetByUsername(username);
         if (account != null && _passwordHasher.Verify(account.Password, password))
         {
             return account;
@@ -25,7 +25,8 @@ public class AccountService : IAccountService
     }
     public void CreateAdmin()
     {
-        if (!_accountRepository.GetByRole(Role.ADMIN).Any())
+        var existingAdmin = _accountRepository.GetByRole(Role.ADMIN).FirstOrDefault();
+        if (existingAdmin == null)
         {
             var admin = new Account
             {
@@ -38,6 +39,10 @@ public class AccountService : IAccountService
                 Status = true
             };
             _accountRepository.Add(admin);
+        } else if (!existingAdmin.Status)
+        {
+            existingAdmin.Status = true;
+            Update(existingAdmin);
         }
     }
     public void ChangePassword(Account account, string newPassword)
@@ -48,13 +53,13 @@ public class AccountService : IAccountService
     }
     public string Create(Account account)
     {
-        var existingEmail =  _accountRepository.GetByEmail(account.Email);
+        var existingEmail =  GetByEmail(account.Email);
         if (existingEmail != null)
         {
             return "EMAIL_TAKEN";
         }
 
-        var existingUsername = _accountRepository.GetByUsername(account.Username);
+        var existingUsername = GetByUsername(account.Username);
         if (existingUsername != null)
         {
             return "USERNAME_TAKEN";
@@ -86,9 +91,9 @@ public class AccountService : IAccountService
         return _accountRepository.GetByRole(role);
     }
 
-    public async Task<Account?>? GetByUsername(string username)
+    public Account? GetByUsername(string username)
     {
-        return await _accountRepository.GetByUsername(username);
+        return _accountRepository.GetByUsername(username);
     }
 
     public void Update(Account account)
@@ -104,6 +109,10 @@ public class AccountService : IAccountService
     public Account? GetById(int id)
     {
         return _accountRepository.GetById(id);
+    }
+    public Account? GetByEmail(string email)
+    {
+        return _accountRepository.GetByEmail(email);
     }
     public async Task UpdateAsync(Account account)
     {

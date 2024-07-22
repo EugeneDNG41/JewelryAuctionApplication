@@ -67,13 +67,17 @@ public class LoginViewModel : BaseViewModel, INotifyDataErrorInfo
     }
     public ICommand LoginCommand { get; }
     public ICommand CloseModalCommand { get; }
+    public ICommand NavigateSignupCommand { get; }
     public LoginViewModel(AccountStore accountStore, 
-        INavigationService accountManagementNavigationService, 
+        INavigationService accountManagementNavigationService,
+        INavigationService jewelryManagementNavigationService,
         IAccountService accountService,
-        INavigationService closeModalNavigationService)
+        INavigationService closeModalNavigationService,
+        INavigationService signupNavigationService)
     {
-        LoginCommand = new LoginCommand(this, accountStore, accountManagementNavigationService, closeModalNavigationService, accountService);       
+        LoginCommand = new LoginCommand(this, accountStore, accountManagementNavigationService, jewelryManagementNavigationService, closeModalNavigationService, accountService);       
         CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
+        NavigateSignupCommand = new NavigateCommand(signupNavigationService);
     }
     private readonly Dictionary<string, List<string>> _propertyErrors = new();
     public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;

@@ -42,7 +42,7 @@ public class BidRepository : IBidRepository
         return _context.Bids.Where(b => b.AuctionId == id);
     }
 
-    public decimal GetCulmulativeBidAmountByAccountId(int id)
+    public decimal GetBidBalanceByAccountId(int id)
     {
         var allBids = _context.Bids
                           .Include(b => b.Auction)
@@ -59,6 +59,17 @@ public class BidRepository : IBidRepository
         {
             sum += bid.BidAmount;
         }
+
+        return sum;
+    }
+    public async Task<decimal> GetCulmulativeBidAmountByAccountIdAsync(int id)
+    {
+        var sum = await _context.Bids
+            .Include(b => b.Auction)
+            .Where(b => b.AccountId == id && b.Auction.EndDate > DateTime.Now)
+            .GroupBy(b => b.Auction.AuctionId)
+            .Select(g => g.OrderByDescending(b => b.BidAmount).First())
+            .SumAsync(b => b.BidAmount);
 
         return sum;
     }
