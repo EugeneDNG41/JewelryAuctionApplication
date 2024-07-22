@@ -123,8 +123,8 @@ public class ServiceRegistration
     private ChangePasswordViewModel CreateChangePasswordViewModel(IServiceProvider serviceProvider)
     {
         return new ChangePasswordViewModel(serviceProvider.GetRequiredService<IAccountService>(),
-            serviceProvider.GetRequiredService<CloseModalNavigationService>()
-            /*serviceProvider.GetRequiredService<AccountStore>()*/);
+            serviceProvider.GetRequiredService<AccountStore>(),
+            serviceProvider.GetRequiredService<CloseModalNavigationService>());
     }
     private NavigationBarViewModel CreateNavigationBarViewModel(IServiceProvider serviceProvider)
     {

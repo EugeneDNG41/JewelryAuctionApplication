@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JewelryAuctionApplicationDAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63bafcc561f58491b8196f76168145c0a930d969")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed3b4d64b114bf3b1df947d10061c9f3e2f61119")]
 [assembly: System.Reflection.AssemblyProductAttribute("JewelryAuctionApplicationDAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JewelryAuctionApplicationDAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

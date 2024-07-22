@@ -1,4 +1,5 @@
 ﻿using JewelryAuctionApplicationBLL.Services;
+using JewelryAuctionApplicationBLL.Stores;
 using JewelryAuctionApplicationGUI.Commands;
 using JewelryAuctionApplicationGUI.Navigation;
 using Microsoft.Identity.Client;
@@ -15,7 +16,6 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 
 public class ChangePasswordViewModel : BaseViewModel
 {
-    private readonly IAccountService _service;
     private string oldPassword;
     private string newPassword;
     private string confirmPassword;
@@ -37,18 +37,66 @@ public class ChangePasswordViewModel : BaseViewModel
             OnErrorsChanged(nameof(OldPassword));
         }
     }
+    public string NewPassword
+    {
+        get => newPassword;
+        set
+        {
+            newPassword = value; //new value is inputted
+            OnPropertyChanged(nameof(NewPassword));
+
+            ClearErrors(nameof(NewPassword)); //clear previous error
+
+            if (string.IsNullOrEmpty(NewPassword)) //check for error
+            {
+                AddError("Required", nameof(NewPassword));
+            }
+            OnErrorsChanged(nameof(NewPassword));
+        }
+    }
+    public string ConfirmPassword
+    {
+        get => confirmPassword;
+        set
+        {
+            confirmPassword = value; //new value is inputted
+            OnPropertyChanged(nameof(ConfirmPassword));
+
+            ClearErrors(nameof(ConfirmPassword)); //clear previous error
+
+            if (string.IsNullOrEmpty(ConfirmPassword)) //check for error
+            {
+                AddError("Required", nameof(ConfirmPassword));
+            }
+            OnErrorsChanged(nameof(ConfirmPassword));
+        }
+    }
+    private string _errorMessage;
+    public string ErrorMessage
+    {
+        get
+        {
+            return _errorMessage;
+        }
+
+        set
+        {
+            _errorMessage = value;
+            OnPropertyChanged(nameof(ErrorMessage));
+        }
+    }
     public ICommand ChangePasswordCommand { get; }
     public ICommand CloseModalCommand { get; }
     private readonly Dictionary<string, List<string>> _propertyErrors = new();
     public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
-    public bool HasErrors => _propertyErrors.Any();
-    public bool CanClick => !HasErrors;
     public ChangePasswordViewModel(IAccountService service,
+        AccountStore accountStore,
         INavigationService closeModalNavigationService)
     {
-        _service = service;
+        ChangePasswordCommand = new ChangePasswordCommand(this, accountStore, closeModalNavigationService,service);
         CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
     }
+
     public IEnumerable GetErrors(string propertyName)
     {
         return _propertyErrors.GetValueOrDefault(propertyName, null);
@@ -66,7 +114,6 @@ public class ChangePasswordViewModel : BaseViewModel
     private void OnErrorsChanged(string propertyName)
     {
         ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
-        OnPropertyChanged(nameof(CanClick));
     }
 
     public void ClearErrors(string propertyName)

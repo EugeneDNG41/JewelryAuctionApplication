@@ -29,56 +29,8 @@
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="25"/>
-                <ColumnDefinition Width="5"/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock Text="PROFILE"
-               Foreground="Black"
-               FontSize="10"
-               FontFamily="Montserrat"
-               Grid.Column="0"
-               VerticalAlignment="Center"
-               Margin="10,0,0,0"/>
-
-            <Button BorderThickness="0"
-            Content="X"
-            Foreground="White"
-            FontSize="12"
-            FontFamily="Montserrat"
-            Cursor="Hand"
-            Grid.Column="1"
-            Command="{Binding CloseModalCommand}">
-
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Background" Value="Black"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DimGray"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="18" Height="18"
-                        CornerRadius="9"
-                        Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center"
-                                      HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-        </Grid>
 
         <StackPanel Width="920"
             Grid.Row="1"
@@ -222,7 +174,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button Command="{Binding UpdateProfileCommand}"
+                <!--<Button Command="{Binding UpdateProfileCommand}"
                 IsEnabled="{Binding CanClick}"
                 BorderThickness="0"
                 Content="EDIT"
@@ -256,7 +208,7 @@
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
-                </Button>
+                </Button>-->
                 <Button Command="{Binding DeleteProfileCommand}"
                 IsEnabled="{Binding CanClick}"
                 BorderThickness="0"
@@ -295,59 +247,4 @@
             </StackPanel>
         </StackPanel>
     </Grid>
-    <!--<Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="1">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
-            Height="630" Width="780">
-            <TextBlock HorizontalAlignment="Center"
-               Margin="0, 50" TextWrapping="Wrap"
-               VerticalAlignment="Top" FontSize="20"
-               Foreground="DeepSkyBlue" FontWeight="Bold"
-               Text="Profile"/>
-            <StackPanel Margin="50,0,50,0" Width="570">
-                <DockPanel Margin="20" Width="530">
-                    <Label Content="UserName" Width="170"/>
-                    <TextBox Name="txtFullName" TextWrapping="Wrap" Width="360" Text="{Binding Username}"/>
-                </DockPanel>
-                <DockPanel Margin="20" Width="530">
-                    <Label Content="Full Name" Width="170"/>
-                    <TextBox Name="txtTelephone" TextWrapping="Wrap" Width="360" Text="{Binding FullName}"/>
-                </DockPanel>
-
-                <DockPanel Margin="20" Width="530">
-                    <Label Content="Email" Width="170"/>
-                    <TextBox Name="txtEmail" TextWrapping="Wrap" Width="360" Text="{Binding Email}"/>
-                </DockPanel>
-
-                <DockPanel Margin="20" Width="530">
-                    <Label Content="Password" Width="170"/>
-                    <Button Command="{Binding NavigateChangePasswordCommand}" Content="Change Password" Width="130"/>
-                </DockPanel>
-
-                <DockPanel Margin="20" Width="530">
-                    <Label Content="Credit" Width="100"/>
-                    <TextBlock Margin="70,0,0,0" Name="txtCredit" TextWrapping="Wrap" Width="360" Text="{Binding Account.Credit}"/>
-                </DockPanel>
-
-
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                <Button Command="{Binding UpdateProfileCommand}"
-                        Margin="50"
-                        Height="30" Width="50" Content="Edit"/>
-                <Button Margin="50"
-                        Height="30" Width="80" Content="View History"/>
-                <Button Margin="50"
-                        Height="30" Width="100" Content="Delete Account"/>
-            </StackPanel>
-
-        </StackPanel>
-        </Grid>
-
-    </Grid>-->
 </UserControl>

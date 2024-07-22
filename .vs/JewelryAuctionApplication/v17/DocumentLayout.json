@@ -1,7 +1,48 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|d:\\main\\2024_fptu\\sem5\\prn212\\finalproj\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\profileview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\profileview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|d:\\main\\2024_fptu\\sem5\\prn212\\finalproj\\jewelryauctionapplication\\jewelryauctionapplicationgui\\commands\\changepasswordcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\commands\\changepasswordcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|d:\\main\\2024_fptu\\sem5\\prn212\\finalproj\\jewelryauctionapplication\\jewelryauctionapplicationgui\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|d:\\main\\2024_fptu\\sem5\\prn212\\finalproj\\jewelryauctionapplication\\jewelryauctionapplicationgui\\commands\\logincommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\commands\\logincommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|d:\\main\\2024_fptu\\sem5\\prn212\\finalproj\\jewelryauctionapplication\\jewelryauctionapplicationgui\\viewmodels\\changepasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\viewmodels\\changepasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|d:\\main\\2024_fptu\\sem5\\prn212\\finalproj\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|d:\\main\\2024_fptu\\sem5\\prn212\\finalproj\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\changepasswordview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\changepasswordview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CF64C73-9206-4D64-A8BD-DC5574288659}|JewelryAuctionApplicationBLL\\JewelryAuctionApplicationBLL.csproj|d:\\main\\2024_fptu\\sem5\\prn212\\finalproj\\jewelryauctionapplication\\jewelryauctionapplicationbll\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CF64C73-9206-4D64-A8BD-DC5574288659}|JewelryAuctionApplicationBLL\\JewelryAuctionApplicationBLL.csproj|solutionrelative:jewelryauctionapplicationbll\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|d:\\main\\2024_fptu\\sem5\\prn212\\finalproj\\jewelryauctionapplication\\jewelryauctionapplicationgui\\views\\addjewelryview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\views\\addjewelryview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|d:\\main\\2024_fptu\\sem5\\prn212\\finalproj\\jewelryauctionapplication\\jewelryauctionapplicationgui\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9A406DB-2EDB-47E7-AD57-CDA2BC306085}|JewelryAuctionApplicationGUI\\JewelryAuctionApplicationGUI.csproj|solutionrelative:jewelryauctionapplicationgui\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,11 +50,137 @@
       "DocumentGroups": [
         {
           "DockedHeight": 300,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\LoginView.xaml",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Views\\LoginView.xaml",
+              "ToolTip": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\LoginView.xaml",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\Views\\LoginView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-22T21:35:57.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationBLL\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationBLL\\Services\\AccountService.cs",
+              "ToolTip": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationBLL\\Services\\AccountService.cs",
+              "RelativeToolTip": "JewelryAuctionApplicationBLL\\Services\\AccountService.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAIwFcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T21:31:59.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AddJewelryView.xaml",
+              "DocumentMoniker": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\AddJewelryView.xaml",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Views\\AddJewelryView.xaml",
+              "ToolTip": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\AddJewelryView.xaml",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\Views\\AddJewelryView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-22T21:23:11.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginCommand.cs",
+              "DocumentMoniker": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Commands\\LoginCommand.cs",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Commands\\LoginCommand.cs",
+              "ToolTip": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Commands\\LoginCommand.cs",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\Commands\\LoginCommand.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T21:08:56.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAYwEkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T21:05:10.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChangePasswordCommand.cs",
+              "DocumentMoniker": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Commands\\ChangePasswordCommand.cs",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Commands\\ChangePasswordCommand.cs",
+              "ToolTip": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Commands\\ChangePasswordCommand.cs",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\Commands\\ChangePasswordCommand.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAIwD0AAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T20:41:58.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ServiceRegistration.cs",
+              "DocumentMoniker": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ServiceRegistration.cs",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ServiceRegistration.cs",
+              "ToolTip": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ServiceRegistration.cs",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\ServiceRegistration.cs",
+              "ViewState": "AQIAAJ0AAAAAAAAAAAAqwKoAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T21:03:49.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChangePasswordViewModel.cs",
+              "DocumentMoniker": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\ChangePasswordViewModel.cs",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\ViewModels\\ChangePasswordViewModel.cs",
+              "ToolTip": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\ViewModels\\ChangePasswordViewModel.cs",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\ViewModels\\ChangePasswordViewModel.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAcwFoAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T20:15:01.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ChangePasswordView.xaml",
+              "DocumentMoniker": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\ChangePasswordView.xaml",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Views\\ChangePasswordView.xaml",
+              "ToolTip": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\ChangePasswordView.xaml",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\Views\\ChangePasswordView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-22T20:14:42.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProfileView.xaml",
+              "DocumentMoniker": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\ProfileView.xaml",
+              "RelativeDocumentMoniker": "JewelryAuctionApplicationGUI\\Views\\ProfileView.xaml",
+              "ToolTip": "D:\\MAIN\\2024_FPTU\\sem5\\PRN212\\FinalProj\\JewelryAuctionApplication\\JewelryAuctionApplicationGUI\\Views\\ProfileView.xaml",
+              "RelativeToolTip": "JewelryAuctionApplicationGUI\\Views\\ProfileView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-22T20:13:50.487Z",
+              "EditorCaption": ""
             }
           ]
         }
