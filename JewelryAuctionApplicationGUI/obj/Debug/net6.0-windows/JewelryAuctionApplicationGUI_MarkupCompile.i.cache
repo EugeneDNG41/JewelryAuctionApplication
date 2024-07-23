@@ -16,5 +16,5 @@ D:\MAIN\2024_FPTU\sem5\PRN212\FinalProj\JewelryAuctionApplication\JewelryAuction
 247619605271
 Components\BindablePasswordBox.xaml;Components\JewelryCard.xaml;Components\NavigationBar.xaml;Themes\Generic.xaml;Views\AccountManagementView.xaml;Views\AddAuctionView.xaml;Views\AddBidView.xaml;Views\AddCreditView.xaml;Views\AddJewelryView.xaml;Views\ChangePasswordView.xaml;Views\CreateAccountView.xaml;Views\HomeView.xaml;Views\JewelryPageView.xaml;Views\LayoutView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\PastAuctionsView.xaml;Views\ProfileView.xaml;Views\SignupView.xaml;
 
-False
+True
 

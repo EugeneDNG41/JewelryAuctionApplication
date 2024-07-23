@@ -174,10 +174,10 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <!--<Button Command="{Binding UpdateProfileCommand}"
+                <Button Command="{Binding NavigateWonItem}"
                 IsEnabled="{Binding CanClick}"
                 BorderThickness="0"
-                Content="EDIT"
+                Content="WON ITEM"
                 Foreground="White"
                 FontSize="11"
                 FontFamily="Montserrat"
@@ -208,7 +208,7 @@
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
-                </Button>-->
+                </Button>
                 <Button Command="{Binding DeleteProfileCommand}"
                 IsEnabled="{Binding CanClick}"
                 BorderThickness="0"
