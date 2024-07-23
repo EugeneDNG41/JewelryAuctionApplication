@@ -295,3 +295,5 @@ D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\JewelryManagementView.baml
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\UpdateJewelryView.g.cs
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\UpdateJewelryView.baml
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\UpdateImageView.g.cs
+D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\obj\Debug\net6.0-windows\Views\UpdateImageView.baml

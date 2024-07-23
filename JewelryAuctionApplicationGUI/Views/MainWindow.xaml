@@ -58,6 +58,9 @@
             <DataTemplate DataType="{x:Type viewmodels:UpdateJewelryViewModel}">
                 <views:UpdateJewelryView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:UpdateImageViewModel}">
+                <views:UpdateImageView/>
+            </DataTemplate>
         </Grid.Resources>
         
         <resources:Modal  Panel.ZIndex="1" IsOpen="{Binding IsOpen}">

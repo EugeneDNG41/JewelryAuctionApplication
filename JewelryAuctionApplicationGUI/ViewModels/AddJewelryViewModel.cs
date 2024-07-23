@@ -147,7 +147,7 @@ public class AddJewelryViewModel : BaseViewModel, INotifyDataErrorInfo
         INavigationService returnJewelryManagementNavigationService)
     {
         AddJewelryCommand = new AddJewelryCommand(this, jewelryService, returnJewelryManagementNavigationService);
-        UploadImageCommand = new UploadImageCommand(this);
+        UploadImageCommand = new UploadImageCommand(this, null);
         CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
 
     }

@@ -14,10 +14,12 @@ namespace JewelryAuctionApplicationGUI.Commands;
 
 public class UploadImageCommand : BaseCommand
 {
-    private readonly AddJewelryViewModel _viewModel;
-    public UploadImageCommand(AddJewelryViewModel viewModel)
+    private readonly AddJewelryViewModel? _addJewelryviewModel;
+    private readonly UpdateImageViewModel? _updateImageViewModel;
+    public UploadImageCommand(AddJewelryViewModel? addJewelryViewModel, UpdateImageViewModel? updateImageViewModel)
     {
-        _viewModel = viewModel;
+        _addJewelryviewModel = addJewelryViewModel;
+        _updateImageViewModel = updateImageViewModel;
     }
     public override void Execute(object parameter)
     {
@@ -28,7 +30,18 @@ public class UploadImageCommand : BaseCommand
 
         if (openFileDialog.ShowDialog() == DialogResult.OK)
         {
-            _viewModel.Image = new BitmapImage(new Uri(openFileDialog.FileName));
+            if (_addJewelryviewModel != null)
+            {
+                _addJewelryviewModel.Image = new BitmapImage(new Uri(openFileDialog.FileName));
+            } else if (_updateImageViewModel != null)
+            {
+                _updateImageViewModel.Image = new BitmapImage(new Uri(openFileDialog.FileName));
+            }
+            else
+            {
+                MessageBox.Show("No View Model Found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }

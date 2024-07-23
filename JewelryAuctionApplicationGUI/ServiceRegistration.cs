@@ -132,6 +132,19 @@ public class ServiceRegistration
             serviceProvider.GetRequiredService<CloseModalNavigationService>(),
             navigationService));
     }
+    private ParameterNavigationService<Jewelry, UpdateImageViewModel> CreateUpdateImageNavigationService(IServiceProvider serviceProvider)
+    {
+        var navigationService = new CompositeNavigationService(
+           serviceProvider.GetRequiredService<CloseModalNavigationService>(),
+           CreateJewelryManagementNavigationService(serviceProvider));
+
+        return new ParameterNavigationService<Jewelry, UpdateImageViewModel>(
+            null, serviceProvider.GetRequiredService<ModalNavigationStore>(),
+            (parameter) => new UpdateImageViewModel(parameter,
+            serviceProvider.GetRequiredService<IJewelryService>(),
+            serviceProvider.GetRequiredService<CloseModalNavigationService>(),
+            navigationService));
+    }
     private AddJewelryViewModel CreateAddJewelryViewModel(IServiceProvider serviceProvider)
     {
         var navigationService = new CompositeNavigationService(
@@ -229,8 +242,11 @@ public class ServiceRegistration
     }
     private CreateAccountViewModel CreateCreateAccountViewModel(IServiceProvider serviceProvider)
     {
+        CompositeNavigationService accountManagementNavigationService = new(
+            serviceProvider.GetRequiredService<CloseModalNavigationService>(),
+            CreateAccountManagementNavigationService(serviceProvider));
         return new CreateAccountViewModel(serviceProvider.GetRequiredService<IAccountService>(),
-            serviceProvider.GetRequiredService<CloseModalNavigationService>());
+            serviceProvider.GetRequiredService<CloseModalNavigationService>(), accountManagementNavigationService);
     }
 
     private AccountManagementViewModel CreateAccountManagementViewModel(IServiceProvider serviceProvider)
@@ -253,7 +269,8 @@ public class ServiceRegistration
             CreateAddJewelryNavigationService(serviceProvider),
             navigationService, CreateJewelryPageNavigationService(serviceProvider),
             CreateUpdateJewelryNavigationService(serviceProvider),
-            CreateAddAuctionNavigationService(serviceProvider));           
+            CreateAddAuctionNavigationService(serviceProvider),
+            CreateUpdateImageNavigationService(serviceProvider));           
     }
     private SignupViewModel CreateSignupViewModel(IServiceProvider serviceProvider)
     {

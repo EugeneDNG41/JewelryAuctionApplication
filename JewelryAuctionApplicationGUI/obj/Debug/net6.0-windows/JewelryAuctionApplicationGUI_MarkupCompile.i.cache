@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Coding stuff\JewelryAuctionApplication\JewelryAuctionApplicationGUI\App.xaml
-20-1403953557
+21152964831
 
-78-2140207494
+82-1506692673
 261-901397723
-Components\BindablePasswordBox.xaml;Components\JewelryCard.xaml;Components\NavigationBar.xaml;Themes\Generic.xaml;Views\AccountManagementView.xaml;Views\AddAuctionView.xaml;Views\AddBidView.xaml;Views\AddCreditView.xaml;Views\AddJewelryView.xaml;Views\CreateAccountView.xaml;Views\HomeView.xaml;Views\JewelryManagementView.xaml;Views\JewelryPageView.xaml;Views\LayoutView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\PastAuctionsView.xaml;Views\SignupView.xaml;Views\UpdateAccountView.xaml;Views\UpdateJewelryView.xaml;
+Components\BindablePasswordBox.xaml;Components\JewelryCard.xaml;Components\NavigationBar.xaml;Themes\Generic.xaml;Views\AccountManagementView.xaml;Views\AddAuctionView.xaml;Views\AddBidView.xaml;Views\AddCreditView.xaml;Views\AddJewelryView.xaml;Views\CreateAccountView.xaml;Views\HomeView.xaml;Views\JewelryManagementView.xaml;Views\JewelryPageView.xaml;Views\LayoutView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\PastAuctionsView.xaml;Views\SignupView.xaml;Views\UpdateAccountView.xaml;Views\UpdateImageView.xaml;Views\UpdateJewelryView.xaml;
 
-False
+True
 

@@ -16,11 +16,11 @@ public class CreateAccountCommand : BaseCommand
     private readonly CreateAccountViewModel _viewModel;
     private readonly IAccountService _accountService;
     private readonly INavigationService _navigationService;
-    public CreateAccountCommand(CreateAccountViewModel viewModel, IAccountService accountService, INavigationService closeModalNavigationService)
+    public CreateAccountCommand(CreateAccountViewModel viewModel, IAccountService accountService, INavigationService returnAccountManagementViewModel)
     {
         _viewModel = viewModel;
         _accountService = accountService;
-        _navigationService = closeModalNavigationService;
+        _navigationService = returnAccountManagementViewModel;
     }
 
     public override void Execute(object parameter)

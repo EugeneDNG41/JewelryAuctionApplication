@@ -109,9 +109,11 @@ public class CreateAccountViewModel : BaseViewModel, INotifyDataErrorInfo
     public ICommand CreateAccountCommand { get; }
     public ICommand CloseModalCommand { get; }
 
-    public CreateAccountViewModel(IAccountService accountService, INavigationService closeModalNavigationServce)
+    public CreateAccountViewModel(IAccountService accountService, 
+        INavigationService closeModalNavigationServce, 
+        INavigationService returnAccountManagementViewModel)
     {
-        CreateAccountCommand = new CreateAccountCommand(this, accountService , closeModalNavigationServce);
+        CreateAccountCommand = new CreateAccountCommand(this, accountService , returnAccountManagementViewModel);
         CloseModalCommand = new NavigateCommand(closeModalNavigationServce);
         GenerateRoleList();
     }

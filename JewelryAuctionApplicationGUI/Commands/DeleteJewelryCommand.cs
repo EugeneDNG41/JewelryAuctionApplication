@@ -33,7 +33,7 @@ public class DeleteJewelryCommand : BaseCommand
         var jewelry = _viewModel.SelectedJewelryListing?.Jewelry;
         if (jewelry?.Status == JewelryStatus.READY || jewelry?.Status == JewelryStatus.SOLD)
         {
-            DialogResult result = MessageBox1.Show("Do you want to delete this jewelry?", "Confirmation", MessageBoxButtons.YesNoCancel);
+            DialogResult result = MessageBox1.Show("Do you want to delete this jewelry?", "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 jewelry.Status = JewelryStatus.DELETED;

@@ -112,9 +112,11 @@ public class JewelryManagementViewModel : BaseViewModel
     public ICommand NavigateAddJewelryCommand { get; }
     public ICommand NavigateUpdateJewelryCommand { get; private set; }
     public ICommand NavigateAddAuctionCommand { get; private set; }
+    public ICommand NavigateUpdateImageCommand { get; private set; }
     public ICommand DeleteJewelryCommand { get; }
     private readonly ParameterNavigationService<Jewelry, AddAuctionViewModel> _addAuctionNavigationService;
-    private readonly ParameterNavigationService<JewelryListingViewModel, UpdateJewelryViewModel> _updateJewelryNavigationService;  
+    private readonly ParameterNavigationService<JewelryListingViewModel, UpdateJewelryViewModel> _updateJewelryNavigationService;
+    private readonly ParameterNavigationService<Jewelry, UpdateImageViewModel> _updateImageNavigationService;
 
     public bool CanUpdate => SelectedJewelryListing != null;
     public bool CanAddAuction => SelectedJewelryListing?.Jewelry.Status == JewelryStatus.READY;
@@ -126,12 +128,14 @@ public class JewelryManagementViewModel : BaseViewModel
         INavigationService returnJewelryManagementNavigationService,
         ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> jewelryPageNavigationService,
         ParameterNavigationService<JewelryListingViewModel, UpdateJewelryViewModel> updateJewelryNavigationService,
-        ParameterNavigationService<Jewelry, AddAuctionViewModel> addAuctionNavigationService
+        ParameterNavigationService<Jewelry, AddAuctionViewModel> addAuctionNavigationService,
+        ParameterNavigationService<Jewelry, UpdateImageViewModel> updateImageNavigationService
         )
     {
         _accountStore = accountStore;
         _updateJewelryNavigationService = updateJewelryNavigationService;
         _addAuctionNavigationService = addAuctionNavigationService;
+        _updateImageNavigationService = updateImageNavigationService;
         InitializeJewelryList(jewelryService, jewelryPageNavigationService);
         JewelryListingCollectionView = CollectionViewSource.GetDefaultView(JewelryListings);
         JewelryListingCollectionView.Filter = FilterJewelry;
@@ -144,6 +148,7 @@ public class JewelryManagementViewModel : BaseViewModel
         if (SelectedJewelryListing != null)
         {
             NavigateUpdateJewelryCommand = new NavigateUpdateJewelryCommand(SelectedJewelryListing, _updateJewelryNavigationService);
+            NavigateUpdateImageCommand = new NavigateUpdateImageCommand(SelectedJewelryListing.Jewelry, _updateImageNavigationService);
             if (SelectedJewelryListing.Jewelry.Status == JewelryStatus.READY)
             {
                 NavigateAddAuctionCommand = new NavigateAddAuctionCommand(SelectedJewelryListing.Jewelry, _addAuctionNavigationService);
