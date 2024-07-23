@@ -235,7 +235,8 @@ public class ServiceRegistration
 
     private AccountManagementViewModel CreateAccountManagementViewModel(IServiceProvider serviceProvider)
     {
-        return new AccountManagementViewModel(serviceProvider.GetRequiredService<IAccountService>(),
+        return new AccountManagementViewModel(serviceProvider.GetRequiredService<AccountStore>(),
+            serviceProvider.GetRequiredService<IAccountService>(),
             serviceProvider.GetRequiredService<IBidService>(),
             CreateCreateAccountNavigationService(serviceProvider),
             CreateAccountManagementNavigationService(serviceProvider),
@@ -247,7 +248,8 @@ public class ServiceRegistration
             serviceProvider.GetRequiredService<CloseModalNavigationService>(),
             CreateJewelryManagementNavigationService(serviceProvider));
 
-        return new JewelryManagementViewModel(serviceProvider.GetRequiredService<IJewelryService>(),
+        return new JewelryManagementViewModel(serviceProvider.GetRequiredService<AccountStore>(),
+            serviceProvider.GetRequiredService<IJewelryService>(),
             CreateAddJewelryNavigationService(serviceProvider),
             navigationService, CreateJewelryPageNavigationService(serviceProvider),
             CreateUpdateJewelryNavigationService(serviceProvider),

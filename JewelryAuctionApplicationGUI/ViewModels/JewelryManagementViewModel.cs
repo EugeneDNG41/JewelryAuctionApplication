@@ -1,4 +1,5 @@
 ﻿using JewelryAuctionApplicationBLL.Services;
+using JewelryAuctionApplicationBLL.Stores;
 using JewelryAuctionApplicationDAL.Models;
 using JewelryAuctionApplicationGUI.Commands;
 using JewelryAuctionApplicationGUI.Navigation;
@@ -17,6 +18,7 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 
 public class JewelryManagementViewModel : BaseViewModel
 {
+    private readonly AccountStore _accountStore;
     public ObservableCollection<JewelryListingViewModel> JewelryListings { get; private set; }
     public ICollectionView JewelryListingCollectionView { get; private set; }
     private string _jewelryNameFilter = string.Empty;
@@ -27,6 +29,17 @@ public class JewelryManagementViewModel : BaseViewModel
         {
             _jewelryNameFilter = value;
             OnPropertyChanged(nameof(JewelryNameFilter));
+            JewelryListingCollectionView.Refresh();
+        }
+    }
+    private string _jewelryConditionFilter = string.Empty;
+    public string JewelryConditionFilter
+    {
+        get => _jewelryConditionFilter;
+        set
+        {
+            _jewelryConditionFilter = value;
+            OnPropertyChanged(nameof(JewelryConditionFilter));
             JewelryListingCollectionView.Refresh();
         }
     }
@@ -93,7 +106,7 @@ public class JewelryManagementViewModel : BaseViewModel
     public ObservableCollection<string> Statuses =>
         new ObservableCollection<string>(GenerateStatusList());
     public ObservableCollection<string> SortOptions =>
-        new ObservableCollection<string> { "All", "Price", "Bid Number", "Auction Time" };
+        new ObservableCollection<string> { "All", "Starting Price", "Current Price", "Number of Bids", "Auction Time", "Number of Auctions" };
     public ObservableCollection<string> SortOrder =>
         new ObservableCollection<string> { "Default", "Ascending", "Descending" };
     public ICommand NavigateAddJewelryCommand { get; }
@@ -105,8 +118,10 @@ public class JewelryManagementViewModel : BaseViewModel
 
     public bool CanUpdate => SelectedJewelryListing != null;
     public bool CanAddAuction => SelectedJewelryListing?.Jewelry.Status == JewelryStatus.READY;
+    public bool IsAdminOrManager => _accountStore.CurrentAccount?.Role == Role.ADMIN || _accountStore.CurrentAccount?.Role == Role.MANAGER;
 
-    public JewelryManagementViewModel(IJewelryService jewelryService,
+    public JewelryManagementViewModel(AccountStore accountStore,
+        IJewelryService jewelryService,
         INavigationService addJewelryNavigationService,
         INavigationService returnJewelryManagementNavigationService,
         ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> jewelryPageNavigationService,
@@ -114,6 +129,7 @@ public class JewelryManagementViewModel : BaseViewModel
         ParameterNavigationService<Jewelry, AddAuctionViewModel> addAuctionNavigationService
         )
     {
+        _accountStore = accountStore;
         _updateJewelryNavigationService = updateJewelryNavigationService;
         _addAuctionNavigationService = addAuctionNavigationService;
         InitializeJewelryList(jewelryService, jewelryPageNavigationService);
@@ -161,9 +177,10 @@ public class JewelryManagementViewModel : BaseViewModel
         if (obj is JewelryListingViewModel jewelryListingViewModel)
         {           
             bool matchesName = jewelryListingViewModel.Jewelry.JewelryName.Contains(JewelryNameFilter, StringComparison.InvariantCultureIgnoreCase);
+            bool matchesCondition = jewelryListingViewModel.Jewelry.Condition.Contains(JewelryConditionFilter, StringComparison.InvariantCultureIgnoreCase);
             bool matchesCategory = JewelryCategoryFilter == 0 || jewelryListingViewModel.Jewelry.JewelryCategory == (JewelryCategory)(JewelryCategoryFilter - 1);
             bool matchesStatus = JewelryStatusFilter == 0 || jewelryListingViewModel.Jewelry.Status == (JewelryStatus)(JewelryStatusFilter - 1);
-            return matchesCategory && matchesName && matchesStatus;
+            return matchesCategory && matchesName && matchesStatus && matchesCondition;
         }
         else { return false; }
     }
@@ -178,12 +195,15 @@ public class JewelryManagementViewModel : BaseViewModel
             switch (SelectedSortOption)
             {
                 case 1:
-                    JewelryListingCollectionView.SortDescriptions.Add(new SortDescription("LatestAuction.CurrentPrice", direction));
+                    JewelryListingCollectionView.SortDescriptions.Add(new SortDescription("Jewelry.StartingPrice", direction));
                     break;
                 case 2:
-                    JewelryListingCollectionView.SortDescriptions.Add(new SortDescription("LatestAuction.Bids.Count", direction));
+                    JewelryListingCollectionView.SortDescriptions.Add(new SortDescription("LatestAuction.CurrentPrice", direction));
                     break;
                 case 3:
+                    JewelryListingCollectionView.SortDescriptions.Add(new SortDescription("LatestAuction.Bids.Count", direction));
+                    break;
+                case 4:
                     JewelryListingCollectionView.SortDescriptions.Add(new SortDescription("LatestAuction.EndDate", direction));
                     break;
                 default:

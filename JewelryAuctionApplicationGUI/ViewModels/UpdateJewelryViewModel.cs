@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 
 namespace JewelryAuctionApplicationGUI.ViewModels;
 
-public class UpdateJewelryViewModel : BaseViewModel
+public class UpdateJewelryViewModel : BaseViewModel, INotifyDataErrorInfo
 {
     public Jewelry Jewelry { get; }
     public Auction? Auction { get; }

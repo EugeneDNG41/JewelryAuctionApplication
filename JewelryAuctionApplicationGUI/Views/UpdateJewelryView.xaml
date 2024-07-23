@@ -143,7 +143,7 @@
                    FontFamily="Montserrat"                             
                    Margin="0,10,0,0"
                    Visibility="{Binding Editable, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-            <TextBox Text="{Binding StartingPrice, UpdateSourceTrigger=PropertyChanged}"
+            <TextBox Text="{Binding StartingPrice, StringFormat={}{0:C0}, UpdateSourceTrigger=PropertyChanged}"
                  FontSize="12"
                  FontWeight="Medium"
                  FontFamily="Montserrat"
@@ -160,7 +160,7 @@
                        FontFamily="Montserrat"                             
                        Margin="0,10,0,0"
                        Visibility="{Binding Readonly, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-            <TextBox Text="{Binding Auction.CurrentPrice, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+            <TextBox Text="{Binding Auction.CurrentPrice, StringFormat={}{0:C0}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                      FontSize="12"
                      FontWeight="Medium"
                      FontFamily="Montserrat"

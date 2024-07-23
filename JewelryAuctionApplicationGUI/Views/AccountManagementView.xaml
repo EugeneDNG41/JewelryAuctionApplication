@@ -17,6 +17,7 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -121,12 +122,12 @@
             Grid.Row="2"
             HorizontalAlignment="Center">
             <Button Command="{Binding NavigateCreateAccountCommand}"
-            VerticalAlignment="Center"
-            Margin="0 5 10 0"
-            Foreground="White"
-            Background="Green"
-            Cursor="Hand"
-            >
+                    Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    VerticalAlignment="Center"
+                    Margin="0 5 10 0"
+                    Foreground="White"
+                    Background="Green"
+                    Cursor="Hand">
                 <TextBlock Text="ADD ACCOUNT"
                    FontWeight="Bold"
                    Style="{StaticResource MyButtonContentStyle}"
@@ -136,6 +137,7 @@
 
             <Button Command="{Binding NavigateUpdateAccountCommand, UpdateSourceTrigger=PropertyChanged}"
                     IsEnabled="{Binding CanClick, UpdateSourceTrigger=PropertyChanged}"
+                    Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}"
                     VerticalAlignment="Center"
                     Margin="60 5 10 0"
                     Foreground="Black"
@@ -148,7 +150,7 @@
 
             </Button>
             <Button Command="{Binding ResetPasswordCommand}"
-                                    
+                                    Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}"
                                     VerticalAlignment="Center"
                                     Margin="60 5 10 0"
                                     Foreground="White"
@@ -161,6 +163,7 @@
                            Margin="5"/>
             </Button>
             <Button Command="{Binding DeleteAccountCommand}"
+                    Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}"
                     VerticalAlignment="Center"
                     Margin="60 5 10 0"
                     Foreground="White"

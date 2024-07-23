@@ -10,13 +10,13 @@
     <UserControl.Resources>
         <Style x:Key="MyButtonContentStyle" TargetType="TextBlock">
             <Style.Triggers>
-
                 <Trigger Property="IsEnabled" Value="False">
                     <Setter Property="Background" Value="White" />
                     <Setter Property="Foreground" Value="DimGray" />
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -32,10 +32,17 @@
             Text="Jewelry Management" />
             <StackPanel Margin="15 0 0 0">
                 <TextBlock Text="Search name"
-               Margin="0 0 0 5"/>
-                <TextBox Width="150"
+                            Margin="0 0 0 5"/>
+                <TextBox Width="100"
                      Text="{Binding JewelryNameFilter, UpdateSourceTrigger=PropertyChanged}"
                      Height="20"/>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Search condition"
+                           Margin="0 0 0 5"/>
+                <TextBox Width="100"
+                         Text="{Binding JewelryConditionFilter, UpdateSourceTrigger=PropertyChanged}"
+                         Height="20"/>
             </StackPanel>
             <StackPanel Margin="15 0 0 0">
                 <TextBlock Text="Filter by category"
@@ -49,7 +56,7 @@
             <StackPanel Margin="15 0 0 0">
                 <TextBlock Text="Filter by status"
                            Margin="0 0 0 5"/>
-                <ComboBox Width="95"
+                <ComboBox Width="80"
                           ItemsSource="{Binding Statuses}"                         
                           IsSynchronizedWithCurrentItem="True"
                           SelectedIndex="{Binding JewelryStatusFilter}"
@@ -98,8 +105,12 @@
                                 DisplayMemberBinding="{Binding LatestAuction.EndDate}"/>
                     <GridViewColumn Header="Time Left" Width="auto"
                                 DisplayMemberBinding="{Binding TimeLeft}"/>
-                    <GridViewColumn Header="Bids" Width="auto"
+                    <GridViewColumn Header="Current Total Bids" Width="auto"
                                     DisplayMemberBinding="{Binding BidNumber}"/>
+                    <GridViewColumn Header="Total Auctions" Width="auto"
+                                    DisplayMemberBinding="{Binding AuctionNumber}"/>
+                    <GridViewColumn Header="Winner" Width="auto"
+                                    DisplayMemberBinding="{Binding Winner}"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -149,6 +160,7 @@
             </Button>
             <Button Command="{Binding NavigateAddAuctionCommand}"
                     IsEnabled="{Binding CanAddAuction, UpdateSourceTrigger=PropertyChanged}"
+                    Visibility="{Binding IsAdminOrManager, Converter={StaticResource BooleanToVisibilityConverter}}"
                                 VerticalAlignment="Center"
                                 Margin="60 5 10 0"
                                 Foreground="White"
@@ -160,12 +172,12 @@
                        Margin="5"/>
             </Button>
             <Button Command="{Binding DeleteJewelryCommand}"
+                    IsEnabled="{Binding CanClick, UpdateSourceTrigger=PropertyChanged}"
                     VerticalAlignment="Center"
                     Margin="60 5 10 0"
                     Foreground="White"
                     Background="Red"
-                    Cursor="Hand"
-                    IsEnabled="{Binding CanClick, UpdateSourceTrigger=PropertyChanged}">
+                    Cursor="Hand">
                 <TextBlock Text="DELETE JEWELRY"
                            FontWeight="Bold"
                            Style="{StaticResource MyButtonContentStyle}"

@@ -19,7 +19,7 @@ using System.Windows.Input;
 
 namespace JewelryAuctionApplicationGUI.ViewModels;
 
-public class UpdateAccountViewModel : BaseViewModel
+public class UpdateAccountViewModel : BaseViewModel, INotifyDataErrorInfo
 {
     public Account Account { get; }
     private string username;
@@ -196,7 +196,7 @@ public class UpdateAccountViewModel : BaseViewModel
     {
         if (_propertyErrors.Remove(propertyName))
         {
-            OnErrorsChanged(propertyName);
+            OnErrorsChanged(propertyName); //make sure that the change should be notified accordingly
         }
     }
 }

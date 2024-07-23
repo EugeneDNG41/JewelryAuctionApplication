@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
+using MessageBox1 = System.Windows.Forms.MessageBox;
+using MessageBox2 = System.Windows.MessageBox;
 
 namespace JewelryAuctionApplicationGUI.Commands;
 
@@ -27,10 +30,14 @@ public class DeleteAccountCommand : BaseCommand
     {
         if (_viewModel.SelectedAccount != null)
         {
-            _viewModel.SelectedAccount.Account.Status = false;
-            _accountService.Update(_viewModel.SelectedAccount.Account);
-            _navigationService.Navigate();
-            MessageBox.Show("Account deactivated", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            DialogResult result = MessageBox1.Show("Do you want to delete this jewelry?", "Confirmation", MessageBoxButtons.YesNoCancel);
+            if (result == DialogResult.OK)
+            {
+                _viewModel.SelectedAccount.Account.Status = false;
+                _accountService.Update(_viewModel.SelectedAccount.Account);
+                _navigationService.Navigate();
+                MessageBox2.Show("Account deactivated successfully", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

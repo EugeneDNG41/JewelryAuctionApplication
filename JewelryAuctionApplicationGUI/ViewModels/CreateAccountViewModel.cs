@@ -16,7 +16,7 @@ using System.Windows.Input;
 
 namespace JewelryAuctionApplicationGUI.ViewModels;
 
-public class CreateAccountViewModel : BaseViewModel
+public class CreateAccountViewModel : BaseViewModel, INotifyDataErrorInfo
 {
     private string username;
     public string Username

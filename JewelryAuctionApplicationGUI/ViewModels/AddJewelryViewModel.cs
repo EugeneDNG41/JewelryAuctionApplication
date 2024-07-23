@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 
 namespace JewelryAuctionApplicationGUI.ViewModels;
 
-public class AddJewelryViewModel : BaseViewModel
+public class AddJewelryViewModel : BaseViewModel, INotifyDataErrorInfo
 {
     private string jewelryName;
     public string JewelryName

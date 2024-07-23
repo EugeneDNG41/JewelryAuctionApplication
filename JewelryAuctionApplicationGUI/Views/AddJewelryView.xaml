@@ -143,7 +143,7 @@
                        FontWeight="Medium"
                        FontFamily="Montserrat"                             
                        Margin="0,10,0,0"/>
-            <TextBox Text="{Binding StartingPrice, UpdateSourceTrigger=PropertyChanged}"
+            <TextBox Text="{Binding StartingPrice, StringFormat={}{0:C0}, UpdateSourceTrigger=PropertyChanged}"
                      FontSize="10"
                      FontWeight="Medium"
                      FontFamily="Montserrat"

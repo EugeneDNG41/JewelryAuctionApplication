@@ -1,4 +1,5 @@
 ﻿using JewelryAuctionApplicationBLL.Services;
+using JewelryAuctionApplicationBLL.Stores;
 using JewelryAuctionApplicationDAL.Models;
 using JewelryAuctionApplicationGUI.Commands;
 using JewelryAuctionApplicationGUI.Navigation;
@@ -17,9 +18,8 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 
 public class AccountManagementViewModel : BaseViewModel
 {
+    private readonly AccountStore _accountStore;
     private readonly IAccountService _accountService;
-    //public ObservableCollection<Account> Accounts { get; private set; }
-    //public ICollectionView AccountCollectionView { get; private set; }
     public ObservableCollection<AccountInformationViewModel> Accounts { get; private set; }
     public ICollectionView AccountCollectionView { get; private set; }
     private string _usernameFilter = string.Empty;
@@ -125,12 +125,14 @@ public class AccountManagementViewModel : BaseViewModel
     public ICommand NavigateUpdateAccountCommand { get; private set; }
     private readonly ParameterNavigationService<Account, UpdateAccountViewModel> _navigateUpdateAccountService;
     public bool CanClick => SelectedAccount != null;
-    public AccountManagementViewModel(IAccountService accountService,
+    public AccountManagementViewModel(AccountStore accountStore,
+        IAccountService accountService,
         IBidService bidService,
         INavigationService createAccountNavigationService,
         INavigationService returnAccountManagementNavigationService,
         ParameterNavigationService<Account, UpdateAccountViewModel> navigateUpdateAccountService)
     {
+        _accountStore = accountStore;
         _accountService = accountService;
         InitializeAccountList(bidService);
         GenerateRoleList();

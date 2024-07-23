@@ -21,6 +21,8 @@ public class JewelryListingViewModel : BaseViewModel
     
     public string TimeLeft => ComputeTimeLeft();
     public string BidNumber => ComputeBidNumber();
+    public string Winner => LatestAuction?.Account != null ? LatestAuction.Account.Username : "No Winner";
+    public int AuctionNumber => Jewelry.Auctions.Count;
     public ICommand NavigateJewelryPageCommand { get; }
     
 
@@ -80,9 +82,9 @@ public class JewelryListingViewModel : BaseViewModel
 
     private string ComputeBidNumber()
     {
-        if (LatestAuction == null || LatestAuction.Bids == null)
+        if (LatestAuction == null)
         {
-            return "no bid";
+            return "No Auction Yet";
         }
         else
         {
