@@ -19,4 +19,5 @@ public interface IJewelryService
     IEnumerable<Jewelry> GetByEndedAuction();
     IEnumerable<(Jewelry Jewelry, Auction LatestAuction)> GetJewelriesWithOngoingAuctions();
     IEnumerable<(Jewelry Jewelry, Auction LatestAuction)> GetJewelriesWithEndedAuctions();
+    Task UpdateAsync(Jewelry jewelry);
 }

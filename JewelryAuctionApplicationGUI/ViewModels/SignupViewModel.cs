@@ -31,7 +31,6 @@ public class SignupViewModel : BaseViewModel, INotifyDataErrorInfo
         {
             username = value; //new value is inputted
             OnPropertyChanged(nameof(Username));
-
             ClearErrors(nameof(Username)); //clear previous error
 
             if (string.IsNullOrEmpty(Username)) //check for error
@@ -111,7 +110,7 @@ public class SignupViewModel : BaseViewModel, INotifyDataErrorInfo
 
             if (string.IsNullOrEmpty(Email)) //check for error
             {
-                AddError("Email cannot be empty", nameof(Email));
+                AddError("Required", nameof(Email));
             } else if (!Regex.IsMatch(Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.IgnoreCase))
             {
                 AddError("Wrong email address format", nameof(Email));

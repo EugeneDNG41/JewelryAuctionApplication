@@ -14,13 +14,14 @@ using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace JewelryAuctionApplicationGUI.ViewModels;
-public class ProfileViewModel : BaseViewModel
+public class ProfileViewModel : BaseViewModel, INotifyDataErrorInfo
 {
     private readonly AccountStore _accountStore;
     public Account? Account => _accountStore.CurrentAccount;
     public ICommand UpdateProfileCommand { get; }
     public ICommand DeleteProfileCommand { get; }
     public ICommand NavigateChangePasswordCommand {  get; }
+    public ICommand NavigateWonItem {  get; }
     private readonly Dictionary<string, List<string>> _propertyErrors = new();
     public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
     public bool HasErrors => _propertyErrors.Any();

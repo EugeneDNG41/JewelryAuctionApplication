@@ -13,7 +13,6 @@ public class ResetPasswordCommand : BaseCommand
 {
     private readonly AccountManagementViewModel _viewModel;
     private readonly IAccountService _accountService;
-    private readonly PasswordHasher _hasher = new PasswordHasher();
     public ResetPasswordCommand(AccountManagementViewModel viewModel, IAccountService accountService)
     {
         _viewModel = viewModel;
@@ -24,8 +23,8 @@ public class ResetPasswordCommand : BaseCommand
     {
         if (_viewModel.SelectedAccount != null)
         {
-            _accountService.ResetPassword(_viewModel.SelectedAccount);
-            MessageBox.Show("Password reset successful! (123)");
+            _accountService.ResetPassword(_viewModel.SelectedAccount.Account);
+            MessageBox.Show("Password reset successful! (123)", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

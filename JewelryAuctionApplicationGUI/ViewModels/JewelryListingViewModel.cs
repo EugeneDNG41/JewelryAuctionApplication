@@ -16,25 +16,21 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 public class JewelryListingViewModel : BaseViewModel
 {
     public Jewelry Jewelry { get; }
-    public Auction LatestAuction { get; private set; }
+    public Auction? LatestAuction { get; }
     public BitmapImage DisplayedImage => ByteArrayToBitmapImage(Jewelry.Image);
     
     public string TimeLeft => ComputeTimeLeft();
     public string BidNumber => ComputeBidNumber();
+    public string Winner => LatestAuction?.Account != null ? LatestAuction.Account.Username : "No Winner";
+    public int AuctionNumber => Jewelry.Auctions.Count;
     public ICommand NavigateJewelryPageCommand { get; }
-    public IAuctionService AuctionService { get; }
-    private readonly IBidService _bidService;
-    private readonly IJewelryService _jewelryService;
+    
 
-    public JewelryListingViewModel(Jewelry jewelry, Auction auction,
-        ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService,
-        IAuctionService auctionService, IBidService bidService, IJewelryService jewelryService)
+    public JewelryListingViewModel(Jewelry jewelry, Auction? latestAuction,
+        ParameterNavigationService<JewelryListingViewModel, JewelryPageViewModel> navigateJewelryPageService)
     {
         Jewelry = jewelry;
-        LatestAuction = auction;
-        AuctionService = auctionService;
-        _bidService = bidService;
-        _jewelryService = jewelryService;
+        LatestAuction = latestAuction;
         NavigateJewelryPageCommand = new NavigateJewelryPageCommand(this, navigateJewelryPageService);
         UpdateCurrentPrice();
     }
@@ -53,12 +49,12 @@ public class JewelryListingViewModel : BaseViewModel
     }
     public void UpdateCurrentPrice()
     { 
-        if (LatestAuction.Bids.Any())
+        if (LatestAuction != null && LatestAuction.Bids.Any())
         {
             var bids = LatestAuction.Bids.OrderByDescending(b => b.BidAmount);
             foreach (var bid in bids)
             {
-                if (bid.Account.Status)
+                if ((bid.Account == LatestAuction.Account) || bid.Account.Status)
                 {
                     LatestAuction.CurrentPrice = bid.BidAmount;
                     break;
@@ -70,22 +66,25 @@ public class JewelryListingViewModel : BaseViewModel
     }
     private string ComputeTimeLeft()
     {
-        if (LatestAuction == null || LatestAuction.EndDate < DateTime.Now)
+        if (LatestAuction != null && LatestAuction.EndDate < DateTime.Now)
         {
             return "Ended";
         }
-        else
+        else if (LatestAuction != null && LatestAuction.EndDate > DateTime.Now)
         {
             TimeSpan timeDifference = LatestAuction.EndDate.Subtract(DateTime.Now);
             return $"Ends in {timeDifference.Days}d {timeDifference.Hours}h {timeDifference.Minutes}m";
+        } else
+        {
+            return "No Auction Yet";
         }
     }
 
     private string ComputeBidNumber()
     {
-        if (LatestAuction == null || LatestAuction.Bids == null)
+        if (LatestAuction == null)
         {
-            return "0 bids";
+            return "No Auction Yet";
         }
         else
         {

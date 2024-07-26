@@ -50,5 +50,8 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
         builder.HasMany(a => a.Bids)
                .WithOne()
                .HasForeignKey(b => b.AccountId);
+        builder.HasMany(a => a.Auctions)
+               .WithOne()
+               .HasForeignKey(auc => auc.AccountId);
     }
 }

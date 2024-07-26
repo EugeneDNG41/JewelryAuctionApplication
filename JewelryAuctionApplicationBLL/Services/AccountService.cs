@@ -23,16 +23,37 @@ public class AccountService : IAccountService
         }
         return null;
     }
-
+    public void CreateAdmin()
+    {
+        var existingAdmin = _accountRepository.GetByRole(Role.ADMIN).FirstOrDefault();
+        if (existingAdmin == null)
+        {
+            var admin = new Account
+            {
+                Username = "admin",
+                Password = _passwordHasher.Hash("admin"),
+                Email = "admin@admin.com",
+                FullName = "Admin",
+                Credit = 0,
+                Role = Role.ADMIN,
+                Status = true
+            };
+            _accountRepository.Add(admin);
+        } else if (!existingAdmin.Status)
+        {
+            existingAdmin.Status = true;
+            Update(existingAdmin);
+        }
+    }
     public string Create(Account account)
     {
-        var existingEmail =  _accountRepository.GetByEmail(account.Email);
+        var existingEmail =  GetByEmail(account.Email);
         if (existingEmail != null)
         {
             return "EMAIL_TAKEN";
         }
 
-        var existingUsername = _accountRepository.GetByUsername(account.Username);
+        var existingUsername = GetByUsername(account.Username);
         if (existingUsername != null)
         {
             return "USERNAME_TAKEN";
@@ -89,5 +110,13 @@ public class AccountService : IAccountService
         var hashPassword = _passwordHasher.Hash(newPassword);
         account.Password = hashPassword;
         _accountRepository.Update(account);
+    }
+    public Account? GetByEmail(string email)
+    {
+        return _accountRepository.GetByEmail(email);
+    }
+    public async Task UpdateAsync(Account account)
+    {
+        await _accountRepository.UpdateAsync(account);
     }
 }

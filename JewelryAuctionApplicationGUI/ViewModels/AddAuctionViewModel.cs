@@ -14,11 +14,7 @@ namespace JewelryAuctionApplicationGUI.ViewModels;
 
 public class AddAuctionViewModel : BaseViewModel
 {
-    private readonly Dictionary<string, List<string>> _propertyErrors = new();
-    public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
-    private readonly IJewelryService _jewelryService;
-    public bool HasErrors => _propertyErrors.Any();
-    public bool CanClick => !HasErrors;
+    public Jewelry Jewelry { get; }
     private DateTime _endDate;
     public DateTime EndDate
     {
@@ -39,82 +35,24 @@ public class AddAuctionViewModel : BaseViewModel
             OnErrorsChanged(nameof(EndDate));
         }
     }
-    private decimal _currentPrice;
-    public decimal CurrentPrice
-    {
-        get
-        {
-            return _currentPrice;
-        }
-        set
-        {
-            _currentPrice = value;
-            OnPropertyChanged(nameof(CurrentPrice));           
-            ClearErrors(nameof(CurrentPrice)); //clear previous error
-
-            if (CurrentPrice < 0) //check for error
-            {
-                AddError("Current Price must be greater than 0", nameof(CurrentPrice));
-            }
-            OnErrorsChanged(nameof(CurrentPrice));
-        }
-    }
-    private ObservableCollection<Jewelry> _jewelries;
-    public ObservableCollection<Jewelry> Jewelries
-    {
-        get
-        {
-            return _jewelries;
-        }
-        set
-        {
-            _jewelries = value;
-            OnPropertyChanged(nameof(Jewelries));
-        }
-    }
-    private Jewelry _jewelry;
-    public Jewelry Jewelry
-    {
-        get
-        {
-            return _jewelry;
-        }
-        set
-        {
-            _jewelry = value;
-            OnPropertyChanged(nameof(Jewelry));
-            OnPropertyChanged(nameof(DisplayedImage));
-            ClearErrors(nameof(Jewelry)); //clear previous error
-
-            if (Jewelry == null) //check for error
-            {
-                AddError("Jewelry is required", nameof(Jewelry));
-            }
-            else
-            {
-                CurrentPrice = Jewelry.StartingPrice; // Set CurrentPrice to StartingPrice of selected Jewelry
-            }
-            OnErrorsChanged(nameof(Jewelry));
-        }
-    }
-    public BitmapImage? DisplayedImage => Jewelry != null ? ByteArrayToBitmapImage(Jewelry.Image) : null;
+    public BitmapImage DisplayedImage =>  ByteArrayToBitmapImage(Jewelry.Image);
 
     public ICommand AddAuctionCommand { get; }
     public ICommand CloseModalCommand { get; }
-    public AddAuctionViewModel(IAuctionService auctionService, 
+    private readonly Dictionary<string, List<string>> _propertyErrors = new();
+    public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
+    public bool HasErrors => _propertyErrors.Any();
+    public bool CanClick => !HasErrors;
+    public AddAuctionViewModel(Jewelry jewelry,
+        IAuctionService auctionService, 
         IJewelryService jewelryService,
-        INavigationService closeModalNavigationService)
+        INavigationService closeModalNavigationService,
+        INavigationService returnJewelryManagementNavigationService)
     {
-        _jewelryService = jewelryService;
-        AddAuctionCommand = new AddAuctionCommand(this, auctionService, jewelryService);
+        Jewelry = jewelry;
+        AddAuctionCommand = new AddAuctionCommand(this, auctionService, jewelryService, returnJewelryManagementNavigationService);
         CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
         EndDate = DateTime.Now;
-        InitializeJewelries();
-    }
-    private void InitializeJewelries()
-    {
-        var jewelries = _jewelryService.GetForAuction();
-        Jewelries = new ObservableCollection<Jewelry>(jewelries);
     }
     
     public IEnumerable GetErrors(string propertyName)

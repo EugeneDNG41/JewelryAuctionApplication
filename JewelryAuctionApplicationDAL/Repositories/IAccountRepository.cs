@@ -12,4 +12,5 @@ public interface IAccountRepository
     void Update(Account account);
     IEnumerable<Account> GetAll();
     IEnumerable<Account> GetByRole(Role role);
+    Task UpdateAsync(Account account);
 }

@@ -15,16 +15,18 @@ public class LoginCommand : BaseCommand
     private readonly AccountStore _accountStore;
     private readonly INavigationService _closeModal;
     private readonly INavigationService _accountManagement;
+    private readonly INavigationService _jewelryManagement;
     private readonly IAccountService _accountService;
-
+    
     public LoginCommand(LoginViewModel viewModel, 
-        AccountStore accountStore, INavigationService accountManagement, 
+        AccountStore accountStore, INavigationService accountManagementNavigationService, INavigationService jewelryManagementNavigationService, 
         INavigationService closeModal, 
         IAccountService accountService)
     {
         _viewModel = viewModel;
         _accountStore = accountStore;
-        _accountManagement = accountManagement;
+        _accountManagement = accountManagementNavigationService;
+        _jewelryManagement = jewelryManagementNavigationService;
         _closeModal = closeModal;
         _accountService = accountService;
     }
@@ -49,6 +51,9 @@ public class LoginCommand : BaseCommand
             if (_accountStore.IsAdmin || _accountStore.IsManager)
             {
                 _accountManagement.Navigate();
+            } else if (_accountStore.IsStaff)
+            {
+                _jewelryManagement.Navigate();
             } else if (_accountStore.IsUser)
             {
                 _closeModal.Navigate();

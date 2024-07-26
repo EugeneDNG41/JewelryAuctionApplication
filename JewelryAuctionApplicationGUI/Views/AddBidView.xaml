@@ -74,7 +74,7 @@
                            FontWeight="Medium"
                            FontFamily="Montserrat"                             
                            Margin="0,10,0,0"/>
-                <TextBox Text="{Binding BiddableCredit, Mode=OneWay, StringFormat={}{0:C}, UpdateSourceTrigger=PropertyChanged}"
+                <TextBox Text="{Binding BiddableCredit, Mode=OneWay, StringFormat={}{0:C0}, UpdateSourceTrigger=PropertyChanged}"
                          IsReadOnly="True"
                          FontSize="12"
                          Width="100"
@@ -108,7 +108,7 @@
                           Height="28"
                           VerticalContentAlignment="Center"
                           Margin="25,5,0,0"
-                          ItemStringFormat="{}{0:C}"
+                          ItemStringFormat="{}{0:C0}"
                           IsEditable="False"
                           ItemsSource="{Binding Path=BidAmounts}"    
                           SelectedItem="{Binding Path=SelectedBidAmount}"

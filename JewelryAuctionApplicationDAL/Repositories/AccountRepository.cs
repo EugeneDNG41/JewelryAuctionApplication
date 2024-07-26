@@ -15,7 +15,7 @@ public class AccountRepository : IAccountRepository
 
     public IEnumerable<Account> GetAll()
     {
-        return _context.Accounts.ToList();
+        return _context.Accounts.Include(a => a.Auctions);
     }
 
     public Account? GetById(int id)
@@ -28,7 +28,7 @@ public class AccountRepository : IAccountRepository
         return _context.Accounts.FirstOrDefault(a => a.Email == email);
     }
 
-    public  Account? GetByUsername(string username)
+    public Account? GetByUsername(string username)
     {
         return _context.Accounts.FirstOrDefault(a => a.Username == username);
     }
@@ -67,5 +67,10 @@ public class AccountRepository : IAccountRepository
     public IEnumerable<Account> GetByRole(Role role)
     {
         return _context.Accounts.Where(a => a.Role == role);
+    }
+    public async Task UpdateAsync(Account account)
+    {
+        _context.Update(account);
+        await _context.SaveChangesAsync();
     }
 }

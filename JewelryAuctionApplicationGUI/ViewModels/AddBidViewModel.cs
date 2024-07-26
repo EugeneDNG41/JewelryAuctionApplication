@@ -51,7 +51,7 @@ public class AddBidViewModel : BaseViewModel
             decimal biddableCredit = 0;
             if (_accountStore.CurrentAccount != null)
             {
-                biddableCredit = _accountStore.CurrentAccount.Credit - _bidService.GetCulmulativeBidAmountByAccountId(_accountStore.CurrentAccount.AccountId);
+                biddableCredit = _accountStore.CurrentAccount.Credit - _bidService.GetBidBalanceByAccountId(_accountStore.CurrentAccount.AccountId);
                 var currentHighestBid = _bidService.GetHighestBid(_jewelryListing.LatestAuction.AuctionId);
                 if (currentHighestBid != null && currentHighestBid.AccountId == _accountStore.CurrentAccount.AccountId)
                 {

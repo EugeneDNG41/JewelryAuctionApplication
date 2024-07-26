@@ -20,13 +20,13 @@ public class AddBidCommand : BaseCommand
     public AddBidCommand(AddBidViewModel addBidViewModel, 
         JewelryListingViewModel jewelryListing, 
         IAuctionService auctionService ,IBidService bidService, 
-        INavigationService closeModelNavigationService,
+        INavigationService closeModalNavigationService,
         AccountStore accountStore)
     {
         _auctionService = auctionService;
         _bidService = bidService;
         _jewelryListing = jewelryListing;
-        _navigationService = closeModelNavigationService;
+        _navigationService = closeModalNavigationService;
         _viewModel = addBidViewModel;
         _accountStore = accountStore;
         
@@ -39,7 +39,7 @@ public class AddBidCommand : BaseCommand
             var highestBid = _bidService.GetHighestBid(_jewelryListing.LatestAuction.AuctionId);         
             if (highestBid != null && _viewModel.SelectedBidAmount < highestBid.BidAmount)
             {
-                MessageBox.Show("Bid amount must be higher than the current highest bid");
+                MessageBox.Show("Bid amount must be higher than the current highest bid", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             var bid = new Bid
@@ -52,12 +52,12 @@ public class AddBidCommand : BaseCommand
                 
             };
             _bidService.Add(bid);
-            MessageBox.Show("Bid added successfully");
+            MessageBox.Show("Bid added successfully", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             _navigationService.Navigate();
             return;
         } else
         {
-            MessageBox.Show("You must be logged in as a user to place a bid");
+            MessageBox.Show("You must be logged in as a user to place a bid", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             return;
         }
     }

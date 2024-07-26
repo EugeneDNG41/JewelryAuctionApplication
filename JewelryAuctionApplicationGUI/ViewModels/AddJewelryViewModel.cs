@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 
 namespace JewelryAuctionApplicationGUI.ViewModels;
 
-public class AddJewelryViewModel : BaseViewModel
+public class AddJewelryViewModel : BaseViewModel, INotifyDataErrorInfo
 {
     private string jewelryName;
     public string JewelryName
@@ -143,9 +143,10 @@ public class AddJewelryViewModel : BaseViewModel
     public bool HasErrors => _propertyErrors.Any();
     public bool CanClick => !HasErrors;
     public AddJewelryViewModel(IJewelryService jewelryService,
-        INavigationService closeModalNavigationService)
+        INavigationService closeModalNavigationService,
+        INavigationService returnJewelryManagementNavigationService)
     {
-        AddJewelryCommand = new AddJewelryCommand(this, jewelryService, closeModalNavigationService);
+        AddJewelryCommand = new AddJewelryCommand(this, jewelryService, returnJewelryManagementNavigationService);
         UploadImageCommand = new UploadImageCommand(this);
         CloseModalCommand = new CloseModalCommand(closeModalNavigationService);
 

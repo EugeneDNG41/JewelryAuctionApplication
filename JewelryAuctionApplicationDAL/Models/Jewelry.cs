@@ -14,31 +14,20 @@ public enum JewelryCategory
     WATCHES
 }
 public enum JewelryStatus {
-    VALUATING,
     READY,
     ACTIVE,
     SOLD,
     DELETED
 }
-//[Table("Jewelry")]
 public class Jewelry
 {
-    //[Key]
-    //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int JewelryId { get; set; }
-    //[Required]
     public string JewelryName { get; set; }
     public string Description { get; set; }
-    //[Required]
     public JewelryCategory JewelryCategory {  get; set; }
-    //[Required]
     public string Condition { get; set; }
-    //[Required]
-    //public string Estimate {  get; set; }
-    //[Required]
     public decimal StartingPrice { get; set; }
-    //[Required]
     public JewelryStatus Status { get; set; }
     public byte[] Image { get; set; }
-    public ICollection<Auction> Auctions { get; set; }
+    public ICollection<Auction> Auctions { get; set; } = new List<Auction>();
 }

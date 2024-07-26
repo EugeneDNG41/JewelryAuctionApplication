@@ -13,11 +13,13 @@ public class AddJewelryCommand : BaseCommand
     private readonly AddJewelryViewModel _viewModel;
     private readonly IJewelryService _jewelryService;
     private readonly INavigationService _navigationService;
-    public AddJewelryCommand(AddJewelryViewModel viewModel, IJewelryService jewelryService, INavigationService navigationService)
+    public AddJewelryCommand(AddJewelryViewModel viewModel, 
+        IJewelryService jewelryService, 
+        INavigationService returnJewelryManagementNavigationService)
     {
         _viewModel = viewModel;
         _jewelryService = jewelryService;
-        _navigationService = navigationService;
+        _navigationService = returnJewelryManagementNavigationService;
     }
     public override void Execute(object parameter)
     {
@@ -63,7 +65,7 @@ public class AddJewelryCommand : BaseCommand
             Image = stream.ToArray()
         };
         _jewelryService.Add(jewelry);
-        MessageBox.Show("Jewelry added successfully!");
         _navigationService.Navigate();
+        MessageBox.Show("Jewelry added successfully", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
     }
 }

@@ -27,7 +27,7 @@
                          Height="20"/>
             </StackPanel>
             <StackPanel Margin="15 0 0 0">
-                <TextBlock Text="Filter"
+                <TextBlock Text="Filter by Category"
                            Margin="0 0 0 5"/>
                 <ComboBox Width="150"
                           ItemsSource="{Binding Categories}"                         

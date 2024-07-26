@@ -36,7 +36,7 @@ public class AddCreditViewModel : BaseViewModel
             decimal bidBalance = 0;
             if (_accountStore.CurrentAccount != null)
             {
-                bidBalance = _bidService.GetCulmulativeBidAmountByAccountId(_accountStore.CurrentAccount.AccountId);
+                bidBalance = _bidService.GetBidBalanceByAccountId(_accountStore.CurrentAccount.AccountId);
             }
             return bidBalance;
         }

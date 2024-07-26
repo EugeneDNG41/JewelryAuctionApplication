@@ -11,10 +11,11 @@ public interface IAuctionRepository
 {
     void Add(Auction auction);
     void Update(Auction auction);
-    IEnumerable<Auction> GetAllLatest();
+    Task<IEnumerable<Auction>> GetAllLatestAsync();
     IEnumerable<Auction> GetByJewelryId(int jewelryId);
     Auction? GetOngoingByJewelryId(int id);
     Auction? GetById(int id);
     Auction? GetLatestByJewelryId(int jewelryId);
     IEnumerable<Auction> GetWonAuction(int accountId);
+    Task UpdateAsync(Auction auction);
 }

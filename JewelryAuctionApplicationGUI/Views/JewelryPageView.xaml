@@ -106,7 +106,7 @@
                                            FontWeight="Regular"
                                            FontSize="16"
                                            Margin="10 5 0 0"/>
-                                <TextBlock Text="{Binding JewelryListing.LatestAuction.CurrentPrice, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C}}"
+                                <TextBlock Text="{Binding JewelryListing.LatestAuction.CurrentPrice, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C0}}"
                                            FontWeight="DemiBold"
                                            FontSize="22"
                                            Margin="10 0 0 0"/>
@@ -151,7 +151,7 @@
                                                         DisplayMemberBinding="{Binding Item1}"
                                                         Width="auto"/>
                                         <GridViewColumn Header="Amount"
-                                                        DisplayMemberBinding="{Binding Item2, StringFormat={}{0:C}}"
+                                                        DisplayMemberBinding="{Binding Item2, StringFormat={}{0:C0}}"
                                                         Width="auto"/>
                                         <GridViewColumn Header="Bid Time"
                                                         DisplayMemberBinding="{Binding Item3}"

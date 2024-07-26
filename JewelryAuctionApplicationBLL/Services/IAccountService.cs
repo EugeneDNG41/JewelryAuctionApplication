@@ -18,5 +18,8 @@ public interface IAccountService
     Account? GetByUsername(string username);
     IEnumerable<Account> GetByRole(Role role);
     Account? GetById(int id);
+    Account? GetByEmail(string email);
+    void CreateAdmin();
+    Task UpdateAsync(Account account);
     void ChangePassword(Account account, string newPassword);
 }

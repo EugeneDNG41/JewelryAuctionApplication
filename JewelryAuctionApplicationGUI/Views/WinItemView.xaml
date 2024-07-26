@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="JewelryAuctionApplicationGUI.Views.WinItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JewelryAuctionApplicationGUI.Views"
+             mc:Ignorable="d" 
+             Background="WhiteSmoke"
+             d:DesignHeight="650" d:DesignWidth="1000">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ValidationErrorTemplate">
+            <StackPanel>
+                <AdornedElementPlaceholder/>
+                <ItemsControl ItemsSource="{Binding}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ErrorContent}" Foreground="Red" HorizontalAlignment="Right"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ControlTemplate>
+
+        <!-- Style for TextBox to use the Validation ErrorTemplate -->
+        <Style TargetType="TextBox">
+            <Setter Property="Validation.ErrorTemplate" Value="{StaticResource ValidationErrorTemplate}"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,40,0,0" Height="22" Width="190">
+                <Button Content="View Auction" Name="AddButton" Width="80" Margin="0,0,30,0"/>
+                <Button Content="View Jewelry" Name="EditButton" Width="80"/>
+            </StackPanel>
+            <ListView Margin="10,10,10,10" Name="listWonItem">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Auction ID" Width="100" DisplayMemberBinding="{Binding AuctionId}"/>
+                        <GridViewColumn Header="Jewelry Name" Width="200" DisplayMemberBinding="{Binding Jewelry.JewelryName}"/>
+                        <GridViewColumn Header="Jewelry Description" Width="400" DisplayMemberBinding="{Binding Jewelry.JewelryDescription}"/>
+                        <GridViewColumn Header="End Date" Width="150" DisplayMemberBinding="{Binding EndDate}"/>
+                        <GridViewColumn Header="Credit" Width="150" DisplayMemberBinding="{Binding CurrentPrice}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

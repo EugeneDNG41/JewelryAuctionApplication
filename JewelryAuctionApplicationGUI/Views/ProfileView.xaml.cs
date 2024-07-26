@@ -24,5 +24,6 @@ namespace JewelryAuctionApplicationGUI.Views
         {
             InitializeComponent();
         }
+
     }
 }
