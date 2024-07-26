@@ -20,6 +20,7 @@ public class JewelryPageViewModel : BaseViewModel
     public JewelryListingViewModel JewelryListing { get; }
     public NavigationBarViewModel NavigationBarViewModel { get; private set; }
     public ObservableCollection<Tuple<string, decimal, string, int>> BidHistory => GetBidHistory();
+    public string LeadingBidder => GetLeadingBidder();
     private string _tickingTimeLeft;
     public string TickingTimeLeft
     {
@@ -52,7 +53,7 @@ public class JewelryPageViewModel : BaseViewModel
     private string GetBidBoxTitle()
     {
         int bidCount = JewelryListing.LatestAuction?.Bids != null ? JewelryListing.LatestAuction.Bids.Count : 0;
-        if (JewelryListing.LatestAuction.EndDate < DateTime.Now && bidCount == 0)
+        if (JewelryListing.LatestAuction?.EndDate < DateTime.Now && bidCount == 0)
         {
             return "No bids";
         }
@@ -65,7 +66,36 @@ public class JewelryPageViewModel : BaseViewModel
             return bidCount > 0 ? $"Current Price ({JewelryListing.BidNumber})" : "Starting Price";
         }
     }
-
+    private string GetLeadingBidder()
+    {
+        var auction = JewelryListing.LatestAuction;
+        if (auction != null && auction.EndDate > DateTime.Now)
+        {
+            if (BidHistory.Any())
+            {
+                var leadingBid = BidHistory.Last();
+                return $"{leadingBid.Item1} is currently in the lead";
+            }
+            else
+            {
+                return "No bid yet";
+            }
+        } else if (auction != null && auction.EndDate < DateTime.Now)
+        {
+            if (BidHistory.Any())
+            {
+                var leadingBid = BidHistory.Last();
+                return $"{leadingBid.Item1} has won the auction";
+            }
+             else
+            {
+                return "No winner";
+            }
+        } else
+        {
+            return "No auction";
+        }
+    }
     private ObservableCollection<Tuple<string, decimal, string, int>> GetBidHistory()
     {
         var bids = JewelryListing.LatestAuction?.Bids.OrderByDescending(b => b.BidAmount);
@@ -99,7 +129,7 @@ public class JewelryPageViewModel : BaseViewModel
                     timeAgo = $"{seconds}s ago";
                 }
                 var account = _accountService.GetById(bid.AccountId);
-                if (account != null && (account.Status || JewelryListing.LatestAuction.Account == account))
+                if (account != null && (account.Status || JewelryListing.LatestAuction?.Account == account))
                 {
                     bidHistory.Add(new Tuple<string, decimal, string, int>(account.Username, bid.BidAmount, timeAgo, i));
                     i++;
@@ -146,6 +176,7 @@ public class JewelryPageViewModel : BaseViewModel
             OnPropertyChanged(nameof(BidHistory));
             OnPropertyChanged(nameof(TickingTimeLeft));
             OnPropertyChanged(nameof(BidBoxTitle));
+            OnPropertyChanged(nameof(LeadingBidder));
         }
         else if (JewelryListing.LatestAuction?.EndDate < DateTime.Now)
         {
@@ -153,6 +184,8 @@ public class JewelryPageViewModel : BaseViewModel
             _auctionTimer.Stop();
             OnPropertyChanged(nameof(BidBoxTitle));
             OnPropertyChanged(nameof(CanBid));
+            OnPropertyChanged(nameof(LeadingBidder));
+            OnPropertyChanged(nameof(JewelryListing.Winner));
         }
         else
         {

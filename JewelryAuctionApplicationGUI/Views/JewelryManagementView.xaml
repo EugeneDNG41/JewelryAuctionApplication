@@ -172,7 +172,7 @@
                        Margin="5"/>
             </Button>
             <Button Command="{Binding DeleteJewelryCommand}"
-                    IsEnabled="{Binding CanClick, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{Binding CanUpdate, UpdateSourceTrigger=PropertyChanged}"
                     VerticalAlignment="Center"
                     Margin="60 5 10 0"
                     Foreground="White"

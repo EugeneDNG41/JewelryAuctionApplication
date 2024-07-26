@@ -45,18 +45,10 @@ public class AuctionCheckService : BackgroundService
                     {
                         if (auction.Bids.Any())
                         {
-                            var bids = auction.Bids.OrderByDescending(b => b.BidAmount);
-                            var winner = new Account();
-                            foreach (var bid in bids)
-                            {
-                                if (bid.Account.Status)
-                                {
-                                    auction.CurrentPrice = bid.BidAmount;
-                                    winner = bid.Account;
-                                    break;
-                                }
-                                auction.CurrentPrice = auction.Jewelry.StartingPrice;
-                            }
+                            var bids = auction.Bids.OrderByDescending(b => b.BidAmount).ToList();
+                            var winner = bids.FirstOrDefault(b => b.Account.Status)?.Account;
+                            auction.CurrentPrice = winner != null ? bids.First(b => b.Account.Status).BidAmount : jewelry.StartingPrice;
+
                             if (auction.CurrentPrice == jewelry.StartingPrice)
                             {
                                 jewelry.Status = JewelryStatus.READY;
@@ -67,8 +59,8 @@ public class AuctionCheckService : BackgroundService
                                 auction.Account = winner;
                                 winner.Credit -= auction.CurrentPrice;
                                 await accountService.UpdateAsync(winner);
-                                await auctionService.UpdateAsync(auction);
                             }
+                            await auctionService.UpdateAsync(auction);
                         }
                         else
                         {

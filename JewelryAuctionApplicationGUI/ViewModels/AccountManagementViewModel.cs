@@ -125,6 +125,7 @@ public class AccountManagementViewModel : BaseViewModel
     public ICommand NavigateUpdateAccountCommand { get; private set; }
     private readonly ParameterNavigationService<Account, UpdateAccountViewModel> _navigateUpdateAccountService;
     public bool CanClick => SelectedAccount != null;
+    public bool IsAdmin => _accountStore.CurrentAccount?.Role == Role.ADMIN;
     public AccountManagementViewModel(AccountStore accountStore,
         IAccountService accountService,
         IBidService bidService,
