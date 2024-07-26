@@ -2,6 +2,12 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Views\ChangePasswordView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ProfileView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AccountManagementView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -18,6 +24,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UpdateJewelryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WinItemView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -52,6 +61,9 @@
     <Page Update="Views\AddJewelryView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\ChangePasswordView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\CreateAccountView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -76,6 +88,9 @@
     <Page Update="Views\PastAuctionsView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\ProfileView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\SignupView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -86,6 +101,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UpdateJewelryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WinItemView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

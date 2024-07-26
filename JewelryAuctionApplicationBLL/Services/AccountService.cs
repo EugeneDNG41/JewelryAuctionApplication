@@ -45,12 +45,6 @@ public class AccountService : IAccountService
             Update(existingAdmin);
         }
     }
-    public void ChangePassword(Account account, string newPassword)
-    {
-        var hashPassword = _passwordHasher.Hash(newPassword);
-        account.Password = hashPassword;
-        _accountRepository.Update(account);
-    }
     public string Create(Account account)
     {
         var existingEmail =  GetByEmail(account.Email);
@@ -109,6 +103,13 @@ public class AccountService : IAccountService
     public Account? GetById(int id)
     {
         return _accountRepository.GetById(id);
+    }
+
+    public void ChangePassword(Account account, string newPassword)
+    {
+        var hashPassword = _passwordHasher.Hash(newPassword);
+        account.Password = hashPassword;
+        _accountRepository.Update(account);
     }
     public Account? GetByEmail(string email)
     {

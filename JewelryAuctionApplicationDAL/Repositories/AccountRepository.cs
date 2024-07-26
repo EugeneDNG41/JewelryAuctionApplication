@@ -51,8 +51,17 @@ public class AccountRepository : IAccountRepository
 
     public void Update(Account account)
     {
-        _context.Accounts.Update(account);
-        _context.SaveChanges();
+        var existingAccount = GetById(account.AccountId);
+        if (existingAccount != null)
+        {
+            existingAccount.Email = account.Email;
+            existingAccount.Username = account.Username;
+            existingAccount.FullName = account.FullName;
+            existingAccount.Role = account.Role;
+            existingAccount.Status = account.Status;
+            _context.Accounts.Update(existingAccount);
+            _context.SaveChanges();
+        }
     }
 
     public IEnumerable<Account> GetByRole(Role role)

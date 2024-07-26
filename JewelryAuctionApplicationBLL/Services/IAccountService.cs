@@ -20,6 +20,6 @@ public interface IAccountService
     Account? GetById(int id);
     Account? GetByEmail(string email);
     void CreateAdmin();
-    void ChangePassword(Account account, string newPassword);
     Task UpdateAsync(Account account);
+    void ChangePassword(Account account, string newPassword);
 }

@@ -28,6 +28,7 @@ public class NavigationBarViewModel : BaseViewModel
     public ICommand NavigateJewelryManagementCommand { get; }
     public ICommand NavigatePastAuctionCommand { get; }
     public ICommand NavigateAddCreditCommand { get; }
+    public ICommand NavigateProfileCommand { get; }
 
     public bool IsLoggedIn => _accountStore.IsLoggedIn;
     public bool IsLoggedOut => !IsLoggedIn;
@@ -43,7 +44,8 @@ public class NavigationBarViewModel : BaseViewModel
         INavigationService accountManagementNavigationService,
         INavigationService jewelryManagementNavigationService,
         INavigationService pastAuctionNavigationService,
-        INavigationService addCreditNavigationService)
+        INavigationService addCreditNavigationService,
+        INavigationService profileNavigationService)
     {
         _accountStore = accountStore;
         NavigateHomeCommand = new NavigateCommand(homeNavigationService); //switch functionality + text
@@ -54,6 +56,8 @@ public class NavigationBarViewModel : BaseViewModel
         NavigateJewelryManagementCommand = new NavigateCommand(jewelryManagementNavigationService);
         NavigatePastAuctionCommand = new NavigateCommand(pastAuctionNavigationService); //switch functionality + text
         NavigateAddCreditCommand = new NavigateCommand(addCreditNavigationService);
+        NavigateProfileCommand = new NavigateCommand(profileNavigationService);
+
         UpdateGreetings();
         _accountStore.CurrentAccountChanged += OnCurrentAccountChanged;
     }
